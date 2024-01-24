@@ -1,0 +1,80 @@
+:root{
+    font-size: 12px;
+}
+h1{
+    text-align: center;
+    color: gray
+}
+h2{
+    font-weight: 200;
+}
+ul li{
+    line-height: 2;
+}
+ol li {
+    font-weight: 800;
+}
+
+.logo_container {
+    text-align: center;
+}
+#logo{
+    height: 40px;
+    margin-bottom: 10px;
+}
+#custom_start{
+    border-top: 1px solid yellow;
+    background-color: rgba(255, 255, 0, 0.213);
+}
+#head_p{
+    color: darkcyan;
+    text-align: center;
+    margin: 0;
+    padding: 10px; 
+}
+span{
+text-transform: uppercase;
+font-weight: 800;
+
+}
+#custom_start p{
+    font-size: 0.8em;
+}
+
+main{
+    width: 35vw;
+    margin: auto;
+}
+
+.focaccia{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #dedede, -5px -5px 5px #dedede, 5px -5px 5px #dedede, -5px 5px 5px #dedede
+}
+figure figcaption p {
+    text-align: center;
+    color: #dedede;
+}
+#decoration {
+    border-left: 1px solid yellow;
+    padding-left: 10px;
+    margin-bottom: 35px;
+}
+#featured_in {
+    color: darkorange;
+    text-transform: uppercase ;
+    font-size: 0.8em;
+    margin-bottom: 0;
+}
+#link_correlati{
+    margin-top: 0;
+}
+a{
+    color: lightseagreen;
+}
+.divisore{
+    border-bottom: 1px solid lightblue;
+}
+video {
+    width: 100%;
+}
