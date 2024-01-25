@@ -85,25 +85,8 @@ iframe {
     border-radius: 20px;
     margin-bottom: 20px;
 }
-/* NEWSLETTER */
 
-#newsletter{
-    background-color: lightgray;
-    padding: 10px;
-}
-#novita {
-    text-align: center;
-    font-size: 30px;
-}
-#newsletter_p {
-    margin: 15px 0;
-}
 
-#iscriviti_button {
-    background-color: #3967c6 ;
-    color: white;
-    border: none;
-}
 /* TABELLE */
 
 #caption {
@@ -135,7 +118,23 @@ tr:nth-child(even) {
 }
 
 /* FORM */
+#newsletter{
+    background-color: lightgray;
+    padding: 10px;
+}
+#novita {
+    text-align: center;
+    font-size: 30px;
+}
+#newsletter_p {
+    margin: 15px 0;
+}
 
+#iscriviti_button {
+    background-color: #3967c6 ;
+    color: white;
+    border: none;
+}
 /* ELEMENTI NELL' ASIDE */
 
 /* FOOTER */
