@@ -3,6 +3,7 @@
 body{
     margin: 15px;
     background-image: url(../img/sfondo.png);
+    font-family: "Poppins";
 }
 /* HEADER */
 #header{
