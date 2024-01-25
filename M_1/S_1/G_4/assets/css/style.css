@@ -173,8 +173,17 @@ aside a {
     background: linear-gradient(0deg, rgba(53,53,53,1) 0%, rgba(5,85,103,1) 68%);
         color: #fff;
         text-align: center;
-    }
+}
     
-#footer p {
-    margin-top: 20px;
+#footer p{
+    padding-top: 10px;
     }
+
+#footer address{
+        padding: 10px 10px 30px 10px;
+}
+
+#footer a{
+    color: #fd0aef;
+
+}
