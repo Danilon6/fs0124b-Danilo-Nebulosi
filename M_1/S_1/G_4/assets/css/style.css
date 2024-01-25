@@ -22,6 +22,9 @@ body{
     text-decoration: none;
     line-height: 1.3;
 }
+#nav a i{
+    font-size: 15px; 
+}
 /* MAIN */
 
 /* ELEMENTI NEL MAIN - ARTICLE */
