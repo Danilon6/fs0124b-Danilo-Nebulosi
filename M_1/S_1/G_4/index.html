@@ -44,21 +44,21 @@
       <article id="article">
         <h1>Come creare un template per i post</h1>
         <p><i class="fas fa-pen-square" class="i_main"></i> di Mario Rossi - <span><i class="fas fa-clock" class="i_main"></i> pubblicato il 25-10-2020</span></p>
-        <p>
+        <p id="first_main_p">
           La prima cosa da fare è suddividere in blocchi logici la pagina,
           identificando le <span class="testo_evidenziato">parti comuni</span> da applicare a tutte le
           pagine
         </p>
         <p>Le varie aree saranno quindi suddivise in:</p>
-        <ul>
-          <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
+        <ul id="main_ul">
+          <li>Contenuti di intestazione del tag <code class="code">&lt;header&gt;</code></li>
           <li>
             Contenuti centrali variabili del tag
-            <code>&lt;main&gt;</code> (corpo principale)
+            <code class="code">&lt;main&gt;</code> (corpo principale)
           </li>
           <li>
             Contenuti di fine pagina comuni, da inserire nel tag
-            <code>&lt;footer&gt;</code>
+            <code class="code">&lt;footer&gt;</code>
           </li>
         </ul>
         <h2>Formattazione del codice</h2>
@@ -67,7 +67,7 @@
           le parti da <span class="testo_evidenziato">selezionare con i CSS</span>. Perciò i passi
           saranno:
         </p>
-        <ol>
+        <ol id="main_ol">
           <li>
             Progettare su carta il markup finale, assegnando ad ogni specifico
             testo il tag appropriato
@@ -83,7 +83,7 @@
           la diffusione pressoché totale.
         </p>
         <table>
-          <caption>
+          <caption id="caption">
             Diffusione dei CSS
           </caption>
           <thead>
@@ -114,35 +114,34 @@
               <td>80&percnt;</td>
               <td>51&percnt;</td>
             </tr>
-            <tr>
+            <tr id="last_tr">
               <td>2012</td>
               <td>100&percnt;</td>
               <td>76&percnt;</td>
             </tr>
           </tbody>
         </table>
-        <p>
-          Un test di validazione potrà essere fatto tramite il
+        <p id="after_table_p">
+          Un test di validazione potrà essere <span>fatto tramite il
           <a
             href="https://jigsaw.w3.org/css-validator/"
             target="blank"
             title="Validatore CSS online del W3C"
+            id="tool_online"
             >tool online</a
           >
-          dedicato allo scopo. Una volta ottimizzato il tutto, avremo raggiunto
+          dedicato</span> allo scopo. Una volta ottimizzato il tutto, avremo raggiunto
           il nostro obiettivo ed essere stati dei veri developers come loro:
         </p>
         <iframe
-          width="300"
-          height="300"
           src="https://www.youtube.com/embed/dvOvHXruEDM"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
-        <section>
-          <h2>Novità</h2>
-          <p>
+        <section id="newsletter">
+          <h2 id="novita">Novità</h2>
+          <p id="newsletter_p">
             Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla
             nostra newsletter:
           </p>
@@ -154,7 +153,7 @@
               placeholder="inserisci l'email"
               required
             />
-            <button type="submit">Iscriviti!</button>
+            <button type="submit" id="iscriviti_button">Iscriviti!</button>
           </form>
         </section>
       </article>
