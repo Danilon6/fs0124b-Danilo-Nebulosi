@@ -36,6 +36,37 @@ h1,h2,h3, h4 {
 }
 
 
+/* MAIN */
+#first_section {
+    background-image: url(../Assets/images/banner.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 40px;
+}
+
+#first_section h1 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+#first_section p{
+    margin: 20px 0;
+    font-size: 1.3rem;
+}
+
+#first_section a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #e22d0e;
+    border-radius: 5px;
+    padding: 15px 25px;
+}
+
+
 /* TESTIMONIANZE */
 #testimonianze {
     background-color: #e22d0e;
