@@ -15,6 +15,7 @@ h1,h2,h3, h4 {
     line-height: 1.5;
     font-weight: 800;
 }
+
 #h3{
     color: white;
 }
@@ -22,11 +23,16 @@ h1,h2,h3, h4 {
 /* HEADER */
 #header {
     background-color: #000;
+    text-align: center;
 }
 #header a {
     color: #f04c2f;
     font-family: "Montserrat";
     font-weight: 800;
+}
+#header img {
+    width: 150px;
+    padding: 25px 0;
 }
 
 
