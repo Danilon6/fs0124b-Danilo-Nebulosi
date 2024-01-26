@@ -29,7 +29,8 @@ blockquote{
 }
 
 hr {
-    margin: 35px 80px;
+    margin: 35px 0;
+    max-width: 300px;
 }
 
 /* HEADER */
@@ -150,7 +151,7 @@ hr {
     max-width: 30%;
 }
 .card p{
-    margin-bottom: 20px;  
+    padding: 10px;  
 }
 
 #background_image_1 {
@@ -183,19 +184,24 @@ hr {
 #footer {
     background-color: #25a2c3;
     color: #c8e7f0;
-    text-align: left;
     padding: 30px;
+    text-align: center;
 }
 
 #footer a {
     color:#c8e7f0;
 }
-#div_footer_esterno
+#div_footer_esterno {
+    width: 20%;
+    margin: 0 auto;
+}
 
 #div_footer_informazioni {
     margin-top: 20px;
+    text-align: left;
 }
 
 #div_footer_copyright {
     margin-bottom: 30px;
 }
+
