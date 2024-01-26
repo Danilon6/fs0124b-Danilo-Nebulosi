@@ -16,9 +16,18 @@ h1,h2,h3, h4 {
     font-weight: 800;
 }
 
-#h3{
+.h3{
     color: white;
+    font-size: 2rem;
 }
+span{
+    font-style: italic;
+}
+
+blockquote{
+    margin: 20px 0;;
+}
+
 
 /* HEADER */
 #header {
@@ -90,13 +99,12 @@ h1,h2,h3, h4 {
     margin: 40px 0;
 }
 
-/* THIRD_SECTION */
-
-
-
 /* TESTIMONIANZE */
 #testimonianze {
     background-color: #e22d0e;
+    color: #fff;
+    text-align: center;
+    padding: 40px 35px 40px 35px;
 }
 
 /* CARD */
