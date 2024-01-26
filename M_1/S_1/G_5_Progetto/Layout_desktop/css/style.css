@@ -57,9 +57,10 @@ hr {
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    padding: 10%;
     height: 100%;
+    padding: 10%;
 }
+
 
 #first_section h1 {
     font-size: 40px;
@@ -148,7 +149,7 @@ hr {
     border: 2px solid #dee1e3;
     border-radius: 5px;
     display: inline-block;
-    max-width: 30%;
+    max-width: 33%;
 }
 .card p{
     padding: 10px;  
