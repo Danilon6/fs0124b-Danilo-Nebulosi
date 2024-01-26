@@ -149,7 +149,7 @@ hr {
     border: 2px solid #dee1e3;
     border-radius: 5px;
     display: inline-block;
-    max-width: 33%;
+    max-width: 100%;
 }
 .card p{
     padding: 10px;  
