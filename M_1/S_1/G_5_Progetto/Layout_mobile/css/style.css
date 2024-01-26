@@ -173,10 +173,10 @@ hr {
     color:#c8e7f0;
 }
 
-.div_footer_informazioni {
+#div_footer_informazioni {
     margin-top: 20px;
 }
 
-.div_footer_copyright {
+#div_footer_copyright {
     margin-bottom: 30px;
 }

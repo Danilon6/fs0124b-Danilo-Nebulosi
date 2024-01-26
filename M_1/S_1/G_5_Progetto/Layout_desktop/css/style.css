@@ -1,1 +1,201 @@
 /* Your styles here */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body {
+    color: #393d41;
+    font-size: 1rem;
+    font-family: "Open Sans";
+    line-height: 1.65;
+}
+
+/* HEADINGS */
+h1,h2,h3, h4 {
+    color: #25a2c3;
+    font-family: "Montserrat";
+    line-height: 1.5;
+    font-weight: 800;
+}
+
+.h3{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.h4{
+    margin: 15px 0;
+}
+blockquote{
+    margin: 20px 0;;
+}
+
+hr {
+    margin: 35px 80px;
+}
+
+/* HEADER */
+#header {
+    background-color: #000;
+}
+#header a {
+    color: #f04c2f;
+    font-family: "Montserrat";
+    font-weight: 800;
+}
+#header img {
+    width: 150px;
+    padding: 25px 30px;
+}
+
+
+/* MAIN */
+
+/* FIRST_SECTION */
+#first_section {
+    background-image: url(../Assets/images/banner.jpg) ;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 10%;
+    height: 100%;
+}
+
+#first_section h1 {
+    font-size: 40px;
+    line-height: 1;
+}
+
+#first_section p{
+    margin: 25px 0;
+    font-size: 1.3rem;
+    
+}
+
+#first_section a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: #f04c2f;
+    border-radius: 5px;
+    padding: 15px 25px;
+    
+}
+#a {
+    margin: 40px 0 20px 0;
+}
+
+/* SECOND_SECTION */
+#second_section {
+    background-color: #FFF;
+    text-align: center;
+    height: 100%;
+}
+#container_left {
+    display: inline-block;
+    max-width: 50vw;
+}
+
+#container_right {
+    display: inline-block;
+    max-width: 50vw;
+    margin: 100px 0;
+    text-align: left;
+}
+
+.second_section_div h2:not(.first_h2){
+    margin: 25px 0 15px 0;
+
+}
+
+#left_image{
+    background-image: url(../Assets/images/notebook.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    margin: 0 50px;
+
+}
+
+/* TESTIMONIANZE */
+#testimonianze {
+    background-color: #e22d0e;
+    color: #fff;
+    text-align: center;
+    padding: 5%;
+}
+.italic{
+    font-style: italic;
+}
+#mario_rossi {
+    font-size: 0.9rem;
+}
+
+#ceo_epicode {
+    font-size: 0.6rem;
+}
+
+/* ASIDE */
+
+#aside {
+    padding: 60px 30px;
+    text-align: center;
+}
+.aside_section{
+    border: 2px solid #dee1e3;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 30%;
+}
+.card p{
+    margin-bottom: 20px;  
+}
+
+#background_image_1 {
+    background-image: url(../Assets/images/foto1.jpg);
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+#background_image_2 {
+    background-image: url(../Assets/images/foto2.jpg);
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+#background_image_3 {
+    background-image: url(../Assets/images/foto3.jpg);
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+#second_aside_section {
+    margin: 40px 0;
+}
+
+
+/* FOOTER */
+#footer {
+    background-color: #25a2c3;
+    color: #c8e7f0;
+    text-align: left;
+    padding: 30px;
+}
+
+#footer a {
+    color:#c8e7f0;
+}
+#div_footer_esterno
+
+#div_footer_informazioni {
+    margin-top: 20px;
+}
+
+#div_footer_copyright {
+    margin-bottom: 30px;
+}
