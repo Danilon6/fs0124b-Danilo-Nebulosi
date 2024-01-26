@@ -54,6 +54,7 @@ h1,h2,h3, h4 {
 #first_section p{
     margin: 20px 0;
     font-size: 1.3rem;
+    
 }
 
 #first_section a {
@@ -66,7 +67,14 @@ h1,h2,h3, h4 {
     padding: 15px 25px;
 }
 
-
+#second_section {
+    background-color: #FFF;
+    padding: 30px;
+    text-align: center;
+}
+#middle_image{
+    border-radius: 50;
+}
 /* TESTIMONIANZE */
 #testimonianze {
     background-color: #e22d0e;
