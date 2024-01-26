@@ -1,1 +1,23 @@
 /* Your styles here */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body {
+    color: #393d41;
+    font-size: 1.2rem;
+    font-family: "Open Sans";
+    line-height: 1.65;
+}
+
+h1,h2,h4 {
+    color: #25a2c3;
+}
+h3{
+    color: white;
+}
+#footer {
+    color: #c8e7f0;
+}
+
+#footer a {
+    color:#c8e7f0;
+}
