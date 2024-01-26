@@ -21,10 +21,16 @@ h1,h2,h3, h4 {
     font-size: 2rem;
 }
 
+.h4{
+    margin: 15px 0;
+}
 blockquote{
     margin: 20px 0;;
 }
 
+hr {
+    margin: 35px 80px;
+}
 
 /* HEADER */
 #header {
@@ -115,9 +121,43 @@ blockquote{
     font-size: 1.6rem;
 }
 
-/* CARD */
-.card {
-    border: 1px solid #dee1e3;
+/* ASIDE */
+
+#aside {
+    padding: 60px 30px;
+    text-align: center;
+}
+.aside_section{
+    border: 2px solid #dee1e3;
+    border-radius: 5px;
+}
+.card{
+    padding: 20px;
+}
+
+#background_image_1 {
+    background-image: url(../Assets/images/foto1.jpg);
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+#background_image_2 {
+    background-image: url(../Assets/images/foto2.jpg);
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+#background_image_3 {
+    background-image: url(../Assets/images/foto3.jpg);
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+#second_aside_section {
+    margin: 40px 0;
 }
 
 
@@ -125,8 +165,18 @@ blockquote{
 #footer {
     background-color: #25a2c3;
     color: #c8e7f0;
+    text-align: center;
+    padding: 30px;
 }
 
 #footer a {
     color:#c8e7f0;
+}
+
+.div_footer_informazioni {
+    margin-top: 20px;
+}
+
+.div_footer_copyright {
+    margin-bottom: 30px;
 }
