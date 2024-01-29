@@ -20,12 +20,12 @@ Elenca e descrivi i principali datatype in JavaScript. Prova a spiegarli come se
     -ARRAY: indica una lista di elementi tra parentesi quadre;
     -OGGETTI: indica una coppia di chiave valore.
 
-    N.B sia negli array che negli oggetii possono essere salvati più dati, ma nel secondo caso sono necessarie delle coppie di chiave valore.
+    N.B sia negli array che negli oggetti possono essere salvati più dati, ma nel secondo caso sono necessarie delle coppie di chiave valore.
 
     COME SI RICONOSCONO?
     -STRINGA: i caratteri sono scritti tra gli apici, doppi ( " " ) o singoli ( ' ' );
-    -NUMERI: sono numeri scritti così come sono senza apici, doppio singoli, perchè altrimenti diventerbbero una stringa;
-    -BOOLEANO: come i numeri anche true e false sono scritti così come sono senza apici, doppio singoli, perchè altrimenti diventerbbero una stringa;
+    -NUMERI: sono numeri scritti così come sono senza apici, doppi o singoli, perchè altrimenti diventerbbero una stringa;
+    -BOOLEANO: come i numeri anche true e false sono scritti così come sono senza apici, doppi o singoli, perchè altrimenti diventerbbero una stringa;
     -ARRAY: i dati sono racchiusi tra parentesi quadre ( [ ] );
     -OGGETTI: le coppie chiave valore sono racchiuse tra parentesi graffe ( { } ).
     
@@ -35,7 +35,7 @@ Elenca e descrivi i principali datatype in JavaScript. Prova a spiegarli come se
 Crea una variable chiamata "myName" e assegna ad essa il tuo nome, sotto forma di stringa.
 */
 
-let myName = "Danilo"
+let myName = "Danilo";
 console.log(myName)
 
 /* ESERCIZIO 3
@@ -89,7 +89,7 @@ console.log(name1==name2)
 
 
 
-if (name2.toLowerCase()) { console.log(true)
+if (name1.toLowerCase() && name2.toLowerCase()) { console.log(true)
     
 } 
 
