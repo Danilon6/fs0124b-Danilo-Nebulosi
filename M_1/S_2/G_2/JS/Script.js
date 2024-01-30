@@ -46,21 +46,23 @@ if (numero1>numero2) {
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
 */
 
-/*{
-  let numero1 = 1
-  let numero2 = 10
-  let sottrazione = numero1 - numero2
-  let addizione = numero1 + numero2
+/*
+{
+  let numero1 = 5
+  let numero2 = 3
+  let sottrazione = (numero1 - numero2)
+  let addizione = (numero1 + numero2)
 
-  if (numero1 || numero2 == 8) {
+  if (numero1 || numero2 === 8) {
     console.log("Almeno uno dei due numeri è pari a 8");
-  } else if (sottrazione || addizione === "8") {
+  } else if (sottrazione || addizione == 8) {
     console.log("l'addizione o la sottrazione dei due numeri è pari a 8");
   } else {
     console.log("Nessun numero è pari a 8 nè tantomeno la loro addizione o sottrazione da come risultato 8");
   }
 }
 */
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 5
@@ -102,6 +104,7 @@ if (totalShoppingCart>=50) {
   Alla fine mostra il risultato in console.
 */
 
+/*
 {
   let numero1 = 10
   let numero2 = 20
@@ -109,11 +112,10 @@ if (totalShoppingCart>=50) {
   if (numero1>numero2 && numero1>numero3 && numero2>numero3) {
       console.log(numero1, numero2, numero3);     
   } else {
-    
+    console.log(numero1, numero3, numero2);
   }
+*/
 
-
-}
 
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
@@ -127,7 +129,6 @@ if (totalShoppingCart>=50) {
     console.log("Il valore fornito non è un numero");
   }
 }
-/* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 9
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
@@ -182,7 +183,6 @@ me["city"] = "Toronto"
 
 console.log(me);
 }
-/* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 12
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
