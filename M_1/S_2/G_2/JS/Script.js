@@ -167,10 +167,11 @@ if (totalShoppingCart>=50) {
       console.log("Uguale a 10 o maggiore");
     }
   }
+
 /* ESERCIZIO 11
   Fornito il seguente oggetto, scrivi del codice per aggiungere una proprietà "city", il cui valore sarà "Toronto".
 */
-
+{
 const me = {
   name: 'John',
   lastName: 'Doe',
@@ -180,25 +181,46 @@ const me = {
 me["city"] = "Toronto"
 
 console.log(me);
-
+}
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 12
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
 */
+{
+  const me = {
+    name: 'John',
+    lastName: 'Doe',
+    skills: ['javascript', 'html', 'css'],
+  }
+  
+  me["city"] = "Toronto"
+  
+  delete me.lastName
 
-delete me.lastName
+  console.log(me);
+  }
 
-console.log(me);
 
 
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
+{
+  const me = {
+    name: 'John',
+    lastName: 'Doe',
+    skills: ['javascript', 'html', 'css'],
+  }
+  
+  me["city"] = "Toronto"
+  
+  delete me.lastName
 
-delete me.length-1
+  delete me.skills[2]
+  console.log(me);
+  }
 
-console.log(me);
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
