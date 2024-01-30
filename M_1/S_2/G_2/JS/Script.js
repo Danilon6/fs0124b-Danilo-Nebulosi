@@ -3,8 +3,8 @@
 */
 
 {
-let numero1 = 3
-let numero2 = 5
+let numero1 = 3;
+let numero2 = 5;
 
 if (numero1>numero2) {
   console.log("Il numero 1 è maggiore del numero 2");
@@ -20,7 +20,7 @@ if (numero1>numero2) {
 */
 
 {
-  let numero1 = 2
+  let numero1 = 2;
   if (numero1 == 5) {
     console.log("Il numero fornito è 5");
   } else {
@@ -33,7 +33,7 @@ if (numero1>numero2) {
 */
 
 {
-  let numero = 5
+  let numero = 5;
   if (numero % 5==0) {
     console.log("divisibile per 5");
   } else {
@@ -46,22 +46,22 @@ if (numero1>numero2) {
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
 */
 
-/*
+
 {
-  let numero1 = 5
-  let numero2 = 3
+  let numero1 = 5;
+  let numero2 = 3;
   let sottrazione = (numero1 - numero2)
   let addizione = (numero1 + numero2)
 
-  if (numero1 || numero2 === 8) {
+  if (numero1 == 8|| numero2 ===8) {
     console.log("Almeno uno dei due numeri è pari a 8");
-  } else if (sottrazione || addizione == 8) {
+  } else if (sottrazione == 8|| addizione == 8) {
     console.log("l'addizione o la sottrazione dei due numeri è pari a 8");
   } else {
     console.log("Nessun numero è pari a 8 nè tantomeno la loro addizione o sottrazione da come risultato 8");
   }
 }
-*/
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
