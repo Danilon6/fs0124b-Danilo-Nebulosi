@@ -48,25 +48,19 @@ if (numero1>numero2) {
 
 /*{
   let numero1 = 1
-  let numero2 = 0
+  let numero2 = 10
   let sottrazione = numero1 - numero2
   let addizione = numero1 + numero2
 
   if (numero1 || numero2 == 8) {
     console.log("Almeno uno dei due numeri è pari a 8");
-  } else if (sottrazione || addizione ==8) {
+  } else if (sottrazione || addizione === "8") {
     console.log("l'addizione o la sottrazione dei due numeri è pari a 8");
   } else {
     console.log("Nessun numero è pari a 8 nè tantomeno la loro addizione o sottrazione da come risultato 8");
   }
-
-
-
 }
 */
-
-
-
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 5
@@ -112,7 +106,11 @@ if (totalShoppingCart>=50) {
   let numero1 = 10
   let numero2 = 20
   let numero3 = 30
-
+  if (numero1>numero2 && numero1>numero3 && numero2>numero3) {
+      console.log(numero1, numero2, numero3);     
+  } else {
+    
+  }
 
 
 }
@@ -189,23 +187,31 @@ console.log(me);
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere la proprietà "lastName".
 */
 
+delete me.lastName
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log(me);
+
 
 /* ESERCIZIO 13
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+delete me.length-1
+
+console.log(me);
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let array = [ ]
+
+array.push(1,2,3,4,5,6,7,8,9,10)
+
+console.log(array);
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+array.splice (9, 1, 100);
+console.log(array);
