@@ -89,7 +89,7 @@ if (totalShoppingCart>=50) {
 {
   let totalShoppingCart = 50
   const SPESE_DI_SPEDIZIONE = 10
-  let speseTotali = (totalShoppingCart+SPESE_DI_SPEDIZIONE)*0.8
+  let speseTotali = (totalShoppingCart*0.8) + SPESE_DI_SPEDIZIONE
   let totaleDaPagareScontato = totalShoppingCart*0.8
   if (totalShoppingCart>=50) {
     console.log("Hai diritto alla spedizione gratuita e ad uno sconto del 20% in occasione del Black Friday " + "Il saldo totale da pagare è: " + totaleDaPagareScontato);
