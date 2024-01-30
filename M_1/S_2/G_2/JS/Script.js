@@ -217,7 +217,7 @@ console.log(me);
   
   delete me.lastName
 
-  delete me.skills[2]
+  delete me.skills.pop()
   console.log(me);
   }
 
