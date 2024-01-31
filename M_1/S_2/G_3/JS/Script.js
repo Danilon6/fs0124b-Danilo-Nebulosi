@@ -223,15 +223,18 @@ let genderEquipaggio = [];
 
   for(let i = 0; i < starWarsCharacters.length; i++) {
 
+
+    let genderCopy = {...starWarsCharacters[i]}
+
     if(starWarsCharacters[i].gender == "n/a")
     {
-      genderEquipaggio.push(starWarsCharacters[i])
+      starWarsCharacters[i].gender = "Robot"
       }
-      
-      
+
+      genderEquipaggio.push(genderCopy)
   }
 
-console.log(genderEquipaggio);
+  console.log(genderEquipaggio);
 
 
 
