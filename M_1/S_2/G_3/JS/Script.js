@@ -138,7 +138,7 @@ console.log(charactersNames);
     yellow:[],
     brown:[],
     red:[],
-    blue_gray:[],
+    "blue-gray":[],
   };
 /* ESERCIZIO 5
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
@@ -151,27 +151,27 @@ for(let i = 0; i < starWarsCharacters.length; i++)
 {
   let Character = starWarsCharacters[i].eye_color 
   switch(Character) {
-    case starWarsCharacters[i].eye_color == "blue":
+    case "blue":
+      eyeColor.blue.push(starWarsCharacters[i]);
+    break;
+    case "yellow":
     eyeColor.blue.push(starWarsCharacters[i]);
     break;
-    case starWarsCharacters[i].eye_color == "yellow":
+    case "brown":
     eyeColor.blue.push(starWarsCharacters[i]);
     break;
-    case starWarsCharacters[i].eye_color == "brown":
+    case "red":
     eyeColor.blue.push(starWarsCharacters[i]);
     break;
-    case starWarsCharacters[i].eye_color == "red":
-    eyeColor.blue.push(starWarsCharacters[i]);
-    break;
-    case starWarsCharacters[i].eye_color == "blue_gray":
+    case "blue_gray":
     eyeColor.blue.push(starWarsCharacters[i]);
     break;
     
-    console.log(eyeColor);
+    
 }
-
+  
 }
-
+console.log(eyeColor);
   
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
@@ -225,22 +225,22 @@ console.log(crewMass);
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
 
-/* let genderEquipaggio = [];
+let genderEquipaggio = [];
 
   for(let i = 0; i < starWarsCharacters.length; i++) {
-    if(starWarsCharacters[i].gender == "n/a")
-    {genderEquipaggio.push(starWarsCharacters[i])}
-      
 
+    if(starWarsCharacters[i].gender == "n/a")
+    {
+      genderEquipaggio.push(starWarsCharacters[i])
+      }
+      
+      
   }
 
-for(let i = 0; i < genderEquipaggio.length; i++){
-  if (genderEquipaggio[i].gender == "n/a") {
-    genderEquipaggio
-  } 
-  
-}
 console.log(genderEquipaggio);
+
+
+
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
