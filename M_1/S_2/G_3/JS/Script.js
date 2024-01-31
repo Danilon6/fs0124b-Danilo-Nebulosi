@@ -178,23 +178,17 @@ console.log(eyeColor);
 */
 
 
+let i = 0
+let crewMass = 0;
 
-let massaEquipaggio = [];
-
-  for(let i = 0; i < starWarsCharacters.length; i++) {
-    if(starWarsCharacters[i].mass)
-    {massaEquipaggio.push(starWarsCharacters[i].mass)}
-      
-
+  while( i < starWarsCharacters.length) {
+    
+    crewMass += starWarsCharacters[i].mass;
+  
+    i++;
   }
 
-  let crewMass = 0
-
-
-for (let i = 0; i <massaEquipaggio.length; i++ ){
-    crewMass += massaEquipaggio[i]
-}
-console.log(crewMass);
+  console.log(crewMass);
 
 
 /* ESERCIZIO 7
