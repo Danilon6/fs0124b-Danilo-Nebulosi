@@ -135,16 +135,16 @@ console.log(cutString("Questa è una stringa senza il primo e l'ultimo carattere
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* function giveMeRandom (n) {
+ function giveMeRandom (n) {
     
-    
+    let arrayDiNumeriCasuali = []
     
     for (let i = 0; i < n; i++) {
-        let numeriCasuali = Math.floor(Math.random() * (10+1 - 0)) 
-        return numeriCasuali
+        let numeriCasuali = Math.floor(Math.random() * 11) 
+        arrayDiNumeriCasuali.push(numeriCasuali);
     }
     
-    let array = [ numeriCasuali ]
-   return numeriCasuali
+   return arrayDiNumeriCasuali
 }
-*/
+
+console.log(giveMeRandom(5));
