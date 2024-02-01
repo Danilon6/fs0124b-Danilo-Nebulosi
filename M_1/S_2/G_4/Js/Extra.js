@@ -5,16 +5,43 @@
  se il suo valore è maggiore di 5 o no.
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
-function checkArray () {
 
+
+function giveMeRandom (n) {
+    
+    let arrayDiNumeriCasuali = []
+    
+    for (let i = 0; i < n; i++) {
+        let numeriCasuali = Math.floor(Math.random() * 11) 
+        arrayDiNumeriCasuali.push(numeriCasuali);
+    }
+    
+   return arrayDiNumeriCasuali
 }
+
+console.log(giveMeRandom(5));
+
+function checkArray (arrayDiNumeriCasuali) {
+    
+   for (let i = 0; i < arrayDiNumeriCasuali.length; i++) {
+    if (arrayDiNumeriCasuali[i] > 5) {
+        console.log("Il numero è maggiore di 5");
+    } else {
+        
+        console.log("Il numero non è maggiore di 5");
+    }
+    
+   }
+  
+}
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
 */
-
+giveMeRandom
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 3
