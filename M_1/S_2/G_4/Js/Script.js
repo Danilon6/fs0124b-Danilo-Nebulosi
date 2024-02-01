@@ -113,7 +113,7 @@ function upperFirst (a) {
         
     }
 
-    let stringaunita = stringa.join()
+    let stringaunita = stringa.join(" ")
     return stringaunita
 }
 
