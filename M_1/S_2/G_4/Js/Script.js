@@ -61,16 +61,16 @@ La funzione deve aggiungere la parola "EPICODE" all'inizio della stringa fornita
 ritornare la stringa originale senza alterarla.
 */
 function epify (a) {
-    if (a != "EPICODE") {
-        return "EPICODE " + a
+    if (a.startsWith("EPICODE") ) {
+        return  a
     } else {
-        return a
+        return "EPICODE" + a
     }
     
 }
 
 console.log(epify(" Bello"));
-console.log(epify("EPICODE"));
+console.log(epify("EPICODERS"));
 
 
 /* ESERCIZIO 6
