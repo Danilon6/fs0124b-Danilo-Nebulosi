@@ -46,7 +46,7 @@ se n è uguale a 400.
 */
 
 function buondary (n) {
-    if (n>20 && n<100 || n == 400) {
+    if ((n>20 && n<=100) || n == 400) {
         return "true"
     }else {
         return "false"
