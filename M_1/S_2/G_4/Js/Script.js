@@ -1,5 +1,5 @@
 /* ESERCIZIO 1
- Scrivi una funzione di nome "area", che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.
+Scrivi una funzione di nome "area", che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.
 */
 function area(l1,l2) {
     return l1*l2;
@@ -8,9 +8,9 @@ function area(l1,l2) {
 console.log(area(3,4));
 
 /* ESERCIZIO 2
- Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
- La funzione deve ritornare la somma dei due parametri, ma se il valore dei due parametri è il medesimo deve invece tornare
- la loro somma moltiplicata per tre.
+Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
+La funzione deve ritornare la somma dei due parametri, ma se il valore dei due parametri è il medesimo deve invece tornare
+la loro somma moltiplicata per tre.
 */
 function crazySum (a,b){
     
@@ -91,17 +91,17 @@ console.log(check3and7("7"));
 console.log(check3and7("10"));
 
 /* ESERCIZIO 7
- Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
+Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
 function reverseString(a) {
     return a.split("").reverse().join("")
 }
- console.log(reverseString("EPICODE"));
- 
- /* ESERCIZIO 8
- Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
- La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
+console.log(reverseString("EPICODE"));
+
+/* ESERCIZIO 8
+Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
+La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
  */
 
 function upperFirst (a) {
@@ -115,14 +115,13 @@ function upperFirst (a) {
 
     let stringaunita = stringa.join()
     return stringaunita
-     
 }
 
 console.log(upperFirst("Questa stringa dovrebbe avere tutte le prime lettere in maiuscolo"));
 
 /* ESERCIZIO 9
- Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
- della stringa originale.
+Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
+della stringa originale.
 */
 
 function cutString(a) {
@@ -132,10 +131,10 @@ console.log(cutString("Questa è una stringa senza il primo e l'ultimo carattere
 
 
 /* ESERCIZIO 10
- Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
+Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
- function giveMeRandom (n) {
+function giveMeRandom (n) {
     
     let arrayDiNumeriCasuali = []
     
@@ -143,8 +142,7 @@ console.log(cutString("Questa è una stringa senza il primo e l'ultimo carattere
         let numeriCasuali = Math.floor(Math.random() * 11) 
         arrayDiNumeriCasuali.push(numeriCasuali);
     }
-    
-   return arrayDiNumeriCasuali
+    return arrayDiNumeriCasuali
 }
 
 console.log(giveMeRandom(5));
