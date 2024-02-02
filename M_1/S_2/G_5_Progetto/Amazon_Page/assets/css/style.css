@@ -5,9 +5,12 @@ body{
     background-color: #EAEDEE;
 }
 html{scroll-behavior: smooth;}
+
+
 h2 {
     font-size: 25px;
     margin-bottom: 25px;
+    font-weight: 800;
 }
 .bg_light_gray{
     background-color: #374859 ;
@@ -48,7 +51,7 @@ ul li a {
     background-color: #F76403 ;
     color: #FFF;
     text-align: center;
-    padding: 5px 0;
+    padding: 10px 0;
     margin: 25px 0;
 }
 
@@ -73,9 +76,11 @@ ul li a {
 #h3, p {
     display:inline;
 }
+
 #h3{
     margin-left: 20px;
 }
+
 #container_card{
     height: 400px;
     width: 100%;
