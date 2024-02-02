@@ -60,13 +60,13 @@ ul li a {
 #second_block {
     margin-bottom: 25px;
     background-image: url(../images/bg-image.png);
-    background-size: cover;
+    background-size: contain;
     text-align: center;
     background-repeat: repeat-y;
-    background-position: right;
+    height: 250px;
     color: #FFF;
-    padding: 60px 0 50px 0;
-    
+    box-sizing: border-box;
+    padding: 105px 0 40px 0;
 }
 
 #third_block {
