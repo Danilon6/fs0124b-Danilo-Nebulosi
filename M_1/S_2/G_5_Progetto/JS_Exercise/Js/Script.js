@@ -90,6 +90,7 @@ console.log(cars);
 const oggetto = {
   brand: 'Lamborghini',
   model: 'Huracan',
+  licensePlate: licensePlate,
   color: 'orange',
   trims: ['life', 'style', 'r-line'],
 }
@@ -97,7 +98,7 @@ cars.push(oggetto)
 console.log(cars);
 
 for (let i = 0; i < cars.length; i++) {
-  cars[i].trims.pop(cars.length -1)
+  cars[i].trims.pop()
   
 }
 console.log(cars);
@@ -126,8 +127,6 @@ for (let i = 0; i < cars.length; i++) {
   }
   
 }
-
-
 
 /* ESERCIZIO 9
     Utilizza un ciclo while per stampare in console i valori del seguente array numerico fino al raggiungimento del numero 32.
@@ -232,8 +231,6 @@ for (let i = 0; i < charactersArray.length; i++) {
     case "z":
       newarray.push(26);
       break;
-    
-  
   }
   
 }
