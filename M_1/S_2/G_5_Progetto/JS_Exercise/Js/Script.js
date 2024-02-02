@@ -37,13 +37,11 @@ console.log(pets);
     Scrivi del codice per spostare il primo elemento dall'array "pets" in ultima posizione.
 */
 
-const petsEsercizio4 = ['dog', 'cat', 'hamster', 'redfish']
+let redfish = pets.shift(0)
 
-let dog = petsEsercizio4.shift(0)
+pets.push(redfish)
 
-petsEsercizio4.push(dog)
-
-console.log(petsEsercizio4);
+console.log(pets);
 
 /* ESERCIZIO 5
     Dato il seguente array di oggetti, scrivi del codice per aggiungere ad ognuno di essi una proprietà "licensePlate" con valore a tua scelta.
