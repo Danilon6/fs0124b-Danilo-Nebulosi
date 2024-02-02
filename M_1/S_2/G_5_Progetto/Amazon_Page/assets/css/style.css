@@ -43,8 +43,9 @@ ul li a {
     color: #FFF;
 }
 
+/*MAIN*/
 #outer_container{
-    margin: 15px;
+    margin: 20px;
 }
 
 #first_block{
@@ -140,7 +141,7 @@ ul li a {
     margin: 5px 0 20px 0;
 }
 
-
+/*FOOTER*/
 #footer{
     text-align: center;
 }
