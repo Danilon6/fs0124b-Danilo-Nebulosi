@@ -185,44 +185,40 @@
 
 
 
-      const makeItClickable = function () {
+      /*const makeItClickable = function () {
         let h1 = document.querySelector("h1");
         h1.addEventListener('click',function(){
-          let h1length = h1.innerText;
         
-          if (h1length > 0) {
-            let caratterEliminato = h1length.remove();
-            h1.innerText = caratterEliminato
+          if (h1.innerText.length > 0) {
+            h1.innerText.slice(0, -1);
           }
-          console.log(h1);
+          
         })
-        console.log(h1);
       }
-      makeItClickable()
+      makeItClickable()*/
 
 
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
-      /*const revealFooterLink = function () {
+      const revealFooterLink = function () {
 
-        
-      
-      
-    }
-    let footer = document.getElementsByTagName("footer");
+        let footer = document.querySelector("footer");
     footer.addEventListener('Click', function () {
         let a = document.querySelectorAll ("a")
+        console.log(a);
         a.forEach(a => {
-          if (a.inenrText != "Questo link porta al sito di Epicode!") {
+          if (a.innerText != "Questo link porta al sito di Epicode!") {
             let link = a.href
           }
+          alert(link)
         })
-        alert(link)
-        console.log(link);
       })
-    revealFooterLink()*/
+    
+    }
+    
+    revealFooterLink()
 
       /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
