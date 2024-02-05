@@ -106,8 +106,7 @@
       const changePcontent = function () {
       
         let p = document.querySelectorAll("div p")
-        console.dir(p);
-
+        
         p.forEach(p => {
           p.innerText = "Testo del paragrafo modificato";
         })
@@ -119,13 +118,10 @@
       */
 
       const changeUrls = function () {
-        let a = document.querySelectorAll("a")
-        console.dir(a);
-        a.forEach(a => {
-          if (a.innerText != "AWESOME!") {
-            a.href = "https://www.google.com";
-          }
-          
+        let a = document.querySelectorAll("a:not(footer a)")
+        
+        a.forEach(l => {
+            l.href = "https://www.google.com"
         })
         
       }
