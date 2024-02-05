@@ -180,15 +180,20 @@
 
 
 
-      /*const makeItClickable = function () {
+      const makeItClickable = function () {
+
         let h1 = document.querySelector("h1");
+
         h1.addEventListener('click',function(){
-            h1.innerText.slice(0, -1);
-          }
-          
+
+          let substring = h1.innetText.slice(0, -1)
+
+          console.dir(substring);
+
+          h1.innerText = substring;
         })
-      }
-      makeItClickable()*/
+        }
+      makeItClickable()
 
 
       /* ESERCIZIO 10
@@ -198,16 +203,11 @@
       const revealFooterLink = function () {
 
         let footer = document.querySelector("footer");
-    footer.addEventListener('Click', function () {
-        let a = document.querySelectorAll ("a")
-        console.log(a);
-        a.forEach(a => {
-          if (a.innerText != "Questo link porta al sito di Epicode!") {
-            let link = a.href
-          }
-          alert(link)
-        })
-      })
+
+    footer.addEventListener('click', function () {
+      let url = footer.querySelector ("a").href
+      alert(url)
+    })
     
     }
     
