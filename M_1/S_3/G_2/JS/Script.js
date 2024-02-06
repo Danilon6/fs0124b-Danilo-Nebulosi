@@ -37,13 +37,16 @@ console.log(randomArray())
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 let arrayNumerico = [1,2,3,4,5,6,7,8,9,10]
-function valoriPari (numeri) {
-  return numeri % 2 == 0
+function valoriPari () {
+  
+  let arrayfiltrato = arrayNumerico.filter(function (numeri) {
+    return numeri % 2 == 0
+  });
+  return arrayfiltrato;
 }
 
-let arrayfiltrato = arrayNumerico.filter(valoriPari)
 
-console.log(arrayfiltrato);
+console.log(valoriPari());
 
 /* ESERCIZIO 4 (forEach)
 Scrivi una funzione per sommare i numeri contenuti in un array
