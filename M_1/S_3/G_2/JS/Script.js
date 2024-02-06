@@ -23,15 +23,15 @@ console.log(ConcatStrings("prima", "secondo"))
 
 
 
-function arrayVuoto () {
+function randomArray () {
   let arrayVuoto = []
 for (let i = 0; i < 10; i++) {
-  const valoriRandom = Math.round(Math.random()*100)+1;
+  const valoriRandom = Math.round(Math.random()*101);
   arrayVuoto.push(valoriRandom)
 }
 return [arrayVuoto]
 }
-console.log(arrayVuoto())
+console.log(randomArray())
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
