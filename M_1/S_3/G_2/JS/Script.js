@@ -10,7 +10,8 @@ function ConcatStrings (String1, String2) {
   let First = String1.slice(0, 2)
   let Second = String2.slice(-3)
   let ConcatString = First += Second
-  return ConcatString;
+  let ConcatUpper = ConcatString.toUpperCase()
+  return ConcatUpper;
 }
 
 console.log(ConcatStrings("prima", "secondo"))
@@ -293,6 +294,10 @@ console.log(filmMillennio());
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 
+let sommaAnni = movies.reduce(function(temp, curr) {
+  return temp + curr.Year
+}, 0);
+console.log(sommaAnni);
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
