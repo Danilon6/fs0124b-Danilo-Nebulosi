@@ -19,6 +19,3 @@ button.addEventListener("click", function () {
 })
 
 
-
-
-

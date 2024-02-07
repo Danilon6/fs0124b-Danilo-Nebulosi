@@ -9,7 +9,13 @@
 h1 {
     text-align: center;
 }
-
+#first_section{
+    text-align: center;
+    margin: 15px 0;
+}
+#to_do_section {
+    margin-bottom: 15px;
+}
 #da_fare {
     background-color: red;
 }
