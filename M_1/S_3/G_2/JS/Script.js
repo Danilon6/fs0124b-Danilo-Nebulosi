@@ -36,7 +36,9 @@ console.log(randomArray())
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
+
 let arrayNumerico = [1,2,3,4,5,6,7,8,9,10]
+
 function valoriPari () {
   
   let arrayfiltrato = arrayNumerico.filter(function (numeri) {
@@ -44,7 +46,6 @@ function valoriPari () {
   });
   return arrayfiltrato;
 }
-
 
 console.log(valoriPari());
 
@@ -255,6 +256,7 @@ console.log(filmVecchio());
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 
+
 function numeroDiFilm () {
   let numeri = []
   for (let i = 0; i < movies.length; i++) {
@@ -296,11 +298,14 @@ console.log(filmMillennio());
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
-
-let sommaAnni = movies.reduce(function(temp, curr) {
-  return temp + curr.Year
-}, 0);
-console.log(sommaAnni);
+function sommaAnni() {
+  let sommaAnni = movies.reduce((temp, curr) => {
+    return temp + curr.Year
+  }, 0);
+  let numeri = parseInt(sommaAnni)
+  
+}
+console.log(sommaAnni());
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
