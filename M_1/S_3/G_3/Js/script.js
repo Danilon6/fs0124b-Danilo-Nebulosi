@@ -15,6 +15,7 @@ button.addEventListener("click", function () {
     li.innerText = tasks.value
     target.append(li)
     li.insertAdjacentElement("Afterend", btn)
+    tasks.value = "";
 })
 
 
