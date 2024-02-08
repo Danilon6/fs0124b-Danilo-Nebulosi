@@ -6,16 +6,23 @@ const container_esterno_cartelle = document.querySelector("#container_esterno_ca
 function aggiungiCartella () {
     const divInterno = document.createElement("div")
     divInterno.setAttribute("id", "container_interno_cartelle")
+    let numeriUsati = []
+        let numero;
     for (let i = 1; i < 25; i++) {
         const cartella = document.createElement("div")
         cartella.classList.add("cartella")
-        let numero = Math.round(Math.random()*23)+1
+        
+
+        do{
+           numero = Math.round(Math.random()*23)+1
+        }while(numeriUsati.includes(numero))
+
+        numeriUsati.push(numero)
+
         cartella.innerText = numero
         cartella.setAttribute("data-numero", numero)
         divInterno.append(cartella)
-        if (numero) {
-            
-        }
+        
     }
     
     container_esterno_cartelle.append(divInterno)
