@@ -11,8 +11,6 @@ function aggiungiCartella () {
     for (let i = 1; i < 25; i++) {
         const cartella = document.createElement("div")
         cartella.classList.add("cartella")
-        
-
         do{
            numero = Math.round(Math.random()*23)+1
         }while(numeriUsati.includes(numero))
@@ -58,11 +56,19 @@ function creaTabellone() {
     }
 
     function estraiNumero () {
-        let numeroEstratto = Math.round(Math.random()*89)+1
+
+        let numeriGiaEstratti = []
+        let numeroEstratto;
+        do{
+           numeroEstratto = Math.round(Math.random()*89)+1
+        }while(numeriGiaEstratti.includes(numeroEstratto))
+
+        numeriGiaEstratti.push(numeroEstratto)
+        
         numero_tabellone.forEach(function (numero){
             let numeroTabellone = parseInt(numero.innerText)
             if ( numeroTabellone == numeroEstratto) {
-                numero.style.backgroundColor = "red"
+                numero.style.backgroundColor = "green"
             }
         })
         
@@ -70,7 +76,7 @@ function creaTabellone() {
         cartella.forEach(function (cartella) {
             let numeroCartella = parseInt(cartella.getAttribute("data-numero"))
             if (numeroCartella == numeroEstratto) {
-                cartella.style.backgroundColor= "red"
+                cartella.style.backgroundColor= "green"
                 
             }
         })
