@@ -12,7 +12,7 @@ function aggiungiCartella () {
         const cartella = document.createElement("div")
         cartella.classList.add("cartella")
         do{
-           numero = Math.round(Math.random()*23)+1
+           numero = Math.round(Math.random()*89)+1
         }while(numeriUsati.includes(numero))
 
         numeriUsati.push(numero)
