@@ -76,4 +76,16 @@ function creaTabellone() {
         })
     }
 
+    const reset = document.querySelector("#reset")
+
+    reset.addEventListener("click", resetPagina)
+
+    function resetPagina () {
+        tabellone.innerHTML = ""
+        container_esterno_cartelle.innerHTML = ""
+        iniziaPartita.disabled = false
+        iniziaPartitaCliccato = false
+        buttonAggiungiCartella.disabled = false
+        button_estrai_numero.style.opacity = 0
+    }
 
