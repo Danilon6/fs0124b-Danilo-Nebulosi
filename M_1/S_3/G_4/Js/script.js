@@ -9,10 +9,17 @@ function aggiungiCartella () {
     for (let i = 1; i < 25; i++) {
         const cartella = document.createElement("div")
         cartella.classList.add("cartella")
-        cartella.innerText = i
+        let numero = Math.round(Math.random()*23)+1
+        cartella.innerText = numero
+        cartella.setAttribute("data-numero", numero)
         divInterno.append(cartella)
+        if (numero) {
+            
+        }
     }
+    
     container_esterno_cartelle.append(divInterno)
+    
 }
 
 
@@ -47,11 +54,19 @@ function creaTabellone() {
         let numeroEstratto = Math.round(Math.random()*89)+1
         numero_tabellone.forEach(function (numero){
             let numeroTabellone = parseInt(numero.innerText)
-            if ( numeroTabellone == numeroEstratto ) {
+            if ( numeroTabellone == numeroEstratto) {
                 numero.style.backgroundColor = "red"
             }
         })
-            
+        
+        const cartella = document.querySelectorAll(".cartella")
+        cartella.forEach(function (cartella) {
+            let numeroCartella = parseInt(cartella.getAttribute("data-numero"))
+            if (numeroCartella == numeroEstratto) {
+                cartella.style.backgroundColor= "red"
+                
+            }
+        })
     }
 
 
