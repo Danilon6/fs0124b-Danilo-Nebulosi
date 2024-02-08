@@ -54,11 +54,11 @@ function creaTabellone() {
     numero_tabellone = document.querySelectorAll(".numero_tabellone")
     button_estrai_numero.addEventListener("click", estraiNumero)
     }
+    let numeriGiaEstratti = []
+    let numeroEstratto;
 
     function estraiNumero () {
 
-        let numeriGiaEstratti = []
-        let numeroEstratto;
         do{
            numeroEstratto = Math.round(Math.random()*89)+1
         }while(numeriGiaEstratti.includes(numeroEstratto))
