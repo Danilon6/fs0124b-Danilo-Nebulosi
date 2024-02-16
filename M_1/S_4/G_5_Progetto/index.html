@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <title>Benchmark Team 6</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <img src="./assets/img/epicode_logo.png" alt="Logo Epicode">
+            </div>
+        </div>
+        <!--Logo uguale per tutti -->
+        <!--INIZIO WELCOME PAGE -->
+
+        <div id="Welcome-page">
+            <div id="welcomeContainer">
+                <h2>Welcome to <br><span class="bold">your exam</span> </h2>
+                <h3>Instructions</h3>
+                <p>We don't expect most engineers to know the answers to all of these <br>questions, so don't worry if
+                    you're unsure of a few of them.</p>
+
+                <ul>
+                    <li>Each question is <span class="bold">timed</span> and can only be <span class="bold">answered
+                            once.</span></li>
+                    <li>Changing browser tab or opening other windows will <span class="bold">invalidate the
+                            question.</span></li>
+                    <li>This exam will take approx. <span class="bold">0-5 minutes.</span></li>
+                </ul>
+
+            </div>
+
+            <div id="welcomeFooter">
+                <!--<input type="checkbox" id="agree_terms"> -->
+                <div id="agree_terms"></div>
+                <label id="labelWelcome" for="agree_terms">I promise to answer myself without
+                    help from anyone</label>
+                <button class="btnNeon" id="btnNeonWelcomePage">PROCEED</button>
+            </div>
+            <div id="div-check">
+
+            </div>
+        </div>
+        <!--FINE WELCOME PAGE -->
+
+
+
+        <!--INIZIO DIFFICULTY PAGE -->
+        <div id="Difficulty-page" class="display">
+            <h2>Scegli la difficoltà del quiz</h2>
+            <div id="div_difficulty_btn">
+                <button id="easy_Btn" class="difficulty_btn">easy</button>
+                <button id="medium_Btn" class="difficulty_btn">medium</button>
+                <button id="hard_Btn" class="difficulty_btn">hard</button>
+
+            </div>
+        </div>
+
+            <!--FINE DIFFICULTY PAGE-->
+
+
+            <!--INIZIO BENCHMARK PAGE-->
+            <div id="Benchmark-page" class="display">
+
+                <div class="grandeCerchio">
+                    <div class="cerchio">
+                        <div class="inside">
+                            <h4>SECONDS</h4>
+                            <h3 id="timer">60</h3>
+                            <h4>REMAINING</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scritte">
+                    <h2 id="domanda"></h2>
+                </div>
+
+                <div class="risposte">
+
+                </div>
+
+                <div class="nDomande">
+                    <p>QUESTION 1 <span id="rosa">/10</span></p>
+                </div>
+            </div>
+
+            <!--FINE BENCHMARK PAGE-->
+
+            <!--INIZIO RESULTS PAGE-->
+
+            <div id="Results-page" class="display">
+                <div id="Title">
+                    <h2 class="bold">Results</h2>
+                    <p>The summary of your answers:</p>
+                </div>
+                <div id="Corpo">
+                    <div class="Sinistra">
+                        <h2>Correct</h2>
+                        <h2 class="bold" id="correct">66.7%</h2>
+                        <p>4/6 questions</p>
+                    </div>
+                    <div class="circleBig">
+                        <div class="circle">
+                            <div class="Centro">
+                                <h3></h3>
+                                <h4></h4>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Destra">
+                        <h3>Wrong</h3>
+                        <h2 class="bold" id="wrong">33.3%</h2>
+                        <p>2/6 questions</p>
+                    </div>
+                </div>
+                <div id="Btn">
+                    <span>RATE US</span>
+                </div>
+            </div>
+
+            <!--FINE RESULTS PAGE-->
+
+            <!--INIZIO FEEDBACK PAGE-->
+        <div id="Feedback-page" class="display">
+            <div id="intestazioni">
+                <h2 id="titolo">Tell us how it's going</h2>
+                <p class="testi">From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</p>
+            </div>
+            <div class="stelle">
+                <div class="stella-box">
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                    <svg class="mySvg" width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z" fill="#384075"/>
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <p class="testi">Leave us an open feedback about your experience so far</p>
+            </div>
+            <input class="feed" type="text" placeholder="Write your comment here">
+            <p class="errore">Campo obbligatorio</p>
+            <div>                
+                <a href="./assets/mp4/meme2.mp4" target="_blank"><button class="btnNeonFb btnNeon" id="btnNeonFeedback" type="button">MORE INFO</button></a>
+            </div>
+        </div>
+        <!--FINE FEEDBACK PAGE -->
+        </div>
+        <script src="./js/script.js"></script>
+</body>
+
+</html>

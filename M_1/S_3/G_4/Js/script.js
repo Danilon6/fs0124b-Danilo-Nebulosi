@@ -5,6 +5,7 @@ buttonAggiungiCartella.addEventListener("click", aggiungiCartella )
 const container_esterno_cartelle = document.querySelector("#container_esterno_cartelle")
 function aggiungiCartella () {
     const divInterno = document.createElement("div")
+    
     let numeriUsati = []
         let numero;
     divInterno.setAttribute("id", "container_interno_cartelle")

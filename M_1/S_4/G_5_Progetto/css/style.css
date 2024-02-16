@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap');
+
+/*INIZIO CSS GENERALI*/
+a {
+    text-decoration: none;
+    color: #000;
+}
+body {
+    background-image: url(../assets/img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+}
+
+#main {
+    width: 1000px;
+    padding: 50px 100px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+
+
+#header img {
+    width: 20%;
+}
+
+.display{
+    display: none;
+}
+
+/*FINE CSS GENERALI*/
+
+
+/*INIZIO CSS WELCOME PAGE*/
+
+#welcomeContainer {
+    color: #FFF;
+}
+
+#welcomeContainer .bold {
+    font-weight: 700;
+}
+
+#welcomeContainer h2 {
+    margin: 65px 0 25px 0;
+    font-size: 4rem;
+    line-height: 3rem;
+}
+
+#welcomeContainer h3 {
+    color: #C2148E;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#welcomeContainer p,
+ul {
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 40px;
+}
+
+#welcomeContainer ul {
+    list-style-type: disc;
+    margin: 0 0 0px 25px;
+}
+
+#welcomeFooter {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#agree_terms {
+    display: flex;
+    border: 1px solid #FFF;
+    border-radius: 2px;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.btnNeon {
+    color: #000;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 15px 50px;
+    background-color: #00FFFF;
+    border: none;
+    cursor: pointer;
+}
+
+#btnNeonWelcomePage{
+    margin: 0 0 0 170px;
+}
+
+#labelWelcome{
+
+    cursor: pointer;
+
+}
+
+.btnNeon:hover {
+    box-shadow: 0px 0px 25px 2px rgba(0,255,255,0.9);
+}
+
+/*INIZIO CSS BENCHMARK PAGE*/
+
+.scritte {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 8em;
+}
+
+.scritte h2 {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+#grassetto {
+    font-family: 'Outfit';
+    font-style: bold;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.risposte {
+    text-align: center;
+    color: white;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+
+.risp{
+    border: 2px solid white;
+    border-radius: 100px;
+    width: 40%;
+    color: white;
+    margin-top: 2em;
+    background-color: #ffffff0a;
+    opacity: 0.8;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    cursor: pointer;
+}
+
+.nDomande {
+    text-align: center;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 3em;
+}
+
+.risp:hover{
+    background-color:#a01282;
+}
+
+#rosa {
+    color: #a01282;
+}
+
+.inside h4 {
+    font-weight: normal;
+    font-size: 11px;
+}
+
+.inside h3 {
+    font-weight: normal;
+    font-size: 50px;
+}
+
+.inside {
+    color: rgb(3, 198, 3);
+    text-align: center;
+    font-size: 9px;
+    margin-top: 5px;
+    z-index: 1;
+}
+
+
+.cerchio {
+    width: 150px;
+    height: 150px;
+    background: conic-gradient(#00FFFF 0.1deg, transparent 0deg);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cerchio::before{
+    content: "";
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    background-color: #0B113C;
+}
+
+.grandeCerchio {
+    position: absolute;
+    right: 270px;
+    top: 60px;
+}
+
+.rispSelezionata {
+    background-color: #a01282;
+}
+
+#timer.high{
+    color: rgb(3, 198, 3);
+}
+
+#timer.mid {
+    color: #ffff00;
+}
+
+#timer.medium {
+    color: rgb(255, 149, 0);
+}
+
+#timer.low {
+    color: red;
+}
+
+/*FINE CSS BENCHMARK PAGE*/
+
+/*INIZIO CSS DIFFICULTY PAGE*/
+
+#Difficulty-page h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+    margin: 30px 0;
+}
+#div_difficulty_btn{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.difficulty_btn{
+    color: white;
+    padding: 15px 60px;
+    background-color: #ffffff0a;
+    margin-top: 30px;
+    border: none;
+    border-radius: 15px;
+    border: 2px solid white;
+    cursor: pointer;
+
+}
+
+
+.difficulty_btn:hover{
+    background-color:#a01282;
+    
+}
+/*FINE CSS DIFFICULTY PAGE*/
+
+/* INIZIO RESULT PAGE */
+
+#Title {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+
+}
+
+.bold {
+    font-weight: bold;
+    color: white;
+}
+
+#Corpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 60vh;
+    position: relative;
+}
+
+.Centro,
+.Sinistra,
+.Destra {
+    max-width: 300px;
+    margin: 40px;
+}
+
+.Centro h4 {
+    color: #00FFFF;
+    font-weight: bold;
+}
+
+.Centro h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.Centro {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+    margin-top: 70px;
+    z-index: 1;
+}
+
+.circle {
+    width: 350px;
+    height: 350px;
+    background: conic-gradient(#00FFFF 3.6deg, #D20094 0deg);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle::before{
+    content: "";
+    position: absolute;
+    height: 260px;
+    width: 260px;
+    border-radius: 50%;
+    background-color: #0B113C;
+}
+
+.Centro p {
+    padding: 12px;
+    margin: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.Sinistra,
+.Destra {
+    color: white;
+    font-size: 70px;
+    padding: 80px;
+}
+
+.Sinistra p,
+.Destra p {
+    font-size: 20px;
+}
+
+#Btn {
+    margin: 0 auto;
+    display: block;
+    padding: 13px;
+    width: 15%;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    border: 1px solid white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 30px #7303af;
+}
+
+
+#Btn:hover{
+    background-color: #900080;
+}
+
+/* FINE RESULT PAGE */
+
+/* INIZIO FEEDBACK PAGE */
+
+#Feedback-page {
+    text-align: center;
+    margin-top: 18px;
+}
+
+#intestazioni {
+    margin-bottom: 50px;
+}
+
+#titolo {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+.testi {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.stella-box {
+    display: inline-block;
+    margin: 10px;
+}
+
+.mySvg {
+    padding: 5px;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+}
+
+.stelle {
+    margin-bottom: 90px;
+}
+
+.feed {
+    margin-top: 50px;
+    padding: 10px 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px #941279;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.errore {
+    display: none;
+    color: red;
+    text-align: left;
+    padding-top: 10px;
+}
+
+
+
+#btnNeonFeedback{
+    margin-top: 60px;
+}
+
+/* FINE FEEDBACK PAGE */
