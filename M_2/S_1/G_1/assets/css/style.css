@@ -28,6 +28,9 @@ header div img {
 }
 header nav ul {
     margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+
 }
 header nav li {
     list-style: none;
@@ -76,6 +79,17 @@ p, address, ul, ol, dl, blockquote {
 }
 h1 + p {
     color: #a0a0a0;
+}
+#badge  {
+    display: inline-block;
+    border: 4px solid #9C096F ;
+
+}
+
+#badge img {
+    height: 65px;
+    display: block;
+    border: 4px solid #09A0C7 ;
 }
 ul, ol {
     margin-left: 2em;
