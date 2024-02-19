@@ -58,6 +58,11 @@
 
     #iframe_and_novita {
         display: flex;
+        
+    }
+    
+    .width{
+        width: 50%;
     }
 
     #articles {
