@@ -29,8 +29,11 @@ header div img {
 header nav ul {
     margin: 0;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 
+}
+#articoli{
+    margin: 0 10px;
 }
 header nav li {
     list-style: none;
