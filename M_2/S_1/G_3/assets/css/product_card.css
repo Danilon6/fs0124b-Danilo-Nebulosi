@@ -1,12 +1,12 @@
 /* GENERALI */
 
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700&display=swap');
 
 /* PRODUCT CARD */
 .product_card {
     background-color: #FBF7E4;
     border-radius: 30%;
-    width: fit-content;
+    width: max-content;
     height: max-content;
     overflow: hidden;
     text-align: center;
@@ -17,7 +17,9 @@
 }
 
 .content{
+    font-family: "Roboto", sans-serif;
     font-weight: 100;
+    font-size: 0.9rem;
 }
 
 .info_container {
