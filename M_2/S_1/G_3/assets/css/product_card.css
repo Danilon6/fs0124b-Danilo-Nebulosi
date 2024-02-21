@@ -1,0 +1,49 @@
+/* GENERALI */
+
+
+
+/* PRODUCT CARD */
+.product_card {
+    background-color: #FBF7E4;
+    border-radius: 30%;
+    width: fit-content;
+    height: max-content;
+    overflow: hidden;
+    text-align: center;
+}
+
+.product_card img {
+    width: 200px;
+}
+
+.content{
+    font-weight: 100;
+}
+
+.info_container {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product_info {
+    display: flex;
+    flex-direction: column;
+}
+
+#bold{
+    font-weight: 800;
+}
+#a {
+    margin-bottom: 20px;
+}
+
+#add_to_cart {
+    text-decoration: none;
+    background-color: #F3DF86;
+    padding: 5px 15px;
+    color: #622506;
+    border-radius: 20px;
+    border: none;
+}
