@@ -1,0 +1,89 @@
+/* GENERALI */
+body {
+    background-color: #666666;
+    padding: 50px;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+p {
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+h2,
+p {
+    font-family: "Indie Flower", cursive;
+}
+
+/* CONTAINER ESTERNO */
+.container {
+    height: 700px;
+    width: 85vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* CONTAINER INTERNI */
+.first_four,
+.last_four {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    perspective: 400px;
+    transform-style: preserve-3d;
+}
+
+/* POST IT */
+.postit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 250px;
+    width: calc(100% / 4 - 10px);
+    max-width: 300px;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.33);
+    animation-name: comparsa;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.background_yellow {
+    background: linear-gradient(#e5e78b, #726f6f);
+    transform: rotate(-2deg);
+}
+
+.background_green {
+    background: linear-gradient(#C8F7C9, #726f6f);
+    transform: rotate(2deg);
+}
+
+.background_purple {
+    background: linear-gradient(#C9C8F6, #726f6f);
+    transform: rotate(-4deg);
+}
+
+.postit:hover {
+    transform: rotate(0) translateZ(1px) scale(1.3);
+}
+
+@keyframes comparsa {
+    from {
+        transform: translateZ(500px)
+    }
+    to{
+        transform: translateZ(0)
+    }
+}
