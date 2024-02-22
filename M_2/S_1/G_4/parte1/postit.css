@@ -63,11 +63,13 @@ p {
 .background_yellow {
     background: linear-gradient(#e5e78b, #726f6f);
     transform: rotate(-2deg);
+    animation-duration: 2s;
 }
 
 .background_green {
     background: linear-gradient(#C8F7C9, #726f6f);
     transform: rotate(2deg);
+    animation-duration: 2.5s;
 }
 
 .background_purple {
