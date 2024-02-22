@@ -8,3 +8,62 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+
+#testoAlternato {
+    font-family: "Bree Serif";
+    line-height: 1.5;
+    position: relative;
+    border: 1px solid #6E6E6E;
+    width: fit-content;
+    padding: 20px;
+    padding-right: 100px;
+    top: 200px;
+    left: 30%;
+    display: flex;
+}
+#testoAlternato p {
+    position: relative;
+}
+.rolling_words{
+    flex-direction: column;
+    height: 25px;
+    color: #6B899A ;
+    position: relative;
+    bottom: 0;
+    right: -3px;
+    perspective: 400px;
+    transform-style: preserve-3d;
+}
+
+.words{
+    animation-name: fadeIn;
+    animation-duration: 3s; 
+    position: absolute;
+    opacity: 0;
+    width: 150px;
+}
+
+#word_2{
+animation-delay: 3s;
+}
+#word_3{
+    animation-delay: 6s;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity:0;
+        transform:translateY(100%);
+    }
+
+    50%{
+            opacity:1;
+            transform:translateY(0);
+    }
+    
+    100%{
+        opacity:0;
+        transform:translateY(-100%);
+    }
+}
+
