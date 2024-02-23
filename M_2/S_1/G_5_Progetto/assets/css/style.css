@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Spectral:wght@400;700&display=swap');
+body{
+    font-family: "Roboto";
+}
+.header_container, #header {
+    background-color: #FFC017;
+    transition: background-color 0.5s;
+}
+.center{
+    width: 70vw;
+    margin: 50px auto;
+}
+#header {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#header, #header_container_content{
+    border-bottom: 1px solid #000;
+}
+#nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#nav a {
+    font-size: 14px;
+}
+
+#nav a:not(.btn) {
+    text-decoration: none;
+    color: #000;
+}
+
+.btn {
+    color: #FFF;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: #000;
+    text-decoration: none;
+}
+
+#header_container_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header_container_inner_content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin: auto;
+}
+
+#header_container_inner_content h1 {
+    font-family: "Spectral";
+    font-size: 100px;
+}
+
+#header_container_inner_content p {
+    width: 65%;
+    font-size: 25px;
+}
+
+#Start_reading {
+    padding: 10px 35px;
+}
+
+#svg {
+    width: 450px;
+    height: 100%;
+}
+
+
+/* MAIN */
+#main, .tag_cloud{
+    border-bottom: 1px solid #F2F2F2;
+}
+#main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+    gap: 50px;
+}
+
+#main h3, .article h3{
+    font-size: 16px;
+    font-weight: 700;
+}
+#main p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#main_inner_content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#first_three, #last_three {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.main_content{
+    display: flex;
+}
+
+.number{
+    font-size: 50px;
+    opacity: 0.1;
+}
+
+.inner_content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inner_content img{
+    border-radius: 5px;
+    height: 20px;
+}
+
+.autore{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Date{
+    font-size: 15px;
+    font-weight: 100;
+    opacity: 0.5;
+    display: inline-block;
+}
+
+.p_date_with_star{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.p_article{
+    width: 100%;
+    justify-content: space-between;
+}
+/* ASIDE */
+#aside{
+    margin-top: 70px;
+}
+#aside_container{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 50px;
+}
+#all_articles{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.article{
+    display: flex;
+    width: fit-content;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.content_images img{
+    width: 300px;
+    height: 200px;
+}
+
+.description{
+opacity: 0.6;
+}
+
+.article h3{
+    font-size: 20px;
+    width: 80%;
+}
+
+.autore img{
+    width: 20px;
+    border-radius: 5px;
+}
+
+.autore  p{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.category{
+    text-decoration: none;
+    color: #000;
+    opacity: 0.5;
+    padding: 10px;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+}
+
+#tag_cloud_and_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.tag_cloud{
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+}
+.tag_cloud h4{
+    font-weight: 700;
+}
+#tag_cloud_links{
+    margin: 25px 0;
+}
+.three_tag_clouds ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.three_tag_clouds a{
+    text-decoration: none;
+    color: #000;
+    padding: 5px;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+}
+
+#See_more_topics{
+color: #1a8917;
+}
+#footer_nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+#footer_nav a{
+text-decoration: none;
+color: #000;
+font-size: 14px;
+opacity: 0.6;
+
+}
+
+
+@media screen and (min-width:320px){
+#first_three, #last_three{
+    flex-direction: column;
+    align-items: center;
+}
+.description{
+    display: none;
+}
+#all_articles{
+
+}
+}

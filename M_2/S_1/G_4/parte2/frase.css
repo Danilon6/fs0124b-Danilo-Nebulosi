@@ -25,7 +25,6 @@
     position: relative;
 }
 .rolling_words{
-    flex-direction: column;
     height: 25px;
     color: #6B899A ;
     position: relative;
