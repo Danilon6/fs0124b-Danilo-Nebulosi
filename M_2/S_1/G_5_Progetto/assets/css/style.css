@@ -2,7 +2,6 @@
 body{
     font-family: "Roboto";
 }
-
 .header_container, #header {
     background-color: #FFC017;
     transition: background-color 0.5s;
@@ -162,7 +161,6 @@ body{
 }
 #aside_container{
     display: flex;
-    flex-wrap: wrap-reverse;
     justify-content: center;
     gap: 50px;
 }
@@ -173,7 +171,8 @@ body{
 }
 .article{
     display: flex;
-    width: fit-content;
+    gap: 10px;
+    align-items: center;
 }
 .content{
     display: flex;
@@ -260,7 +259,7 @@ opacity: 0.6;
 }
 
 
-@media screen and (min-width:320px){
+/* @media screen and (min-width:320px){
 #first_three, #last_three{
     flex-direction: column;
     align-items: center;
@@ -271,4 +270,73 @@ opacity: 0.6;
 #all_articles{
 
 }
+} */
+
+/* TOOLTIP */
+.tooltip_wrap{
+    cursor: pointer;
+    position: relative;
+}
+.tooltip{
+    display: none;
+    max-width: 250px;
+    box-shadow: 1px 1px 10px 4px #000000;
+    z-index: 2;
+}
+.tooltip::before{
+    content: "";
+    background-color: #FFF;
+    position: absolute;
+    top: 46px;
+    left: -8px;
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+}
+.tooltip_wrap:hover .tooltip{
+    display: inline-block;
+    position: absolute;
+    top: -48px;
+    right: -290px;
+    background-color: #FFF;
+    padding: 10px;
+}
+
+.tooltip_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tooltip_author{
+    display: flex;
+    gap: 10px;
+}
+
+.tooltip_descriptio_and_website{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tooltip_follower_and_follow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #F2F2F2;
+    padding-top: 10px;
+}
+
+.tooltip_follower_and_follow, .tooltip_descriptio_and_website a{
+    color: #000;
+    text-decoration: none;
+}
+.tooltip_follower_and_follow a{
+    text-decoration: none;
+    color: #FFF;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #1a8917;
+    
 }
