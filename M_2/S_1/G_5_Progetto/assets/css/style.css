@@ -170,19 +170,18 @@ body{
 }
 #aside_container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 50px;
-    flex-wrap: wrap;
 }
 #all_articles{
-    display: flex;
+    display: flex; /* mi serviva solo per il gap, lo so che andrebbero a capo anche senza*/
     flex-direction: column;
     gap: 30px;
 }
 .article{
     display: flex;
     gap: 10px;
-    align-items: center;
+    justify-content: center;
 }
 .content{
     display: flex;
@@ -190,10 +189,13 @@ body{
     gap: 15px;
     align-items: flex-start;
 }
-
+.content_images {
+    width: 100%;
+    height: 100%;
+}
 .content_images img{
-    width: 300px;
-    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .description{
@@ -269,19 +271,6 @@ opacity: 0.6;
 }
 
 
-@media screen and (min-width:320px){
-#first_three, #last_three{
-    flex-direction: column;
-    align-items: center;
-}
-.description{
-    display: none;
-}
-#all_articles{
-
-}
-}
-
 
 @media screen and (min-width:320px) {
     #nav ul li:nth-child(-n+4){
@@ -299,11 +288,7 @@ opacity: 0.6;
         width: 85%;
         font-size: 20px;
     }
-    .content_images img {
-        width: 100%; /* Assicura che l'immagine si adatti alla larghezza dell'elemento */
-        height: auto; /* Permette all'immagine di mantenere le proporzioni originali */
-        max-height: 100%; /* Imposta l'altezza massima dell'immagine */
-      }
+    
     .p_date_with_star > * {
         flex-shrink: 0;
     }
@@ -402,4 +387,13 @@ opacity: 0.6;
     border-radius: 15px;
     background-color: #1a8917;
     
+}
+
+#sticky_section{
+    position: relative;
+}
+
+#tag_cloud_and_footer{
+    position: sticky;
+    top: 100px;
 }
