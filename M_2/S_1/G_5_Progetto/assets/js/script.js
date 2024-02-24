@@ -11,12 +11,12 @@ window.addEventListener("scroll", function () {
     let top = window.scrollY
     // let headerBottom = header.getBoundingClientRect().bottom;
     // let stickySectionTop = stickySection.getBoundingClientRect().top;
-    // console.log(top);
+    console.log(top);
     // console.log(headerBottom);
     // console.log(stickySectionTop);
     // console.log(stickySection);
 
-    if (top>260) {
+    if (top>360) {
         header.style.backgroundColor = "white"
         
     }else{

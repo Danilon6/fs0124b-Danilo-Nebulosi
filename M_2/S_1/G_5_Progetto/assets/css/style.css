@@ -50,6 +50,8 @@ body{
 #header_container_content {
     display: flex;
     justify-content: space-between;
+    height: 500px;
+    position: relative;
 }
 
 #header_container_inner_content {
@@ -58,6 +60,13 @@ body{
     align-items: flex-start;
     gap: 30px;
     margin: auto;
+    
+}
+#svg_m{
+    position: absolute;
+    right: 0;
+    top: 10%;
+    max-width: 500px;
 }
 
 #header_container_inner_content h1 {
@@ -163,6 +172,7 @@ body{
     display: flex;
     justify-content: center;
     gap: 50px;
+    flex-wrap: wrap;
 }
 #all_articles{
     display: flex;
@@ -259,7 +269,7 @@ opacity: 0.6;
 }
 
 
-/* @media screen and (min-width:320px){
+@media screen and (min-width:320px){
 #first_three, #last_three{
     flex-direction: column;
     align-items: center;
@@ -270,7 +280,60 @@ opacity: 0.6;
 #all_articles{
 
 }
-} */
+}
+
+
+@media screen and (min-width:320px) {
+    #nav ul li:nth-child(-n+4){
+        display: none;
+    }
+    #svg_m{
+        display: none;
+    }
+    #header_container_inner_content h1 {
+        font-family: "Spectral";
+        font-size: 60px;
+    }
+    
+    #header_container_inner_content p {
+        width: 85%;
+        font-size: 20px;
+    }
+    .content_images img {
+        width: 100%; /* Assicura che l'immagine si adatti alla larghezza dell'elemento */
+        height: auto; /* Permette all'immagine di mantenere le proporzioni originali */
+        max-height: 100%; /* Imposta l'altezza massima dell'immagine */
+      }
+    .p_date_with_star > * {
+        flex-shrink: 0;
+    }
+    .content h3{
+        display: none;
+    }
+}
+@media screen and (min-width:551px) {
+    #nav ul li:nth-child(4){
+        display: list-item;
+    }
+}
+
+@media screen and (min-width:727px) {
+    #nav ul li:nth-child(-n+3){
+        display: list-item;
+    }
+    #svg_m{
+        display: block;
+    }
+    #header_container_inner_content h1 {
+        font-family: "Spectral";
+        font-size: 100px;
+    }
+    
+    #header_container_inner_content p {
+        width: 65%;
+        font-size: 25px;
+    }
+}
 
 /* TOOLTIP */
 .tooltip_wrap{
