@@ -78,8 +78,7 @@ body {
 #svg_m {
     position: absolute;
     right: 1px;
-    top: 10%;
-    max-width: 500px;
+    top: 5%;
 }
 
 #header_container_inner_content h1 {
@@ -493,6 +492,26 @@ body {
     #tag_cloud_and_footer {
         min-width: 260px;
     }
+
+    .tooltip::before {
+    content: "";
+    background-color: #FFF;
+    position: absolute;
+    top: -8px;
+    left: 119px;
+    height: 15px;
+    width: 15px;
+    transform: rotate(45deg);
+}
+
+.tooltip_wrap:hover .tooltip {
+    display: inline-block;
+    position: absolute;
+    top: 32px;
+    left: -100px;
+    background-color: #FFF;
+    padding: 10px;
+}
 }
 
 @media screen and (min-width:551px) {
@@ -500,6 +519,15 @@ body {
         display: list-item;
     }
 
+    .tooltip::before {
+        top: 46px;
+        left: -8px;
+    }
+    
+    .tooltip_wrap:hover .tooltip {
+        top: -48px;
+        left: 95px;
+    }
 
 }
 

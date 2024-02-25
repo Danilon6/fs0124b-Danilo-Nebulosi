@@ -96,6 +96,7 @@ function splitMe(stringa) {
   return [stringa.split(" ")]
 
 }
+console.log(splitMe("ciao sono io"));
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
