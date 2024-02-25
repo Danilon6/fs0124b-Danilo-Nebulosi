@@ -216,10 +216,11 @@ body {
     min-width: 320px;
 }
 
-.content_images{
+.content_images {
     display: flex;
     align-items: center;
 }
+
 .content_images img {
     max-width: 150px;
     max-height: 150px;
@@ -461,6 +462,7 @@ body {
         font-family: "Spectral";
         font-size: 60px;
     }
+
     #header_container_inner_content p {
         max-width: unset;
     }
@@ -486,7 +488,9 @@ body {
     #tag_cloud_and_footer {
         max-width: unset;
     }
-    .content, #tag_cloud_and_footer{
+
+    .content,
+    #tag_cloud_and_footer {
         min-width: 260px;
     }
 }
@@ -495,7 +499,7 @@ body {
     #nav ul li:nth-child(4) {
         display: list-item;
     }
-    
+
 
 }
 
@@ -512,7 +516,7 @@ body {
         font-family: "Spectral";
         font-size: 100px;
     }
-   
+
     #footer_mobile {
         padding: 20px 40px;
     }
@@ -522,6 +526,7 @@ body {
     #hr_footer_mobile {
         display: none;
     }
+
     .content_images img {
         display: block;
     }
@@ -531,9 +536,11 @@ body {
     #aside_container {
         flex-wrap: unset;
     }
+
     #header_container_inner_content p {
         max-width: 40%;
     }
+
     #footer {
         display: block;
     }
@@ -555,6 +562,5 @@ body {
         max-width: 366px;
         min-width: 366px;
     }
-
 
 }
