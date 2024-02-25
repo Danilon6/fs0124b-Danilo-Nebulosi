@@ -494,24 +494,24 @@ body {
     }
 
     .tooltip::before {
-    content: "";
-    background-color: #FFF;
-    position: absolute;
-    top: -8px;
-    left: 119px;
-    height: 15px;
-    width: 15px;
-    transform: rotate(45deg);
-}
+        content: "";
+        background-color: #FFF;
+        position: absolute;
+        top: -8px;
+        left: 119px;
+        height: 15px;
+        width: 15px;
+        transform: rotate(45deg);
+    }
 
-.tooltip_wrap:hover .tooltip {
-    display: inline-block;
-    position: absolute;
-    top: 32px;
-    left: -100px;
-    background-color: #FFF;
-    padding: 10px;
-}
+    .tooltip_wrap:hover .tooltip {
+        display: inline-block;
+        position: absolute;
+        top: 32px;
+        left: -100px;
+        background-color: #FFF;
+        padding: 10px;
+    }
 }
 
 @media screen and (min-width:551px) {
@@ -523,7 +523,7 @@ body {
         top: 46px;
         left: -8px;
     }
-    
+
     .tooltip_wrap:hover .tooltip {
         top: -48px;
         left: 95px;
