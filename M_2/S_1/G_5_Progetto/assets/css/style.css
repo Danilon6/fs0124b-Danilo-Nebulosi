@@ -59,6 +59,7 @@ body {
     justify-content: space-between;
     height: 455px;
     position: relative;
+    padding: 30px 0;
 }
 
 #header_container_inner_content {
@@ -197,7 +198,6 @@ body {
 
 #all_articles {
     display: flex;
-    /* mi serviva solo per il gap, lo so che andrebbero a capo anche senza*/
     flex-direction: column;
     gap: 30px;
 }
@@ -213,16 +213,16 @@ body {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
+    min-width: 320px;
 }
 
-.content_images {
-    width: 100%;
-    height: 100%;
+.content_images{
+    display: flex;
+    align-items: center;
 }
-
 .content_images img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 150px;
+    max-height: 150px;
 }
 
 .description {
@@ -255,7 +255,6 @@ body {
 
 #sticky_section {
     position: relative;
-    width: 100%;
 }
 
 #tag_cloud_and_footer {
@@ -265,6 +264,7 @@ body {
     flex-direction: column;
     gap: 45px;
     max-width: 366px;
+    min-width: 366px;
 }
 
 .tag_cloud h4 {
@@ -461,11 +461,10 @@ body {
         font-family: "Spectral";
         font-size: 60px;
     }
+    #header_container_inner_content p {
+        max-width: unset;
+    }
 
-    /* #header_container_inner_content p {
-        max-width: max-content;
-        font-size: 20px;
-    } */
     /* RESPONSIVE PER IL MAIN */
     #first_three,
     #last_three {
@@ -479,12 +478,24 @@ body {
     #footer {
         display: none;
     }
+
+    .content_images img {
+        display: none;
+    }
+
+    #tag_cloud_and_footer {
+        max-width: unset;
+    }
+    .content, #tag_cloud_and_footer{
+        min-width: 260px;
+    }
 }
 
 @media screen and (min-width:551px) {
     #nav ul li:nth-child(4) {
         display: list-item;
     }
+    
 
 }
 
@@ -501,11 +512,7 @@ body {
         font-family: "Spectral";
         font-size: 100px;
     }
-
-    /* #header_container_inner_content p {
-        max-width: 50% ;
-        font-size: 25px;
-    } */
+   
     #footer_mobile {
         padding: 20px 40px;
     }
@@ -515,13 +522,18 @@ body {
     #hr_footer_mobile {
         display: none;
     }
+    .content_images img {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 904px) {
     #aside_container {
         flex-wrap: unset;
     }
-
+    #header_container_inner_content p {
+        max-width: 40%;
+    }
     #footer {
         display: block;
     }
@@ -537,6 +549,11 @@ body {
     #first_three,
     #last_three {
         flex-direction: row;
+    }
+
+    #tag_cloud_and_footer {
+        max-width: 366px;
+        min-width: 366px;
     }
 
 
