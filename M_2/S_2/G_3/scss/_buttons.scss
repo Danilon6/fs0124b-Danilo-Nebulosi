@@ -1,0 +1,13 @@
+$buttonsColor: (
+    "blue":#0e6cff, 
+    "yellow":#ff8700, 
+    "green":#4caf50
+);
+
+@mixin generate-btnColors() {
+    @each $color, $value in $buttonsColor{
+        .btn-#{$color}{
+            background-color: #{$value};
+        }
+    }
+}

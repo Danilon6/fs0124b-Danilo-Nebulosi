@@ -1,0 +1,48 @@
+@import "reset";
+@import "colors";
+@import "font";
+@import "buttons";
+@import "animations";
+@import "spacings";
+@import "mixins";
+
+@include generate-padding(top);
+@include generate-padding(bottom);
+@include generate-padding(left);
+@include generate-padding(right);
+
+@include generate-margin(top);
+@include generate-margin(bottom);
+@include generate-margin(left);
+@include generate-margin(right);
+
+@include generate-btnColors();
+
+
+
+
+.row{
+   display: flex;
+   flex-wrap: wrap
+}
+
+#animazione{
+    @include fadeIn(10, 40vh, 0, 3);
+    height: 100vh;
+    perspective: 400px;
+    transform-style: preserve-3d;
+}
+
+.colonna{
+    @include grid(5);
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.prova{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    @include floating(1px solid #000, 10px, 0px 0px 10px 4px rgba(0,0,0,0.71));
+}

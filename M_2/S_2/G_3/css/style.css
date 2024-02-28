@@ -1,0 +1,303 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.padding-top-sm {
+  padding-top: 12px;
+}
+
+.padding-top-normal {
+  padding-top: 16px;
+}
+
+.padding-top-md {
+  padding-top: 24px;
+}
+
+.padding-top-lg {
+  padding-top: 36px;
+}
+
+.padding-top-xl {
+  padding-top: 48px;
+}
+
+.padding-top-xxl {
+  padding-top: 160px;
+}
+
+.padding-bottom-sm {
+  padding-bottom: 12px;
+}
+
+.padding-bottom-normal {
+  padding-bottom: 16px;
+}
+
+.padding-bottom-md {
+  padding-bottom: 24px;
+}
+
+.padding-bottom-lg {
+  padding-bottom: 36px;
+}
+
+.padding-bottom-xl {
+  padding-bottom: 48px;
+}
+
+.padding-bottom-xxl {
+  padding-bottom: 160px;
+}
+
+.padding-left-sm {
+  padding-left: 12px;
+}
+
+.padding-left-normal {
+  padding-left: 16px;
+}
+
+.padding-left-md {
+  padding-left: 24px;
+}
+
+.padding-left-lg {
+  padding-left: 36px;
+}
+
+.padding-left-xl {
+  padding-left: 48px;
+}
+
+.padding-left-xxl {
+  padding-left: 160px;
+}
+
+.padding-right-sm {
+  padding-right: 12px;
+}
+
+.padding-right-normal {
+  padding-right: 16px;
+}
+
+.padding-right-md {
+  padding-right: 24px;
+}
+
+.padding-right-lg {
+  padding-right: 36px;
+}
+
+.padding-right-xl {
+  padding-right: 48px;
+}
+
+.padding-right-xxl {
+  padding-right: 160px;
+}
+
+.margin-top-sm {
+  margin-top: 12px;
+}
+
+.margin-top-normal {
+  margin-top: 16px;
+}
+
+.margin-top-md {
+  margin-top: 24px;
+}
+
+.margin-top-lg {
+  margin-top: 36px;
+}
+
+.margin-top-xl {
+  margin-top: 48px;
+}
+
+.margin-top-xxl {
+  margin-top: 160px;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 12px;
+}
+
+.margin-bottom-normal {
+  margin-bottom: 16px;
+}
+
+.margin-bottom-md {
+  margin-bottom: 24px;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 36px;
+}
+
+.margin-bottom-xl {
+  margin-bottom: 48px;
+}
+
+.margin-bottom-xxl {
+  margin-bottom: 160px;
+}
+
+.margin-left-sm {
+  margin-left: 12px;
+}
+
+.margin-left-normal {
+  margin-left: 16px;
+}
+
+.margin-left-md {
+  margin-left: 24px;
+}
+
+.margin-left-lg {
+  margin-left: 36px;
+}
+
+.margin-left-xl {
+  margin-left: 48px;
+}
+
+.margin-left-xxl {
+  margin-left: 160px;
+}
+
+.margin-right-sm {
+  margin-right: 12px;
+}
+
+.margin-right-normal {
+  margin-right: 16px;
+}
+
+.margin-right-md {
+  margin-right: 24px;
+}
+
+.margin-right-lg {
+  margin-right: 36px;
+}
+
+.margin-right-xl {
+  margin-right: 48px;
+}
+
+.margin-right-xxl {
+  margin-right: 160px;
+}
+
+.btn-blue {
+  background-color: #0e6cff;
+}
+
+.btn-yellow {
+  background-color: #ff8700;
+}
+
+.btn-green {
+  background-color: #4caf50;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#animazione {
+  animation-name: fadeInAnimation;
+  animation-duration: 10;
+  animation-delay: 3;
+  height: 100vh;
+  perspective: 400px;
+  transform-style: preserve-3d;
+}
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translate(0, 40vh);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.colonna {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  flex-basis: 20%;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.prova {
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.71);
+}
+
+/*# sourceMappingURL=style.css.map */
