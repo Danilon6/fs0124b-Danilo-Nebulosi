@@ -1,0 +1,31 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+#navbar_profile{
+    background-image: url(../assets/avatar-1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar_circle{
+    width: 60px;
+    height: 60px;
+}
+
+#hero_section{
+    background-color: #764FFE;
+    height: 300px;
+}
+
+#hero_first_row{
+    background-image: url(../assets/hero-img.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#hero_section_container{
+    height: 100%;
+    & > div {
+        height: 100%;
+    }
+}
+
