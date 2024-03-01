@@ -11873,6 +11873,10 @@ textarea.form-control-lg {
   }
 }
 
+#header_profile_page {
+  background-color: #211d1d;
+}
+
 #logo_netflix {
   width: 150px;
   height: 100%;
@@ -11890,12 +11894,20 @@ textarea.form-control-lg {
   width: fit-content;
 }
 
-#agree_terms {
+#pencil_icon {
+  text-align: center;
+  width: 30px;
+  bottom: 4px;
+  right: 103px;
+}
+
+.agree_terms {
+  padding: 2px;
   display: flex;
   border: 1px solid #6c757d;
   border-radius: 2px;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 25px;
   margin-right: 10px;
   align-items: center;
   cursor: pointer;

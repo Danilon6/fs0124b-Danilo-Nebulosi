@@ -12,9 +12,9 @@
 
 <body>
     <div class="bg-dark" id="background">
-        <header>
-            <div class="row">
-                <div class="col-12">
+        <header id="header_profile_page">
+            <div class="row g-0">
+                <div class="col-12 p-0">
                     <img src="./assets/Netflix/netflix_logo.png" alt="Logo_netflix" id="logo_netflix">
                 </div>
             </div>
@@ -22,19 +22,20 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-12 border-bottom border-secondary mb-3">
+                <div class="col-12 border-bottom border-secondary my-3">
                     <h4 class="fs-1 text-white">Edit Profile</h4>
                 </div>
                 <div class="col-12">
                     <div class="row">
                         <div class="col-1 col-md-2"></div>
                         <div class="col-10 col-md-8">
-                            <div class="row row-gap-3">
+                            <div class="row row-gap-3 mb-5">
                                 <div class="col-12">
                                     <div class="row">
-                                        <div class="col-4">
+                                        <div class="col-4 text-end">
+                                            <div class="position-relative">
                                             <img src="./assets/avatar.png" alt="avatar" class="w-50">
-                                            <i class="bi bi-pencil-fill position-absolute start-0"></i>
+                                            <i class="bi bi-pencil-fill position-absolute rounded-circle text-white border border-2 bg-dark" id="pencil_icon"></i></div>
                                         </div>
                                         <div class="col-8">
                                             <div class="row border-bottom border-secondary ">
@@ -90,11 +91,13 @@
                                                 <div class="col-12 p-0">
                                                     <p class="text-secondary fs-3">Autoplay controls:</p>
                                                 </div>
-
                                                 <div class="col-12 d-flex align-items-center">
-
-                                                    <div id="agree_terms" class=""></div>
-                                                    <label for="agree_terms" class="text-secondary">Autoplay next episode in a series on all devices.</label>
+                                                    <div class="agree_terms" class=""></div>
+                                                    <label for="agree_terms" class="text-secondary w-100 label_fake_checkbox">Autoplay next episode in a series on all devices.</label>
+                                                </div>
+                                                <div class="col-12 d-flex align-items-center">
+                                                    <div class="agree_terms" class=""></div>
+                                                    <label for="agree_terms" class="text-secondary w-100 label_fake_checkbox">Autoplay prevoius while browsing on all devices.</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -124,7 +127,8 @@
 
         </div>
     </div>
-    </div>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
