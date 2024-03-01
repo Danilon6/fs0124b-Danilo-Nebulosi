@@ -5,19 +5,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix-Clone</title>
+    <link rel="icon" type="image/x-icon" href="./assets/Netflix/netflix.ico">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
 </head>
 
 <body>
-    
+    <div class="bg-dark" id="background">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="./assets//Netflix/netflix_logo.png"
+                            alt="Logo_netflix"></a>
+                    <button class="navbar-toggler border border-1 border-white" data-bs-theme="dark" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page" href="#">TV Shows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" aria-current="page" href="#">Movies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" aria-current="page" href="#">Recently Added</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" aria-current="page" href="#">My List</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 align-items-center justify-content-around column-gap-3"
+                            role="search">
+                            <i class="bi bi-search text-white g-col-6"></i>
+                            <p class="text-white g-col-6" id="KIDS">KIDS</p>
+                            <i class="bi bi-bell-fill text-white g-col-6"></i>
+                        </div>
 
+                        <div class="dropdown text-end">
+                            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="./assets/avatar.png" alt="avatar" id="avatar">
+                            </a>
+                            <ul class="dropdown-menu menu-text-small">
+                                <li><a class="dropdown-item" href="#">New project...</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="./Profile_page.html">Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="row align-items-center container-fluid">
+            <div class="col-5 text-white d-flex column-gap-4">
+                <h2 class="d-none d-md-block">TV Shows</h2>
+                <select class="form-select bg-dark border border-1 border-white text-white" id="floatingSelect"
+                    aria-label="Floating label select example">
+                    <option selected>Categorie</option>
+                    <option value="1">Avventura</option>
+                    <option value="2">Azione</option>
+                    <option value="3">Fantasy</option>
+                </select>
+            </div>
 
+            <div class="col-2 text-white"></div>
+            <div class="col-5 text-white d-flex">
+                <div class="me-auto"></div>
+                <i class="bi bi-text-left border border-1 border-white p-2"></i>
+                <i class="bi bi-grid border border-1 border-white p-2"></i>
+            </div>
+        </div>
 
+        <div class="mt-4 container-fluid">
+            <h3 class="text-white">Trending Now</h3>
+            <section class="splide" id="splide1" aria-label="Basic Structure Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide text-white"><img src="./assets/media/media0.webp" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media1.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media2.webp" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media3.webp" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media4.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media5.webp" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media6.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media7.webp" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media8.webp" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media9.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media10.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media11.jpg" alt="Copertina_film">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="mt-4 container-fluid">
+            <h3 class="text-white">Watch It Again</h3>
+            <section class="splide" id="splide2" aria-label="Basic Structure Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide text-white"><img src="./assets/media/media12.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media13.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media14.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media15.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media16.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media17.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media18.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media19.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media20.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media21.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media22.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media23.webp"
+                                alt="Copertina_film"></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="mt-4 container-fluid">
+            <h3 class="text-white">New Releases</h3>
+            <section class="splide" id="splide3" aria-label="Basic Structure Example">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide text-white"><img src="./assets/media/media24.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media25.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media26.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media27.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media28.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media29.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media30.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media31.webp"
+                                alt="Copertina_film"></li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media32.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media1.jpg" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media2.webp" alt="Copertina_film">
+                        </li>
+                        <li class="splide__slide text-white"><img src="./assets/media/media3.webp" alt="Copertina_film">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
 
+        <div class="container mt-5">
+            <div class="row d-flex row-gap-3">
+                <div class="col-12 d-flex column-gap-4 ">
+                    <i class="bi bi-facebook text-secondary"></i>
+                    <i class="bi bi-instagram text-secondary"></i>
+                    <i class="bi bi-twitter text-secondary"></i>
+                    <i class="bi bi-youtube text-secondary"></i>
+                </div>
+                <div class="col-12 ">
+                    <div class="row">
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Audio and Subtitles</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Media Center</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Privacy</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Audio description</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Investor relations</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Legal Notices</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Help Center</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Jobs</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Cookie Preferences</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Gift Cards</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Terms of Use</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-secondary">Corporate Infomrations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="button" class="btn btn-outline-secondary text-secondary">Service Code</button>
+                </div>
+                <div class="col-12">
+                    <p class="text-secondary">&copy; 1997-2019 netflix<span class="d-none d-md-inline-block">, inc. {i-0d00fcda2fdf9c0de}</span></p>
+                </div>
+            </div>
+        </div>
 
+    </div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+
+        Splide.defaults = {
+            type: 'loop',
+            perPage: 6,
+            perMove: 3,
+            gap: "2rem",
+            autoWidth: true,
+        }
+        new Splide('#splide1').mount();
+        new Splide('#splide2').mount();
+        new Splide('#splide3').mount();
+
+    </script>
 </body>
 
 </html>

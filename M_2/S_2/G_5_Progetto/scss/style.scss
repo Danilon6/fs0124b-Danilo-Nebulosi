@@ -1,3 +1,66 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+#background{
+    height: 100%;
+}
+
+#KIDS{
+    margin-bottom: 0;
+}
+.navbar-brand{
+    & img{
+        width: 100%;
+        height: 50px;
+    }
+}
+#avatar{
+    width: 32px;
+    height: 32px;
+}
+
+.form-select{
+    width: fit-content;
+}
+
+.dropdown-menu[data-bs-popper] {
+    @media screen and (min-width: 768px) {
+        right: 0;
+        left: unset;
+    }
+}
+
+
+// PROFILE PAGE
+
+#logo_netflix{
+    width: 150px;
+    height: 100%;
+}
+
+.profile-page_btn:hover {
+    background-color: #FFF;
+}
+
+.bg-custom{
+    background-color:#323232;
+}
+
+.w-custom{
+    width: fit-content;
+}
+
+#agree_terms {
+    display: flex;
+    border: 1px solid $secondary;
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
