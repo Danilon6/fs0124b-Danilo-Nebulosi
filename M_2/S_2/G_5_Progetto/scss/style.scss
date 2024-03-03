@@ -1,26 +1,28 @@
-
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "profilePage";
 @import "settingsPage";
-#background{
+
+#background {
     height: 100%;
 }
 
-#KIDS{
+#KIDS {
     margin-bottom: 0;
 }
-.navbar-brand{
-    & img{
+
+.navbar-brand {
+    & img {
         width: 100%;
         height: 50px;
     }
 }
-#avatar{
+
+#avatar {
     width: 32px;
     height: 32px;
 }
 
-.form-select{
+.form-select {
     width: fit-content;
 }
 
