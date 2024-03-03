@@ -11888,9 +11888,8 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-.splide__slide:hover {
-  transform: scale(1.4);
-  z-index: 2;
+* a {
+  text-decoration: none;
 }
 
 .btn-bg-custom {
