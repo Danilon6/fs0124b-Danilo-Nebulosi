@@ -27,10 +27,9 @@
 }
 
 .dropdown-menu[data-bs-popper] {
-    @media screen and (min-width: 768px) {
-        right: 0;
-        left: unset;
-    }
+    right: 0;
+    left: unset;
+
 }
 
 

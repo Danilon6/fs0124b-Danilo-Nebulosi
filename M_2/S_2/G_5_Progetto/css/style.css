@@ -11949,11 +11949,9 @@ input[type=checkbox] {
   width: fit-content;
 }
 
-@media screen and (min-width: 768px) {
-  .dropdown-menu[data-bs-popper] {
-    right: 0;
-    left: unset;
-  }
+.dropdown-menu[data-bs-popper] {
+  right: 0;
+  left: unset;
 }
 
 /*# sourceMappingURL=style.css.map */
