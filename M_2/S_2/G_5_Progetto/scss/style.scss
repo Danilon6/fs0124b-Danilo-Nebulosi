@@ -1,6 +1,8 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-
+@import "profilePage";
+@import "splideSlide";
+@import "settingsPage";
 #background{
     height: 100%;
 }
@@ -32,43 +34,3 @@
 
 
 // PROFILE PAGE
-#header_profile_page{
-    background-color: #211d1d;
-}
-#logo_netflix{
-    width: 150px;
-    height: 100%;
-}
-
-.profile-page_btn:hover {
-    background-color: #FFF;
-}
-
-.bg-custom{
-    background-color:#323232;
-}
-
-.w-custom{
-    width: fit-content;
-}
-#pencil_icon{
-    text-align: center;
-    width: 30px;
-    bottom: 4px;
-    right: 103px;
-}
-.agree_terms {
-    padding: 2px;
-    display: flex;
-    border: 1px solid $secondary;
-    border-radius: 2px;
-    width: 30px;
-    height: 25px;
-    margin-right: 10px;
-    align-items: center;
-    cursor: pointer;
-}
-
-input[type="checkbox"] {
-    cursor: pointer;
-}
