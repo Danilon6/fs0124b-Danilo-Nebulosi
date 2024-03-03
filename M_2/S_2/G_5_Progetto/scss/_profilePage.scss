@@ -17,11 +17,16 @@
 .w-custom{
     width: fit-content;
 }
+
+.container-img{
+    height: fit-content;
+}
+
 #pencil_icon{
     text-align: center;
     width: 30px;
-    bottom: 4px;
-    right: 103px;
+    bottom: 0;
+    left: 0; 
 }
 .agree_terms {
     padding: 2px;
