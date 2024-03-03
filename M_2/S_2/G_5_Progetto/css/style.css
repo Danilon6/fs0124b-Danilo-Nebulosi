@@ -11893,13 +11893,20 @@ input[type=checkbox] {
   z-index: 2;
 }
 
+.btn-bg-custom {
+  background-color: #E3E3E3;
+}
+.btn-bg-custom:hover {
+  background-color: #b2b0b0;
+}
+
 .w-cutsom-svg {
   max-width: 40px;
 }
 
 .w-custom-avatar-setting-page {
   max-width: 100%;
-  max-height: 150px;
+  max-height: 100px;
 }
 
 #logo_paypal {
@@ -11907,6 +11914,14 @@ input[type=checkbox] {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.w-avatar {
+  max-width: 45px;
+}
+
+#container-img-avatar {
+  max-width: fit-content;
 }
 
 #background {

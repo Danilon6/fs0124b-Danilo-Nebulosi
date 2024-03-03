@@ -1,10 +1,17 @@
+.btn-bg-custom{
+    background-color: #E3E3E3 ;
+    &:hover{
+        background-color: #b2b0b0;
+    }
+}
+
 .w-cutsom-svg {
     max-width: 40px;
 }
 
 .w-custom-avatar-setting-page{
     max-width: 100%;
-    max-height: 150px;
+    max-height: 100px;
 }
 
 #logo_paypal{
@@ -14,3 +21,12 @@
     background-repeat: no-repeat;
 
 }
+
+.w-avatar{
+    max-width: 45px;
+}
+
+#container-img-avatar{
+    max-width: fit-content;
+}
+
