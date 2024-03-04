@@ -1,12 +1,12 @@
 // ESERCIZIO 1 CLASSE USER
-class User{
-    constructor(_firstName, _lastName, _age, _location ){
+class User {
+    constructor(_firstName, _lastName, _age, _location) {
         this.firstName = _firstName
         this.lastName = _lastName
         this.age = _age
         this.location = _location
     }
-    confrontoEta(user){
+    confrontoEta(user) {
         let etaDaConfrontare = user.age
         if (etaDaConfrontare >= this.age) {
             return `L'età di ${user.firstName} ${user.lastName} è uguale o maggiore di quella di ${this.firstName} ${this.lastName}, infatti ${etaDaConfrontare} >= ${this.age}`
@@ -30,15 +30,15 @@ let ownerName;
 let species;
 let breed;
 
-class Pet{
-    constructor(_petName, _ownerName, _species, _breed){
+class Pet {
+    constructor(_petName, _ownerName, _species, _breed) {
         this.petName = _petName
         this.ownerName = _ownerName
         this.species = _species
         this.breed = _breed
     }
 
-    confrontoPadrone(pet){
+    confrontoPadrone(pet) {
         let padroneDaConfrontare = pet.ownerName
 
         if (padroneDaConfrontare.toLowerCase() == this.ownerName.toLowerCase()) {
@@ -49,7 +49,7 @@ class Pet{
     }
 }
 
-document.getElementById('myForm').addEventListener('submit', function(event) {
+document.getElementById('myForm').addEventListener('submit', function (event) {
     event.preventDefault();
     let datiForm = []
     petName = document.querySelector("#petName").value
@@ -62,6 +62,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     let pet = new Pet(petName, ownerName, species, breed)
 
     let ul = document.createElement("ul")
+    ul.classList.add("border", "border-dark", "p-0", "px-4", "m-0")
     target.append(ul)
 
     for (const key in pet) {

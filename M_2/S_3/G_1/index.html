@@ -5,36 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="bg-secondary">
 
-    <div>
-        <form id="myForm">
-            <label for="petName">Nome dell'animale</label>
-            <input type="text" id="petName" name="petName">
+    <div class="container">
 
-            <label for="ownerName">Nome del padrone</label>
-            <input type="text" id="ownerName" name="ownerName">
+        <form id="myForm" class="row row-gap-3 d-flex ms-auto mt-5">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <label for="petName">Nome dell'animale</label>
+                <input type="text" id="petName" name="petName">
+            </div>
+            <div class="col-4"></div>
 
-            <label for="species">Scegli la specie:</label>
-            <select id="species" name="species">
-                <option value="cane">Cane</option>
-                <option value="gatto">Gatto</option>
-                <option value="coniglio">Coniglio</option>
-            </select>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <label for="ownerName">Nome del padrone</label>
+                <input type="text" id="ownerName" name="ownerName">
+            </div>
+            <div class="col-4"></div>
 
-            <label for="breed">Scegli la razza:</label>
-            <select id="breed" name="breed">
-                <option value="labrador">Labrador</option>
-                <option value="soriano">Soriano</option>
-                <option value="nano">Nano</option>
-            </select>
-            <button type="submit" value="Submit">Invia</button>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <label for="species">Scegli la specie:</label>
+                <select id="species" name="species">
+                    <option value="cane">Cane</option>
+                    <option value="gatto">Gatto</option>
+                    <option value="coniglio">Coniglio</option>
+                </select>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <label for="breed">Scegli la razza:</label>
+                <select id="breed" name="breed">
+                    <option value="labrador">Labrador</option>
+                    <option value="soriano">Soriano</option>
+                    <option value="nano">Nano</option>
+                </select>
+            </div>
+            <div class="col-4"></div>
+
+            <div class="col-5"></div>
+            <div class="col-2">
+                <button class="btn btn-outline-dark" type="submit" value="Submit">Invia</button>
+            </div>
+            <div class="col-5"></div>
         </form>
     </div>
 
-    <div id="target"></div>
+    <div class="container d-flex gap-2 flex-wrap mt-5" id="target">
+    </div>
 
 
     <script src="./assets/js/script.js"></script>
