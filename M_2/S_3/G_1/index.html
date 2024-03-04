@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
+    <div>
+        <form id="myForm">
+            <label for="petName">Nome dell'animale</label>
+            <input type="text" id="petName" name="petName">
+
+            <label for="ownerName">Nome del padrone</label>
+            <input type="text" id="ownerName" name="ownerName">
+
+            <label for="species">Scegli la specie:</label>
+            <select id="species" name="species">
+                <option value="cane">Cane</option>
+                <option value="gatto">Gatto</option>
+                <option value="coniglio">Coniglio</option>
+            </select>
+
+            <label for="breed">Scegli la razza:</label>
+            <select id="breed" name="breed">
+                <option value="labrador">Labrador</option>
+                <option value="soriano">Soriano</option>
+                <option value="nano">Nano</option>
+            </select>
+            <button type="submit" value="Submit">Invia</button>
+        </form>
+    </div>
+
+    <div id="target"></div>
+
+
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
