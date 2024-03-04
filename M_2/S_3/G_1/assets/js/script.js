@@ -23,8 +23,6 @@ let user2 = new User("Mario", "Rossi", "20", "Bologna")
 console.log(user1.confrontoEta(user2));
 
 // ESERCIZIO 2 CLASSE PET
-let count = 1
-
 let target = document.querySelector("#target")
 
 let petName;
@@ -61,18 +59,16 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     datiForm.push(petName, ownerName, species, breed)
     console.log(datiForm);
 
-    eval`(let pet${count} = new Pet(petName, ownerName, species, breed))`
-    console.log(eval(`pet${count}`));
+    let pet = new Pet(petName, ownerName, species, breed)
 
     let ul = document.createElement("ul")
     target.append(ul)
 
-    datiForm.forEach(dato => {
+    for (const key in pet) {
         let li = document.createElement("li")
-        li.innerHTML = dato
+        li.innerHTML = `${pet[key]}`
         ul.append(li)
-    });
-    count ++
+    }
 });
 
 let animale1 = new Pet("nome", "padrone", "cane", "labrador")
