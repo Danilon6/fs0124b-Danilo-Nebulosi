@@ -5,13 +5,18 @@ class User{
         this.age = _age
         this.location = _location
     }
-    confrontoEta(user1, user2){
-        let eta1 = user1.age
-        let eta2 = user2.age
-        if (eta1 >= eta2) {
-            return `L'età del primo utente è uguale o maggiore di quella del secondo, infatti ${eta1} >= ${eta2}`
+    confrontoEta(user){
+        let etaDaConfrontare = user.age
+        if (etaDaConfrontare >= this.age) {
+            return `L'età di ${user.firstName} ${user.lastName} è uguale o maggiore di quella di ${this.firstName} ${this.lastName}, infatti ${etaDaConfrontare} >= ${this.age}`
         } else {
-            return `L'età del secondo utente è uguale o maggiore di quella del secondo, infatti ${eta2} >= ${eta1}`
+            return `L'età di ${this.firstName} ${this.lastName} è uguale o maggiore di quella di ${user.firstName} ${user.lastName}, infatti ${this.age} >= ${etaDaConfrontare}`
         }
     }
 }
+
+
+let user1 = new User("Danilo", "Nebulosi", "19", "Napoli")
+let user2 = new User("Mario", "Rossi", "20", "Bologna")
+
+console.log(user1.confrontoEta(user2));
