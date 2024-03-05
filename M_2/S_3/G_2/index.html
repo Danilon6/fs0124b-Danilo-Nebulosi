@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- ESERCIZIO 1 -->
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="d-inline fs-3">Questo è il dato precedentemente salvato:</h2>
+                <p class="d-inline" id="savedData"></p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row d-flex align-items-center">
+            <div class="col-2">
+                <label for="inputName" class="form-label">Inserisci il tuo nome</label>
+                <input id="inputName" type="text" class="form-control" placeholder="nome">
+            </div>
+            <div class="col-10">
+                <div class="row row-gap-2">
+                    <div class="col-4">
+                        <button id="saveBtn" type="button" class="btn btn-secondary">Salva il dato</button>
+                    </div>
+                    <div class="col-8"></div>
+                    <div class="col-4">
+                        <button id="deleteBtn" type="button" class="btn btn-secondary">Elimina il dato</button>
+                    </div>
+                    <div class="col-8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ESERCIZIO 2 -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h4>Seconds</h4>
+                <p id="seconds"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
