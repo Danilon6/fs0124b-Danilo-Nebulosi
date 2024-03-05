@@ -17,6 +17,7 @@ class SalvaDati {
 
     initHTML() {
         this.inputfield = this.creaElementoConId("input", "inputName")
+        this.inputfield.placeholder = "Inserisci il tuo nome";
         this.savedDataP = this.creaElementoConId("p", "savedData")
         this.saveBtn = this.creaElementoConId("button", "saveBtn")
         this.saveBtn.innerText = "Salva il dato"
@@ -39,10 +40,9 @@ class SalvaDati {
 
     saveBtnCallback() {
         this.savedDataP.innerHTML = ""
-        localStorage.setItem("nome", JSON.stringify(this.inputfield.value))
+        localStorage.setItem("nome", this.inputfield.value)
         let savedData = localStorage.getItem("nome")
-        let savedDataString = JSON.parse(savedData)
-        this.savedDataP.append(savedDataString)
+        this.savedDataP.innerHTML = savedData
     }
 
     deleteBtnCallback() {
@@ -55,18 +55,18 @@ class SalvaDati {
 
 new SalvaDati();
 
+
 // INIZIO ESERCIZIO SENZA LA CLASSE
-//     let inputfield = document.querySelector("#inputName")
+//     let inputfield = document.querySelector("#inputName").value
 //     let savedDataP = document.querySelector("#savedData")
 //     let saveBtn = document.querySelector("#saveBtn")
 //     let deleteBtn = document.querySelector("#deleteBtn")
 
 //     saveBtn.addEventListener("click", function () {
 //         savedDataP.innerHTML = ""
-//         localStorage.setItem("nome", JSON.stringify(inputfield.value))
+//         localStorage.setItem("nome", inputfield)
 //         let savedData = localStorage.getItem("nome")
-//         let savedDataString = JSON.parse(savedData)
-//         savedDataP.append(savedDataString)
+//         savedDataP.innerHTML = savedData
 //     })
 
 //     deleteBtn.addEventListener("click", function () {
@@ -82,26 +82,16 @@ new SalvaDati();
 // ESERCIZIO 2
 let secondsP = document.querySelector("#seconds")
 
-let seconds = 0
+let seconds = sessionStorage.getItem("clock") || 0
 
-function updateClock() {
-
-    secondsP.innerText = seconds
-
+setInterval(function() {
+    
     seconds++
-
+    
     sessionStorage.setItem("clock", JSON.stringify(secondsP.innerText))
-}
-
-
-addEventListener("load", function () {
-    let savedSeconds = sessionStorage.getItem("clock")
-    let savedSecondsConverted = JSON.parse(savedSeconds)
-    seconds = savedSecondsConverted
-
-
-})
-setInterval(updateClock, 1000)
+    
+    secondsP.innerText = seconds
+}, 1000)
 
 
 
