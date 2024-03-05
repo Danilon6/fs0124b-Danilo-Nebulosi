@@ -53,7 +53,7 @@ class SalvaDati {
 
 }
 
-let test = new SalvaDati();
+new SalvaDati();
 
 // INIZIO ESERCIZIO SENZA LA CLASSE
 //     let inputfield = document.querySelector("#inputName")
