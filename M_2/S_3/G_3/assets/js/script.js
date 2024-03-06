@@ -116,6 +116,17 @@ fetch("https://striveschool-api.herokuapp.com/books")
                 cardContainerA.forEach(el => {
                     el.classList.add("d-none")
                 });
+                let cardContainerNewBtn = document.createElement("a")
+                cardContainerNewBtn.classList.add("btn", "btn-primary", "me-2")
+                // INSERISCO IL TESTO
+                cardContainerNewBtn.innerHTML = "RIMUOVI DAL ARRELLO"
+                // GLI DO L'ADD EVENT LISTENER
+                cardContainerNewBtn.addEventListener("click", () => {
+                    let cardParentCart = cardContainerNewBtn.closest(".col-12")
+                    cardParentCart.classList.add("d-none")
+                })
+
+                cardContainerCopia.append(cardContainerNewBtn)
 
                 
                 cartContainer.append(cardContainerCopia)
