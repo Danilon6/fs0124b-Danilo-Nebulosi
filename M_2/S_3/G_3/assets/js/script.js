@@ -98,7 +98,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
             cartBtn.setAttribute("href", "#offcanvasExample")
             cartBtn.setAttribute("aria-controls", "#offcanvasExample")
             // SETTO LE CLASSI
-            cartBtn.classList.add("btn", "btn-primary")
+            cartBtn.classList.add("btn", "btn-primary", "mt-2", "mt-xl-0")
             // INSERISCO IL TESTO
             cartBtn.innerHTML = "AGGIUNGI AL CARRELLO"
             
