@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="modal-dialog modal-fullscreen-sm-down d-none" id="modal">
+        Hai già aggiunto questo articolo al carrello
+      </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Il tuo carrello</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="row row-gap-5" id="targetCarrello">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-flex">
+            <h1 class="m-auto my-5">LIBRERIA</h1>
+        </div>
+        <div class="row row-gap-5" id="target">
+
+        </div>
+
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
