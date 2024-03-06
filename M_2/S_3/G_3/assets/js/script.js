@@ -47,8 +47,8 @@ fetch("https://striveschool-api.herokuapp.com/books")
             let titoloDaVisualizzare;
 
             if (libro.title.length > 30) {
-                titoloDaVisualizzare = libro.title.slice(0,31) + "..."
-            }else{
+                titoloDaVisualizzare = libro.title.slice(0, 31) + "..."
+            } else {
                 titoloDaVisualizzare = libro.title
             }
             h5.innerHTML = titoloDaVisualizzare
@@ -70,10 +70,10 @@ fetch("https://striveschool-api.herokuapp.com/books")
             // SETTO LE CLASSI
             pPrice.classList.add("card-text")
             // INSERISCO IL TITOLO DEL LIBRO
-            pPrice.innerHTML = `Prezzo: <b>${libro.price} ${valuta}</b>` 
+            pPrice.innerHTML = `Prezzo: <b>${libro.price} ${valuta}</b>`
             // LO INSERISCO NEL CARD BODY
             cardBody.append(pPrice)
-            
+
             // CREO IL BTN DEL CARD BODY 
             let btn = document.createElement("a")
             // SETTO GLI ATTRIBUTI
@@ -89,10 +89,10 @@ fetch("https://striveschool-api.herokuapp.com/books")
             })
             // LO INSERISCO NEL CARD BODY
             cardBody.append(btn)
-            
+
             // CREO IL BTN PER IL CARRELLO E SELEZIONE IL TARGET DEI DIV
             let cartBtn = document.createElement("a")
-            
+
             // SETTO GLI ATTRIBUTI
             cartBtn.setAttribute("data-bs-toggle", "offcanvas")
             cartBtn.setAttribute("href", "#offcanvasExample")
@@ -101,7 +101,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
             cartBtn.classList.add("btn", "btn-primary", "mt-2", "mt-xl-0")
             // INSERISCO IL TESTO
             cartBtn.innerHTML = "AGGIUNGI AL CARRELLO"
-            
+
 
             // GLI DO L'ADD EVENT LISTENER
             cartBtn.addEventListener("click", () => {
@@ -128,7 +128,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
 
                 cardContainerCopia.append(cardContainerNewBtn)
 
-                
+
                 cartContainer.append(cardContainerCopia)
                 localStorage.setItem("cart", JSON.stringify(cartContainer))
             })
@@ -137,8 +137,8 @@ fetch("https://striveschool-api.herokuapp.com/books")
 
         }
 
-       // PERSISTE
-        
+        // PERSISTE
+
 
     })
 
