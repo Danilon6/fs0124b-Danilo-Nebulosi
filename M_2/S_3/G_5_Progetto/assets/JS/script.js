@@ -1,7 +1,5 @@
-loader = document.querySelector("#loader")
 
-setInterval(() => {
-    
+loader = document.querySelector("#loader")
 
 fetch('https://striveschool-api.herokuapp.com/api/product/', {
     method: "GET",
@@ -16,12 +14,9 @@ fetch('https://striveschool-api.herokuapp.com/api/product/', {
             // SELEZIONO I CONTENUTI DEL MODALE CHE GESTIRà L'ELIMINAZIONE
             let titolo = document.querySelector(".deleteModal-title")
             let contenuto = document.querySelector(".deleteModal-body")
-            let stopBtn = document.querySelector("#stopRequest")
-            let continueBtn = document.querySelector("#continueRequest")
             let closeBtn = document.querySelector("#closeBtn")
 
             let containerTelefono = generaClone()
-
             let modello = containerTelefono.querySelector(".card-title")
             let descrizione = containerTelefono.querySelector("#descrizione")
             let brand = containerTelefono.querySelector("#brand")
@@ -40,34 +35,39 @@ fetch('https://striveschool-api.herokuapp.com/api/product/', {
             prezzo.innerHTML = telefono.price
 
             deleteBtn.addEventListener('click', function () {
-                titolo.innerHTML = `Stai per eliminare ${telefono.name}`
-                contenuto.innerHTML = `Se sicuro di voler eliminare ${telefono.name} definitivamente?`
 
-                continueBtn.addEventListener("click", function () {
+                // titolo.innerHTML =
+                //     contenuto.innerHTML = `Se sicuro di voler eliminare ${telefono.name} definitivamente?`
 
-                    fetch(`https://striveschool-api.herokuapp.com/api/product/${telefono._id}`, {
-                        method: "DELETE",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
-                        }
-                    })
-                        .then(res => res.json())
-                        .then(telefonoEliminato => {
-                            closeBtn.click()
-                            deleteBtn.closest(".container_telefono").remove()
-
-                        })
-                })
-
-                stopBtn.addEventListener("click", function () {
-                    closeBtn.click()
-                })
+                Swal.fire({
+                    title: `You are going to eliminate ${telefono.name}, are you sure?`,
+                    showDenyButton: true,
+                    confirmButtonText: "Cancel",
+                    denyButtonText: `Don't cancel`
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                            fetch(`https://striveschool-api.herokuapp.com/api/product/${telefono._id}`, {
+                                method: "DELETE",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+                                }
+                            })
+                                .then(res => res.json())
+                                .then(telefonoEliminato => {
+                                    Swal.fire("Canceled!", "", "success");
+                                    deleteBtn.closest(".container_telefono").remove()
+                                })
+                    } else if (result.isDenied) {
+                        Swal.fire(`${telefono.name} not eliminated`, "", "error");
+                    }
+                });
 
             })
 
-            
-            
+
+
             document.querySelector(".target").append(containerTelefono)
         });
 
@@ -76,7 +76,7 @@ fetch('https://striveschool-api.herokuapp.com/api/product/', {
     .then(
         loader.classList.add("d-none")
     )
-}, 20000);
+
 function generaClone() {
     let template = document.querySelector('#template-telefono')
     let clone = template.content.cloneNode(true)

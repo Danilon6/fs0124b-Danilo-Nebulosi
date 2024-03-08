@@ -1,0 +1,9 @@
+.navbar-brand img{
+    height: 30px;
+}
+
+#url-immagine{
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: fill;
+}
