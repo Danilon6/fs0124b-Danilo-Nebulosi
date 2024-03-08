@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="./back-office.html">Back
+                            Office</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="loader" class="container my-5 d-flex">
+        <button class="btn btn-primary m-auto" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            <span role="status">I CONTENUTI SONO IN FASE DI ELABORAZIONE</span>
+        </button>
+    </div>
+
+    
+
+    <div class="container">
+        <div class="row target row-gap-3 my-4">
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title deleteModal-title"></h5>
+                    <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body deleteModal-body">
+                </div>
+                <div class="modal-footer">
+                    <button id="continueRequest" type="button" class="btn btn-success">SI SONO SICURO</button>
+                    <button id="stopRequest" type="button" class="btn btn-danger" data-bs-dismiss="modal">NO, HO
+                        SBAGLIATO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="template-telefono">
+        <div class="col-12 col-md-4 col-lg-3 container_telefono">
+            <div class="card">
+                <img id="url-immagine" src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p id="descrizione" class="card-text"></p>
+                    <p id="brand" class="card-text"></p>
+                    <p id="prezzo" class="card-text"></p>
+                    <div class="d-flex justify-content-between">
+                        <a id="editBtn" href="" class="btn btn-warning">MODIFICA</a>
+                        <a id="infoBtn" href="" class="btn btn-info">DETTAGLI</a>
+                        <button id="deleteBtn" class="btn btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#deleteModal"><i class="bi bi-trash3"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/JS/script.js"></script>
+</body>
+
+</html>

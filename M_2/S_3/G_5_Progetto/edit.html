@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title resetModal-title"></h5>
+                    <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body resetModal-body">
+                </div>
+                <div class="modal-footer">
+                    <button id="continueRequest" type="button" class="btn btn-success">SI SONO SICURO</button>
+                    <button id="stopRequest" type="button" class="btn btn-danger" data-bs-dismiss="modal">NO, HO
+                        SBAGLIATO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="./index.html">HOME</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <h1>Modifica lo smartphone</h1>
+    </div>
+    <div class="container mb-4">
+        <form>
+            <div class="mb-3">
+                <label for="modello-telefono" class="form-label">Modello dello smartphone</label>
+                <input type="text" class="form-control" id="modello-telefono" aria-describedby="emailHelp"
+                    placeholder="Inserisci il modello" required>
+            </div>
+            <div class="mb-3">
+                <label for="brand" class="form-label">Brand</label>
+                <input type="text" class="form-control" id="brand" placeholder="Inserisci il brand" required>
+            </div>
+            <div class="mb-3">
+                <label for="prezzo" class="form-label">Prezzo</label>
+                <input type="number" class="form-control" id="prezzo" placeholder="Inserisci il prezzo" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="Url-immagine" class="form-label">URL immagine</label>
+                <input type="url" class="form-control" id="Url-immagine" placeholder="Inserisci l'URL dell'immagine"
+                    required>
+            </div>
+            <div class="mb-3">
+                <p><label for="descrizione-prodotto">Descrizione del prodotto</label></p>
+                <textarea class="form-control" id="descrizione-prodotto" name="descrizione-prodotto" rows="4" cols="50"
+                    required></textarea>
+            </div>
+
+            <div class="d-flex justify-content-end gap-4">
+                <button id="resetBtn" type="submit" class="btn btn-light" data-bs-toggle="modal"
+                    data-bs-target="#resetModal">RESET</button>
+                <button id="editBtn" type="submit" class="btn btn-warning">MODIFICA</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        // SELEZIONO I CONTENUTI DEL MODALE CHE GESTIRà IL RESET DELLE MODIFICHE
+        let titolo = document.querySelector(".resetModal-title")
+        let contenuto = document.querySelector(".resetModal-body")
+        let stopBtn = document.querySelector("#stopRequest")
+        let continueBtn = document.querySelector("#continueRequest")
+        let closeBtn = document.querySelector("#closeBtn")
+
+
+        let url = new URLSearchParams(location.search)
+        let id = url.get('id')
+        getData()
+
+        resetBtn.addEventListener("click", function (e) {
+            e.preventDefault()
+            titolo.innerHTML = "Stai per annullare tutte le modifiche effettuate!"
+            contenuto.innerHTML = "Se sicuro di voler procedere?"
+
+            continueBtn.addEventListener("click", function () {
+                getData()
+                closeBtn.click()
+            })
+
+            stopBtn.addEventListener("click", function () {
+                closeBtn.click()
+            })
+            
+
+        })
+
+        editBtn.addEventListener("click", edit)
+
+        function edit(e) {
+            e.preventDefault()
+
+            let name = document.querySelector("#modello-telefono").value
+            let description = document.querySelector("#descrizione-prodotto").value
+            let brand = document.querySelector("#brand").value
+            let price = document.querySelector("#prezzo").value
+            let imageUrl = document.querySelector("#Url-immagine").value
+
+            let smartphoneModificato = {
+                name,
+                description,
+                brand,
+                price,
+                imageUrl
+            }
+
+            fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+                },
+                body: JSON.stringify(smartphoneModificato)
+            })
+                .then(res => res.json())
+                .then(telefono => {
+
+                    // INSERIRE UN AVVISO DI AVVENUTA MODIFICA 
+
+                    location.href = "index.html"
+                })
+
+        }
+
+        function getData() {
+            fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+                }
+            })
+                .then(res => res.json())
+                .then(telefono => {
+                    let modello = document.querySelector("#modello-telefono")
+                    let brand = document.querySelector("#brand")
+                    let prezzo = document.querySelector("#prezzo")
+                    let urlImmagine = document.querySelector("#Url-immagine")
+                    let descrizioneProdotto = document.querySelector("#descrizione-prodotto")
+                    let editBtn = document.querySelector("#editBtn")
+                    let resetBtn = document.querySelector("#resetBtn")
+
+                    modello.value = telefono.name
+                    brand.value = telefono.brand
+                    prezzo.value = telefono.price
+                    urlImmagine.value = telefono.imageUrl
+                    descrizioneProdotto.value = telefono.description
+                })
+        }
+
+    </script>
+</body>
+
+</html>

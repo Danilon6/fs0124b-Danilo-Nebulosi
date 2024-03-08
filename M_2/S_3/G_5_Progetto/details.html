@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details page</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="./index.html">HOME</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <h1 id="h1"></h1>
+    </div>
+
+    <div class="container mb-4">
+        <div class="col-12">
+            <div class="card">
+                <img id="url-immagine" src="" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p id="descrizione" class="card-text"></p>
+                    <p id="brand" class="card-text"></p>
+                    <p id="prezzo" class="card-text"></p>
+                    <div class="d-flex justify-content-between">
+                        <a id="back-home" href="" class="btn btn-dark"><i class="bi bi-arrow-left-square"></i></a>
+                        <button class="btn btn-secondary">AGGIUNGI AL CARRELLO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let url = new URLSearchParams(location.search)
+        let id = url.get('id')
+        console.log(id);
+
+        fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+            }
+        })
+            .then(res => res.json())
+            .then(telefono => {
+                let titolo = document.querySelector(".card-title")
+                let descrizione = document.querySelector("#descrizione")
+                let brand = document.querySelector("#brand")
+                let imageurl = document.querySelector("#url-immagine")
+                let prezzo = document.querySelector("#prezzo")
+                let backHome = document.querySelector("#back-home")
+
+                backHome.addEventListener("click", function () {
+                    backHome.href = "index.html"
+                })
+
+
+                titolo.innerHTML = telefono.name
+                descrizione.innerHTML = telefono.description
+                brand.innerHTML = telefono.brand
+                imageurl.src = telefono.imageUrl
+                prezzo.innerHTML = telefono.price
+            })
+
+    </script>
