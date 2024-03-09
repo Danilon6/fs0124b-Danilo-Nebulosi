@@ -11,32 +11,12 @@
 </head>
 
 <body>
-    <!-- <div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title resetModal-title"></h5>
-                    <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body resetModal-body">
-                </div>
-                <div class="modal-footer">
-                    <button id="continueRequest" type="button" class="btn btn-success">SI SONO SICURO</button>
-                    <button id="stopRequest" type="button" class="btn btn-danger" data-bs-dismiss="modal">NO, HO
-                        SBAGLIATO</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img class="" src="./assets/img/Amazon_logo.png" alt="Logo amazon">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -90,13 +70,6 @@
     <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // SELEZIONO I CONTENUTI DEL MODALE CHE GESTIRà IL RESET DELLE MODIFICHE
-        let titolo = document.querySelector(".resetModal-title")
-        let contenuto = document.querySelector(".resetModal-body")
-        let stopBtn = document.querySelector("#stopRequest")
-        let continueBtn = document.querySelector("#continueRequest")
-        let closeBtn = document.querySelector("#closeBtn")
-
 
         let url = new URLSearchParams(location.search)
         let id = url.get('id')
@@ -104,19 +77,20 @@
 
         resetBtn.addEventListener("click", function (e) {
             e.preventDefault()
-            titolo.innerHTML = "Stai per annullare tutte le modifiche effettuate!"
-            contenuto.innerHTML = "Se sicuro di voler procedere?"
-
-            continueBtn.addEventListener("click", function () {
-                getData()
-                closeBtn.click()
-            })
-
-            stopBtn.addEventListener("click", function () {
-                closeBtn.click()
-            })
-
-
+            Swal.fire({
+                title: "Stai per annullare tutte le modifiche!",
+                showDenyButton: true,
+                confirmButtonText: "Annulla",
+                denyButtonText: `Non annullare`
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    getData()
+                    Swal.fire("Tutte le modifiche sono state annullate!", "", "success");
+                } else if (result.isDenied) {
+                    Swal.fire("Le modifiche non sono state annullate", "", "error");
+                }
+            });
         })
 
         editBtn.addEventListener("click", edit)
@@ -146,15 +120,15 @@
                 },
                 body: JSON.stringify(smartphoneModificato)
             })
-            await   Swal.fire({
-                        icon: "success",
-                        title: "Your work has been saved",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-            
-                    location.href = "index.html"
-                }
+            await Swal.fire({
+                icon: "success",
+                title: `${smartphoneModificato.name} è stato modificato con successo`,
+                showConfirmButton: false,
+                timer: 2000
+            });
+
+            location.href = "index.html"
+        }
 
         async function getData() {
             const response = await fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
@@ -164,21 +138,21 @@
                     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
                 }
             })
-                let telefono = await response.json()
-                    let modello = document.querySelector("#modello-telefono")
-                    let brand = document.querySelector("#brand")
-                    let prezzo = document.querySelector("#prezzo")
-                    let urlImmagine = document.querySelector("#Url-immagine")
-                    let descrizioneProdotto = document.querySelector("#descrizione-prodotto")
-                    let editBtn = document.querySelector("#editBtn")
-                    let resetBtn = document.querySelector("#resetBtn")
+            let telefono = await response.json()
+            let modello = document.querySelector("#modello-telefono")
+            let brand = document.querySelector("#brand")
+            let prezzo = document.querySelector("#prezzo")
+            let urlImmagine = document.querySelector("#Url-immagine")
+            let descrizioneProdotto = document.querySelector("#descrizione-prodotto")
+            let editBtn = document.querySelector("#editBtn")
+            let resetBtn = document.querySelector("#resetBtn")
 
-                    modello.value = telefono.name
-                    brand.value = telefono.brand
-                    prezzo.value = telefono.price
-                    urlImmagine.value = telefono.imageUrl
-                    descrizioneProdotto.value = telefono.description
-                }
+            modello.value = telefono.name
+            brand.value = telefono.brand
+            prezzo.value = telefono.price
+            urlImmagine.value = telefono.imageUrl
+            descrizioneProdotto.value = telefono.description
+        }
 
     </script>
 </body>

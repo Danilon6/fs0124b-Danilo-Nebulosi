@@ -1,81 +1,66 @@
 
 loader = document.querySelector("#loader")
 
-fetch('https://striveschool-api.herokuapp.com/api/product/', {
-    method: "GET",
-    headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
-    },
-})
-    .then(res => res.json())
-    .then(telefoni => {
+call()
+
+async function call() {
+    const response = await fetch('https://striveschool-api.herokuapp.com/api/product/', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+        },
+    })
+    const telefoni = await response.json()
+    if (telefoni.length == 0) {
+        Swal.fire({
+            icon: "error",
+            title: "Non è stato trovato nessun prodotto! ",
+            text: "Crea un nuovo telefono nella sezione Back office per visualizzarlo nella home",
+            footer: '<a href="./back-office.html">Vai al back Office</a>'
+        });
+        loader.classList.add("d-none")
+    } else {
         telefoni.forEach(telefono => {
-            // SELEZIONO I CONTENUTI DEL MODALE CHE GESTIRà L'ELIMINAZIONE
-            let titolo = document.querySelector(".deleteModal-title")
-            let contenuto = document.querySelector(".deleteModal-body")
-            let closeBtn = document.querySelector("#closeBtn")
 
             let containerTelefono = generaClone()
-            let modello = containerTelefono.querySelector(".card-title")
-            let descrizione = containerTelefono.querySelector("#descrizione")
-            let brand = containerTelefono.querySelector("#brand")
-            let imageurl = containerTelefono.querySelector("#url-immagine")
-            let prezzo = containerTelefono.querySelector("#prezzo")
-            let editBtn = containerTelefono.querySelector("#editBtn")
-            let deleteBtn = containerTelefono.querySelector("#deleteBtn")
-            let infoBtn = containerTelefono.querySelector("#infoBtn")
-            editBtn.href = `edit.html?id=${telefono._id}`
-            infoBtn.href = `details.html?id=${telefono._id}`
 
-            modello.innerHTML = telefono.name
-            descrizione.innerHTML = telefono.description
-            brand.innerHTML = telefono.brand
-            imageurl.src = telefono.imageUrl
-            prezzo.innerHTML = telefono.price
+            let { modello, descrizione, brand, imageurl, prezzo, editBtn, deleteBtn, infoBtn } = selezioneElementiClone(containerTelefono)
+
+            modificaElementiClone(editBtn, infoBtn, modello, descrizione, brand, imageurl, prezzo, telefono)
 
             deleteBtn.addEventListener('click', function () {
 
-                // titolo.innerHTML =
-                //     contenuto.innerHTML = `Se sicuro di voler eliminare ${telefono.name} definitivamente?`
-
                 Swal.fire({
-                    title: `You are going to eliminate ${telefono.name}, are you sure?`,
+                    title: `Stai per eliminare ${telefono.name}, se sicuro ?`,
                     showDenyButton: true,
-                    confirmButtonText: "Cancel",
-                    denyButtonText: `Don't cancel`
+                    confirmButtonText: "Si, voglio eliminarlo",
+                    denyButtonText: `No, ho sbagliato`
                 }).then((result) => {
-                    /* Read more about isConfirmed, isDenied below */
                     if (result.isConfirmed) {
-                            fetch(`https://striveschool-api.herokuapp.com/api/product/${telefono._id}`, {
-                                method: "DELETE",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
-                                }
+                        fetch(`https://striveschool-api.herokuapp.com/api/product/${telefono._id}`, {
+                            method: "DELETE",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+                            }
+                        })
+                            .then(res => res.json())
+                            .then(telefonoEliminato => {
+                                Swal.fire(`Hai cancellato ${telefono.name}`, "", "success");
+                                deleteBtn.closest(".container_telefono").remove()
                             })
-                                .then(res => res.json())
-                                .then(telefonoEliminato => {
-                                    Swal.fire("Canceled!", "", "success");
-                                    deleteBtn.closest(".container_telefono").remove()
-                                })
                     } else if (result.isDenied) {
-                        Swal.fire(`${telefono.name} not eliminated`, "", "error");
+                        Swal.fire(`${telefono.name} non è stato eliminato!`, "", "error");
                     }
                 });
-
             })
-
-
-
+            
             document.querySelector(".target").append(containerTelefono)
         });
-
-
-    })
-    .then(
         loader.classList.add("d-none")
-    )
+    }
+}
 
 function generaClone() {
     let template = document.querySelector('#template-telefono')
@@ -83,5 +68,35 @@ function generaClone() {
     return clone;
 }
 
+function selezioneElementiClone(elemento) {
+    let modello = elemento.querySelector(".card-title")
+    let descrizione = elemento.querySelector("#descrizione")
+    let brand = elemento.querySelector("#brand")
+    let imageurl = elemento.querySelector("#url-immagine")
+    let prezzo = elemento.querySelector("#prezzo")
+    let editBtn = elemento.querySelector("#editBtn")
+    let deleteBtn = elemento.querySelector("#deleteBtn")
+    let infoBtn = elemento.querySelector("#infoBtn")
 
+    return {
+        modello: modello,
+        descrizione: descrizione,
+        brand: brand,
+        imageurl: imageurl,
+        prezzo: prezzo,
+        editBtn: editBtn,
+        deleteBtn: deleteBtn,
+        infoBtn: infoBtn,
+    }
+}
 
+function modificaElementiClone(editBtn, infoBtn, modello, descrizione, brand, imageurl, prezzo, telefono) {
+    editBtn.href = `edit.html?id=${telefono._id}`
+    infoBtn.href = `details.html?id=${telefono._id}`
+
+    modello.innerHTML = telefono.name
+    descrizione.innerHTML = telefono.description
+    brand.innerHTML = telefono.brand
+    imageurl.src = telefono.imageUrl
+    prezzo.innerHTML = telefono.price
+}

@@ -4,6 +4,12 @@
 
 #url-immagine{
     max-width: 100%;
+    height: 100%;
     aspect-ratio: 1/1;
     object-fit: fill;
+}
+
+.alignment-custom{
+    bottom: 5px;
+    right: 5px;
 }
