@@ -83,10 +83,10 @@
         resetBtn.addEventListener("click", function (e) {
             e.preventDefault();
             Swal.fire({
-                title: "Stai per annullare tutte le modifiche!",
+                title: "Stai per annullare tutte le modifiche! Sei sicuro di voler continuare?",
                 showDenyButton: true,
-                confirmButtonText: "Annulla",
-                denyButtonText: `Non annullare`,
+                confirmButtonText: "Si annulla",
+                denyButtonText: `No non annullare`,
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
@@ -106,7 +106,6 @@
 
         async function edit(e) {
             e.preventDefault();
-
             let name = document.querySelector("#modello-telefono").value;
             let description = document.querySelector("#descrizione-prodotto").value;
             let brand = document.querySelector("#brand").value;
@@ -160,9 +159,7 @@
             let brand = document.querySelector("#brand");
             let prezzo = document.querySelector("#prezzo");
             let urlImmagine = document.querySelector("#Url-immagine");
-            let descrizioneProdotto = document.querySelector(
-                "#descrizione-prodotto"
-            );
+            let descrizioneProdotto = document.querySelector("#descrizione-prodotto");
             let editBtn = document.querySelector("#editBtn");
             let resetBtn = document.querySelector("#resetBtn");
 
