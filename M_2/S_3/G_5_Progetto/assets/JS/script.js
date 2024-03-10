@@ -1,6 +1,6 @@
 
 loader = document.querySelector("#loader")
-
+h1 = document.querySelector("h1")
 call()
 
 async function call() {
@@ -20,6 +20,8 @@ async function call() {
             footer: '<a href="./back-office.html">Vai al back Office</a>'
         });
         loader.classList.add("d-none")
+        h1.innerHTML = "Non ci sono prodotti"
+        h1.classList.add("text-danger", "m-auto")
     } else {
         telefoni.forEach(telefono => {
 
@@ -32,7 +34,7 @@ async function call() {
             deleteBtn.addEventListener('click', function () {
 
                 Swal.fire({
-                    title: `Stai per eliminare ${telefono.name}, se sicuro ?`,
+                    title: `Stai per eliminare ${telefono.name}, sei sicuro ?`,
                     showDenyButton: true,
                     confirmButtonText: "Si, voglio eliminarlo",
                     denyButtonText: `No, ho sbagliato`
@@ -47,7 +49,7 @@ async function call() {
                         })
                             .then(res => res.json())
                             .then(telefonoEliminato => {
-                                Swal.fire(`Hai cancellato ${telefono.name}`, "", "success");
+                                Swal.fire(`Hai eliminato ${telefono.name}`, "", "success");
                                 deleteBtn.closest(".container_telefono").remove()
                             })
                     } else if (result.isDenied) {

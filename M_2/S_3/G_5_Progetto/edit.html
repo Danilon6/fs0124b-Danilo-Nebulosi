@@ -31,12 +31,12 @@
         </div>
     </nav>
     <div class="container my-4">
-        <h1>Modifica lo smartphone</h1>
+        <h1>Modifica il prodotto</h1>
     </div>
     <div class="container mb-4">
         <form>
             <div class="mb-3">
-                <label for="modello-telefono" class="form-label">Modello dello smartphone</label>
+                <label for="modello-telefono" class="form-label">Modello</label>
                 <input type="text" class="form-control" id="modello-telefono" aria-describedby="emailHelp"
                     placeholder="Inserisci il modello" required />
             </div>
@@ -56,18 +56,18 @@
             </div>
             <div class="mb-3">
                 <p>
-                    <label for="descrizione-prodotto">Descrizione del prodotto</label>
+                    <label for="descrizione-prodotto">Descrizione</label>
                 </p>
                 <textarea class="form-control" id="descrizione-prodotto" name="descrizione-prodotto" rows="4" cols="50"
                     required></textarea>
             </div>
 
             <div class="d-flex justify-content-end gap-4">
-                <button id="resetBtn" type="submit" class="btn btn-light" data-bs-toggle="modal"
+                <button id="resetBtn" type="submit" class="btn btn-outline-dark" data-bs-toggle="modal"
                     data-bs-target="#resetModal">
                     RESET
                 </button>
-                <button id="editBtn" type="submit" class="btn btn-warning">
+                <button id="editBtn" type="submit" class="btn btn-outline-warning">
                     MODIFICA
                 </button>
             </div>
@@ -91,13 +91,19 @@
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     getData();
-                    Swal.fire(
-                        "Tutte le modifiche sono state annullate!",
-                        "",
-                        "success"
-                    );
+                    Swal.fire({
+                        icon: "success",
+                        title: "Tutte le modifiche sono state annullate!",
+                        showConfirmButton: false,
+                        timer: 2000,
+                    });
                 } else if (result.isDenied) {
-                    Swal.fire("Le modifiche non sono state annullate", "", "error");
+                    Swal.fire({
+                        icon: "error",
+                        title: "Le modifiche non sono state annullate",
+                        showConfirmButton: false,
+                        timer: 2000,
+                    });
                 }
             });
         });
@@ -120,26 +126,37 @@
                 imageUrl,
             };
 
-            await fetch(
-                `https://striveschool-api.herokuapp.com/api/product/${id}`,
-                {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization:
-                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E",
-                    },
-                    body: JSON.stringify(smartphoneModificato),
+            Swal.fire({
+                title: `Stai per modificare ${name}, sei sicuro ?`,
+                showDenyButton: true,
+                confirmButtonText: "Si, voglio modificarlo",
+                denyButtonText: `No, ho sbagliato`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    fetch(
+                        `https://striveschool-api.herokuapp.com/api/product/${id}`,
+                        {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                                Authorization:
+                                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E",
+                            },
+                            body: JSON.stringify(smartphoneModificato),
+                        }
+                    ).then(() => {
+                        Swal.fire({
+                            icon: "success",
+                            title: `${smartphoneModificato.name} è stato modificato con successo`,
+                            showConfirmButton: false,
+                            timer: 2000,
+                        }).then(() => { location.href = "index.html"; })
+                    })
+                } else if (result.isDenied) {
+                    Swal.fire(`${name} non è stato modificato!`, "", "error");
                 }
-            );
-            await Swal.fire({
-                icon: "success",
-                title: `${smartphoneModificato.name} è stato modificato con successo`,
-                showConfirmButton: false,
-                timer: 2000,
             });
 
-            location.href = "index.html";
         }
 
         async function getData() {

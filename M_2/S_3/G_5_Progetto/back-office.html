@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -32,38 +33,42 @@
     </nav>
 
     <div class="container my-4">
+        <h1>Crea un nuovo prodotto</h1>
+    </div>
+    <div class="container my-4">
+
         <form>
             <div class="mb-3">
                 <label for="modello-telefono" class="form-label">Modello dello smartphone</label>
                 <input type="text" class="form-control" id="modello-telefono" aria-describedby="emailHelp"
-                    placeholder="Inserisci il modello" required>
+                    placeholder="Inserisci il modello">
             </div>
             <div class="mb-3">
                 <label for="brand" class="form-label">Brand</label>
-                <input type="text" class="form-control" id="brand" placeholder="Inserisci il brand" required>
+                <input type="text" class="form-control" id="brand" placeholder="Inserisci il brand">
             </div>
             <div class="mb-3">
                 <label for="prezzo" class="form-label">Prezzo</label>
-                <input type="number" class="form-control" id="prezzo" placeholder="Inserisci il prezzo" required>
+                <input type="number" class="form-control" id="prezzo" placeholder="Inserisci il prezzo">
             </div>
 
             <div class="mb-3">
                 <label for="Url-immagine" class="form-label">URL immagine</label>
-                <input type="url" class="form-control" id="Url-immagine" placeholder="Inserisci l'URL dell'immagine"
-                    required>
+                <input type="url" class="form-control" id="Url-immagine" placeholder="Inserisci l'URL dell'immagine">
             </div>
             <div class="mb-3">
                 <p><label for="descrizione-prodotto">Descrizione del prodotto</label></p>
                 <textarea class="form-control" id="descrizione-prodotto" name="descrizione-prodotto"
-                    placeholder="Inserisci la descrizione" rows="4" cols="50" required></textarea>
+                    placeholder="Inserisci la descrizione" rows="4" cols="50"></textarea>
             </div>
 
             <div class="d-flex">
-                <button id="SaveBtn" type="submit" class="btn btn-secondary ms-auto">SALVA</button>
+                <button id="SaveBtn" type="submit" class="btn btn-outline-primary ms-auto">SALVA</button>
             </div>
         </form>
     </div>
 
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <script>
         class Telefono {
             constructor(modello, descrizioneProdotto, brand, urlImmagine, prezzo) {
@@ -77,30 +82,46 @@
 
 
         let saveBtn = document.querySelector("#SaveBtn")
-        console.log(saveBtn);
+
         saveBtn.addEventListener("click", function (e) {
-            e.preventDefault()
-            let modello = document.querySelector("#modello-telefono").value
-            let brand = document.querySelector("#brand").value
-            let prezzo = document.querySelector("#prezzo").value
-            let urlImmagine = document.querySelector("#Url-immagine").value
-            let descrizioneProdotto = document.querySelector("#descrizione-prodotto").value
-            const telefono = new Telefono(modello, descrizioneProdotto, brand, urlImmagine, prezzo)
+            e.preventDefault();
+            let modello = document.querySelector("#modello-telefono").value;
+            let brand = document.querySelector("#brand").value;
+            let prezzo = document.querySelector("#prezzo").value;
+            let urlImmagine = document.querySelector("#Url-immagine").value;
+            let descrizioneProdotto = document.querySelector("#descrizione-prodotto").value;
+            const telefono = new Telefono(modello, descrizioneProdotto, brand, urlImmagine, prezzo);
 
-            fetch('https://striveschool-api.herokuapp.com/api/product/', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
-                },
-                body: JSON.stringify(telefono)
-            })
-                .then(res => res.json())
-                .then(telefoni => {
-                    location.href = "index.html";
+            if (!modello || !brand || !prezzo || !urlImmagine || !descrizioneProdotto) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Alcuni campi sono vuoti!",
+                    showConfirmButton: false,
+                    timer: 2500,
+                });
+            } else {
+                fetch('https://striveschool-api.herokuapp.com/api/product/', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+                    },
+                    body: JSON.stringify(telefono)
                 })
+                    .then(res => res.json())
+                    .then(telefono => {
+                        Swal.fire({
+                            icon: "success",
+                            title: `${telefono.name} è stato creato con successo`,
+                            showConfirmButton: false,
+                            timer: 2000,
+                        }).then(() => {
+                            location.href = "index.html";
+                        });
+                    });
+            }
+        });
 
-        })
     </script>
 </body>
 
