@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edit page</title>
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img class="" src="./assets/img/Amazon_logo.png" alt="Logo amazon">
+                <img class="" src="./assets/img/Amazon_logo.png" alt="Logo amazon" />
             </a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -38,122 +38,140 @@
             <div class="mb-3">
                 <label for="modello-telefono" class="form-label">Modello dello smartphone</label>
                 <input type="text" class="form-control" id="modello-telefono" aria-describedby="emailHelp"
-                    placeholder="Inserisci il modello" required>
+                    placeholder="Inserisci il modello" required />
             </div>
             <div class="mb-3">
                 <label for="brand" class="form-label">Brand</label>
-                <input type="text" class="form-control" id="brand" placeholder="Inserisci il brand" required>
+                <input type="text" class="form-control" id="brand" placeholder="Inserisci il brand" required />
             </div>
             <div class="mb-3">
                 <label for="prezzo" class="form-label">Prezzo</label>
-                <input type="number" class="form-control" id="prezzo" placeholder="Inserisci il prezzo" required>
+                <input type="number" class="form-control" id="prezzo" placeholder="Inserisci il prezzo" required />
             </div>
 
             <div class="mb-3">
                 <label for="Url-immagine" class="form-label">URL immagine</label>
                 <input type="url" class="form-control" id="Url-immagine" placeholder="Inserisci l'URL dell'immagine"
-                    required>
+                    required />
             </div>
             <div class="mb-3">
-                <p><label for="descrizione-prodotto">Descrizione del prodotto</label></p>
+                <p>
+                    <label for="descrizione-prodotto">Descrizione del prodotto</label>
+                </p>
                 <textarea class="form-control" id="descrizione-prodotto" name="descrizione-prodotto" rows="4" cols="50"
                     required></textarea>
             </div>
 
             <div class="d-flex justify-content-end gap-4">
                 <button id="resetBtn" type="submit" class="btn btn-light" data-bs-toggle="modal"
-                    data-bs-target="#resetModal">RESET</button>
-                <button id="editBtn" type="submit" class="btn btn-warning">MODIFICA</button>
+                    data-bs-target="#resetModal">
+                    RESET
+                </button>
+                <button id="editBtn" type="submit" class="btn btn-warning">
+                    MODIFICA
+                </button>
             </div>
         </form>
     </div>
     <script src="./node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-
-        let url = new URLSearchParams(location.search)
-        let id = url.get('id')
-        getData()
+        let url = new URLSearchParams(location.search);
+        let id = url.get("id");
+        getData();
 
         resetBtn.addEventListener("click", function (e) {
-            e.preventDefault()
+            e.preventDefault();
             Swal.fire({
                 title: "Stai per annullare tutte le modifiche!",
                 showDenyButton: true,
                 confirmButtonText: "Annulla",
-                denyButtonText: `Non annullare`
+                denyButtonText: `Non annullare`,
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
-                    getData()
-                    Swal.fire("Tutte le modifiche sono state annullate!", "", "success");
+                    getData();
+                    Swal.fire(
+                        "Tutte le modifiche sono state annullate!",
+                        "",
+                        "success"
+                    );
                 } else if (result.isDenied) {
                     Swal.fire("Le modifiche non sono state annullate", "", "error");
                 }
             });
-        })
+        });
 
-        editBtn.addEventListener("click", edit)
+        editBtn.addEventListener("click", edit);
 
         async function edit(e) {
-            e.preventDefault()
+            e.preventDefault();
 
-            let name = document.querySelector("#modello-telefono").value
-            let description = document.querySelector("#descrizione-prodotto").value
-            let brand = document.querySelector("#brand").value
-            let price = document.querySelector("#prezzo").value
-            let imageUrl = document.querySelector("#Url-immagine").value
+            let name = document.querySelector("#modello-telefono").value;
+            let description = document.querySelector("#descrizione-prodotto").value;
+            let brand = document.querySelector("#brand").value;
+            let price = document.querySelector("#prezzo").value;
+            let imageUrl = document.querySelector("#Url-immagine").value;
 
             let smartphoneModificato = {
                 name,
                 description,
                 brand,
                 price,
-                imageUrl
-            }
+                imageUrl,
+            };
 
-            await fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
-                },
-                body: JSON.stringify(smartphoneModificato)
-            })
+            await fetch(
+                `https://striveschool-api.herokuapp.com/api/product/${id}`,
+                {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization:
+                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E",
+                    },
+                    body: JSON.stringify(smartphoneModificato),
+                }
+            );
             await Swal.fire({
                 icon: "success",
                 title: `${smartphoneModificato.name} è stato modificato con successo`,
                 showConfirmButton: false,
-                timer: 2000
+                timer: 2000,
             });
 
-            location.href = "index.html"
+            location.href = "index.html";
         }
 
         async function getData() {
-            const response = await fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E"
+            const response = await fetch(
+                `https://striveschool-api.herokuapp.com/api/product/${id}`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization:
+                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZTYwYTJkN2IxMTAwMTkwZTZlZWUiLCJpYXQiOjE3MDk4OTMxMzAsImV4cCI6MTcxMTEwMjczMH0.D90x1gKirs-QbiLsLO_IpURvYI5UqNpnH7Nu_OYNC-E",
+                    },
                 }
-            })
-            let telefono = await response.json()
-            let modello = document.querySelector("#modello-telefono")
-            let brand = document.querySelector("#brand")
-            let prezzo = document.querySelector("#prezzo")
-            let urlImmagine = document.querySelector("#Url-immagine")
-            let descrizioneProdotto = document.querySelector("#descrizione-prodotto")
-            let editBtn = document.querySelector("#editBtn")
-            let resetBtn = document.querySelector("#resetBtn")
+            );
+            let telefono = await response.json();
+            let modello = document.querySelector("#modello-telefono");
+            let brand = document.querySelector("#brand");
+            let prezzo = document.querySelector("#prezzo");
+            let urlImmagine = document.querySelector("#Url-immagine");
+            let descrizioneProdotto = document.querySelector(
+                "#descrizione-prodotto"
+            );
+            let editBtn = document.querySelector("#editBtn");
+            let resetBtn = document.querySelector("#resetBtn");
 
-            modello.value = telefono.name
-            brand.value = telefono.brand
-            prezzo.value = telefono.price
-            urlImmagine.value = telefono.imageUrl
-            descrizioneProdotto.value = telefono.description
+            modello.value = telefono.name;
+            brand.value = telefono.brand;
+            prezzo.value = telefono.price;
+            urlImmagine.value = telefono.imageUrl;
+            descrizioneProdotto.value = telefono.description;
         }
-
     </script>
 </body>
 
