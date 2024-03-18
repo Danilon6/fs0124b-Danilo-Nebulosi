@@ -29,6 +29,7 @@ class User {
     }
     azzeraChiamate() {
         this.numeroChiamate = 0;
+        return true;
     }
 }
 const persona1 = new User("Danilo", "Nebulosi");

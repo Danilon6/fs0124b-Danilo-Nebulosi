@@ -38,8 +38,9 @@ class User implements iSmartphone {
         return this.numeroChiamate
     }
 
-    azzeraChiamate():void{
+    azzeraChiamate():boolean{
         this.numeroChiamate = 0
+        return true
     }
 }
 
