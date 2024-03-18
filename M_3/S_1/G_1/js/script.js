@@ -1,15 +1,15 @@
 "use strict";
 class User {
-    constructor(nome, cognome, credito, numeroChiamate) {
+    constructor(nome, cognome) {
         this.nome = nome;
         this.cognome = cognome;
-        this.credito = credito;
-        this.numeroChiamate = numeroChiamate;
+        this.credito = 0;
+        this.numeroChiamate = 0;
     }
-    ricarica(ricarica) {
+    set ricarica(ricarica) {
         this.credito += ricarica;
     }
-    chiamata(minuti) {
+    set chiamata(minuti) {
         let costoChiamata = minuti * 0.20;
         if (this.credito < costoChiamata)
             throw new Error("Non hai abbastanza credito residuo");
@@ -21,22 +21,22 @@ class User {
         }
         this.numeroChiamate += minuti;
     }
-    chiama404() {
+    get chiama404() {
         return this.credito;
     }
-    getNumeroChiamata() {
+    get getNumeroChiamata() {
         return this.numeroChiamate;
     }
     azzeraChiamate() {
         this.numeroChiamate = 0;
     }
 }
-const persona1 = new User("Danilo", "Nebulosi", 0, 0);
-console.log(persona1.ricarica(10));
-console.log(persona1.chiama404());
-console.log(persona1.chiamata(5));
-console.log(persona1.chiama404());
-console.log(persona1.getNumeroChiamata());
+const persona1 = new User("Danilo", "Nebulosi");
+persona1.ricarica = 10;
+console.log(persona1.chiama404);
+persona1.chiamata = 5;
+console.log(persona1.chiama404);
+console.log(persona1.getNumeroChiamata);
 console.log(persona1.azzeraChiamate());
-console.log(persona1.getNumeroChiamata());
+console.log(persona1.getNumeroChiamata);
 //# sourceMappingURL=script.js.map

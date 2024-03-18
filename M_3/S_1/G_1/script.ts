@@ -8,16 +8,16 @@ class User implements iSmartphone {
     credito: number
     numeroChiamate: number
 
-    constructor(protected nome:string, protected cognome:string, credito:number, numeroChiamate:number,){
-        this.credito = credito
-        this.numeroChiamate = numeroChiamate
+    constructor(protected nome:string, protected cognome:string){
+        this.credito = 0
+        this.numeroChiamate = 0
     }
 
-    ricarica(ricarica:number):void{
+    set ricarica(ricarica:number){
         this.credito += ricarica
     }
 
-    chiamata(minuti:number):void{
+    set chiamata(minuti:number){
         let costoChiamata = minuti * 0.20
         if(this.credito < costoChiamata) throw new Error("Non hai abbastanza credito residuo");
         
@@ -29,11 +29,12 @@ class User implements iSmartphone {
 
         this.numeroChiamate += minuti
     }
-    chiama404():number{
+
+    get chiama404():number{
         return this.credito
     }
 
-    getNumeroChiamata():number{
+    get getNumeroChiamata():number{
         return this.numeroChiamate
     }
 
@@ -42,12 +43,14 @@ class User implements iSmartphone {
     }
 }
 
-const persona1:User = new User("Danilo", "Nebulosi", 0, 0)
+const persona1:User = new User("Danilo", "Nebulosi")
 
-console.log(persona1.ricarica(10));
-console.log(persona1.chiama404());
-console.log(persona1.chiamata(5));
-console.log(persona1.chiama404());
-console.log(persona1.getNumeroChiamata());
+
+
+persona1.ricarica = 10
+console.log(persona1.chiama404);
+persona1.chiamata = 5
+console.log(persona1.chiama404);
+console.log(persona1.getNumeroChiamata);
 console.log(persona1.azzeraChiamate());
-console.log(persona1.getNumeroChiamata());
+console.log(persona1.getNumeroChiamata);
