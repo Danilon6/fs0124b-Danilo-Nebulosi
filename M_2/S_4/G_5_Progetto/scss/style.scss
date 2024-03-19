@@ -1,0 +1,218 @@
+$green: #1ed760;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// HOME
+#full-window {
+  height: 100vh;
+  overflow: hidden;
+
+  #three-column {
+    height: 90vh;
+    overflow-y: hidden;
+
+    .paragrafoHover:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #left-col {
+      height: 60vh;
+      overflow-y: auto;
+      color: rgb(151, 151, 151);
+    }
+    #mid-col {
+      height: 90vh;
+      overflow-y: auto;
+      background: rgb(24, 24, 24);
+      background: linear-gradient(
+        5deg,
+        rgba(24, 24, 24, 1) 49%,
+        rgba(88, 88, 88, 1) 100%
+      );
+
+      .album-title {
+        font-size: 70px;
+      }
+
+      .btn.rounded-circle {
+        background-color: #181818;
+      }
+      #card {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          5deg,
+          rgba(0, 0, 0, 1) 39%,
+          rgba(88, 88, 88, 1) 100%
+        );
+      }
+      .img-size {
+        width: 80px;
+      }
+      .custom-card {
+        background-color: rgb(29, 29, 29);
+        color: #ffffff;
+      }
+    }
+    #right-col {
+      height: 90vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+
+  #player {
+    background-color: #181818;
+
+    .control-buttons {
+      #playIcon {
+        background-color: white;
+        display: inline-block;
+        color: #111;
+        border-radius: 50%;
+        &:hover {
+          background-color: $green;
+          transform: scale(1.1);
+        }
+      }
+
+      .sideIcon:hover {
+        color: $green;
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.text-white.mb-3 {
+  background-color: #353535;
+}
+
+.displayNone {
+  display: none;
+}
+
+#inputCerca {
+  background-color: black;
+  border-radius: 25px;
+  padding: 10px;
+  border: 2px solid white;
+}
+#inputCerca::placeholder {
+  color: white;
+}
+
+.flex-shrink-0.dropdown {
+  border-radius: 25px;
+  padding: 2px;
+}
+
+.right-card {
+  font-size: small;
+  color: rgb(151, 151, 151);
+  .grey-text-small {
+    font-size: 10px;
+  }
+}
+
+.letter-spacing {
+  letter-spacing: 0.1em;
+}
+
+// ALBUM
+#mid-col {
+  img.rounded.mx-auto {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.445);
+    width: 250px;
+  }
+  #icon-container {
+    i:nth-of-type(1) {
+      font-size: 60px;
+      color: $green;
+    }
+    i {
+      font-size: 40px;
+      color: gray;
+    }
+  }
+}
+
+.following {
+  font-size: 10px;
+}
+
+#card-artista {
+  background-color: #181818;
+}
+// pPLAYER
+.progress-controller {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #999;
+}
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+#progress-bar {
+  height: 8px;
+  border-radius: 10px;
+  background-color: #ccc4;
+}
+
+// .progress-bar:hover .progress {
+//   background-color: $green;
+// }
+#progress-bar:hover .progress::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  right: 0;
+  border-radius: 50%;
+  background-color: #ddd;
+  transform: translate(50%, calc(2px - 50%));
+}
+// #progressed {
+//   // -webkit-appearance: none;
+//   // appearance: none;
+//   background: $green;
+//   cursor: pointer;
+// }
+input[type="range"] {
+  accent-color: $green;
+}
+
+.bi-chevron-left,.bi-chevron-right{
+
+  padding: 0 6px;
+}
+
+
+// ARTIST PAGE
+.coverArtist{
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pointer{
+  cursor: pointer;
+}
+.paragrafoHover:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
