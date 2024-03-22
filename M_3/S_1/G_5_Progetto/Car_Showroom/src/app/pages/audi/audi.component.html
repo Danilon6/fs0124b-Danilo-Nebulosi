@@ -5,7 +5,7 @@
 <div class="row" *ngIf="carsArr.length > 0">
   <div class="col-12 col-md-6 mb-4 mb-md-0" *ngFor="let car of carsArr">
     <div class="card">
-      <img [src]="'../../../assets/' + car.modelImage" class="card-img-top" alt="">
+      <img [src]="'../../../assets/' + car.modelImage" class="card-img-top img-car" alt="">
       <div class="card-body py-3">
         <h5 class="card-title fs-1">{{car.brand}} {{car.model}}</h5>
         <div class="row my-4">
@@ -20,7 +20,9 @@
       }"></span>
         </div>
         <div class="d-flex mt-2">
-          <a [routerLink]="['/car',car.id]"class="btn btn-outline-info ms-auto">DETTAGLI</a>
+          <div class="ms-auto">
+            <a [routerLink]="['/car',car.id]"class="btn btn-outline-info me-3">DETTAGLI</a>
+            <button routerLink="/" class="btn btn-outline-dark">HOME</button>
         </div>
       </div>
     </div>
