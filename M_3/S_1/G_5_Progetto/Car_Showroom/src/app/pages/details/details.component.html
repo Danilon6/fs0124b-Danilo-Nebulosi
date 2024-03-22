@@ -3,7 +3,7 @@
 <div class="row" *ngIf="carArr.length > 0">
   <div class="col-12">
     <div class="card">
-      <img [src]="carArr[0].modelImage" class="card-img-top" alt="">
+      <img [src]="'../../../assets/' + carArr[0].modelImage" class="card-img-top" alt="">
       <div class="card-body py-3">
         <h5 class="card-title fs-1">{{carArr[0].brand}} {{carArr[0].model}}</h5>
         <div class="row my-4">

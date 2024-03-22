@@ -4,7 +4,7 @@
 <div class="row" *ngIf="carsArr.length > 0">
   <div class="col-12 col-md-6 mb-4 mb-md-0" *ngFor="let car of carsArr">
     <div class="card">
-      <img [src]="car.modelImage" class="card-img-top" alt="">
+      <img [src]="'../../../assets/' + car.modelImage" class="card-img-top" alt="">
       <div class="card-body py-3">
         <h5 class="card-title fs-1">{{car.brand}} {{car.model}}</h5>
         <div class="row my-4">
