@@ -1,8 +1,8 @@
 
-<h1>Le nostre {{carsArr[0].brand}}</h1>
+<h1 class="my-4 border-bottom border-dark pb-1">Le nostre {{carsArr[0].brand}}</h1>
 
 <div class="row" *ngIf="carsArr.length > 0">
-  <div class="col-6" *ngFor="let car of carsArr">
+  <div class="col-12 col-md-6 mb-4 mb-md-0" *ngFor="let car of carsArr">
     <div class="card">
       <img [src]="car.modelImage" class="card-img-top" alt="">
       <div class="card-body py-3">

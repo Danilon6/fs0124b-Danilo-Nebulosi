@@ -1,13 +1,31 @@
-<h2 class="my-3">I nostri marchi</h2>
-<div class="row">
-  <div class="col-4" *ngFor="let logo of allLogoArr">
-    <img [src]="logo" alt="">
+<div class="card my-5">
+  <div class="card-header">
+    <h1 class="fs-1 text-center text-secondary">Car ShowRoom</h1>
+  </div>
+  <div class="py-3">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p class="text-center mb-2 fs-4">Guida l'emozione, abbraccia l'eleganza. Il tuo viaggio verso il lusso
+        incomparabile. Scopri la potenza, la bellezza e l'innovazione con noi</p>
+    </blockquote>
+  </div>
+  <div class="d-flex">
+    <a [routerLink]="['/car',idRandom]" class="btn btn-outline-success m-auto">Lasciati ispirare</a>
+  </div>
+</div>
+</div>
+
+
+<h2 class="my-3">I nostri partner</h2>
+<div class="row my-4">
+  <div class="col-4 d-flex align-items-center" *ngFor="let logo of allLogoArr">
+    <img [src]="'../../../assets/' + logo.slice(2)" alt="" class="img-fluid">
   </div>
 </div>
 
-<h2 class="my-3">Le nostre auto in evidenza</h2>
+<h2 class="my-3">Auto in evidenza</h2>
 <div class="row" *ngIf="carsArr.length > 0">
-  <div class="col-6" *ngFor="let car of randomCarsArr">
+  <div class="col-12 col-md-6 mb-4 mb-md-0" *ngFor="let car of randomCarsArr">
     <div class="card">
       <img [src]="car.modelImage" class="card-img-top" alt="">
       <div class="card-body py-3">
@@ -24,7 +42,7 @@
       }"></span>
         </div>
         <div class="d-flex mt-2">
-          <a [routerLink]="['/car',car.id]"class="btn btn-outline-info ms-auto">DETTAGLI</a>
+          <a [routerLink]="['/car',car.id]" class="btn btn-outline-info ms-auto">DETTAGLI</a>
         </div>
       </div>
     </div>
