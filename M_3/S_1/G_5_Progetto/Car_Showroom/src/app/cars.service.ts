@@ -44,7 +44,7 @@ export class CarsService {
     return this.getAllcars()
     .then( cars => {
       const logo:string[] = [];
-      cars.filter(car => {
+      cars.map(car => {
         if (!logo.includes(car.brandLogo)) {
           logo.push(car.brandLogo)
         }

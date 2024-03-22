@@ -22,9 +22,6 @@ export class HomeComponent {
   constructor(private carSvc:CarsService){}
 
   ngOnInit():void{
-    this.carSvc.getAllLogo().then(loghi => this.allLogoArr = loghi)
-    this.carSvc.getAllcars().then(cars => this.carsArr = cars)
-    this.carSvc.getRandomAvailableCars(2).then(cars => this.randomCarsArr = cars)
     this.carSvc.getAllcars().then(cars => {
       for (let i = 0; i < cars.length; i++) {
         this.carsIdArr.push(cars[i].id)
@@ -35,5 +32,7 @@ export class HomeComponent {
       const randomIndex =  Math.floor(Math.random() * carsIdArr.length);
         this.idRandom = carsIdArr[randomIndex]
     })
+    this.carSvc.getAllLogo().then(loghi => this.allLogoArr = loghi)
+    this.carSvc.getRandomAvailableCars(2).then(cars => this.randomCarsArr = cars)
   }
 }

@@ -14,6 +14,6 @@ export class FiatComponent {
 
   ngOnInit():void{
     this.carSvc.getAllcars().then(cars => cars.filter(cars => cars.brand == 'Fiat'))
-    .then(ford => this.carsArr = ford)
+    .then(fiat => this.carsArr = fiat)
   }
 }
