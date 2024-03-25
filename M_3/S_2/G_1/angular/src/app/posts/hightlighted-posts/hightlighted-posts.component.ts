@@ -13,6 +13,6 @@ export class HightlightedPostsComponent {
   constructor(private postsSvc:PostsService){}
 
   ngOnInit():void{
-    this.postsSvc.getFirstPost().then(res => this.postArr.push(res))
+    this.postArr.push(this.postsSvc.getFirstPost())
   }
 }

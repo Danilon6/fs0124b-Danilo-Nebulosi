@@ -13,6 +13,6 @@ export class CouldLikeComponent {
   constructor(private postsSvc:PostsService){}
 
   ngOnInit():void{
-    this.postsSvc.getRandomPosts(4).then(res => this.postArr = res)
+    this.postArr = this.postsSvc.getRandomPosts(4)
   }
 }

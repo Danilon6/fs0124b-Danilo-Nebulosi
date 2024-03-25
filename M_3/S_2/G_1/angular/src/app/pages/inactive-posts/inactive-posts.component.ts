@@ -13,6 +13,6 @@ export class InactivePostsComponent {
   constructor(private postsSvc:PostsService){}
 
   ngOnInit():void{
-    this.postsSvc.getInactivePost().then(res => this.postArr = res)
+    this.postArr = this.postsSvc.getInactivePost()
   }
 }
