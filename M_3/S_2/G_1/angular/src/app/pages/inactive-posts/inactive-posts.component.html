@@ -1,14 +1,3 @@
-<div class="container my-3">
-  <h2>Post inattivi</h2>
-  <div class="row mt-3 row-gap-4" *ngIf="postArr.length > 0">
-      <div class="col-4" *ngFor="let post of postArr">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{post.title}}</h5>
-            <p class="card-text">{{post.body.slice(0,250) + '...'}}</p>
-            <p class="text-secondary">Tags: {{post.tags}}</p>
-          </div>
-        </div>
-      </div>
-  </div>
-</div>
+<app-post-item *ngFor="let post of postArr" [post]="post">
+
+</app-post-item>

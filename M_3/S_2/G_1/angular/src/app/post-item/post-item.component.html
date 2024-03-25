@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-2" *ngIf="post">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.body}}</p>
+          <p class="text-secondary">Tags: {{post.tags}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

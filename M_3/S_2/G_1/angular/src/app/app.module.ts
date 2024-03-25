@@ -11,6 +11,8 @@ import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.co
 import { HightlightedPostsComponent } from './posts/hightlighted-posts/hightlighted-posts.component';
 import { CouldLikeComponent } from './posts/could-like/could-like.component';
 import { Pagina404Component } from './pages/pagina-404/pagina-404.component';
+import { PostItemComponent } from './post-item/post-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { Pagina404Component } from './pages/pagina-404/pagina-404.component';
     InactivePostsComponent,
     HightlightedPostsComponent,
     CouldLikeComponent,
-    Pagina404Component
+    Pagina404Component,
+    PostItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
