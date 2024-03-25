@@ -8,6 +8,5 @@ import { PostsService } from '../posts.service';
   styleUrl: './post-item.component.scss'
 })
 export class PostItemComponent {
-
   @Input() post!:iPost
 }

@@ -8,8 +8,6 @@ import { FooterComponent } from './mainComponents/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ActivePostsComponent } from './pages/active-posts/active-posts.component';
 import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.component';
-import { HightlightedPostsComponent } from './posts/hightlighted-posts/hightlighted-posts.component';
-import { CouldLikeComponent } from './posts/could-like/could-like.component';
 import { Pagina404Component } from './pages/pagina-404/pagina-404.component';
 import { PostItemComponent } from './post-item/post-item.component';
 import { FormsModule } from '@angular/forms';
@@ -22,8 +20,6 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ActivePostsComponent,
     InactivePostsComponent,
-    HightlightedPostsComponent,
-    CouldLikeComponent,
     Pagina404Component,
     PostItemComponent
   ],
