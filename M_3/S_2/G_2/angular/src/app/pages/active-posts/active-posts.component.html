@@ -1,3 +1,20 @@
+<div class="container">
+
+  <div class="d-flex align-items-center">
+    <p class="m-0">FILTER BY:</p>
+    <button (click)="toggleClicked(tag)" *ngFor="let tag of tagsArr"
+    [ngClass]="{
+      'mx-1': true,
+      'btn':true,
+      'btn-success':clicked[tag],
+      'btn-secondary':!clicked[tag]
+
+    }"
+    >{{tag | uppercase}}</button>
+  </div>
+
+  </div>
+
 <app-post-item *ngFor="let post of postArr" [post]="post">
 
 </app-post-item>

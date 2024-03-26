@@ -11,6 +11,7 @@ import { InactivePostsComponent } from './pages/inactive-posts/inactive-posts.co
 import { Pagina404Component } from './pages/pagina-404/pagina-404.component';
 import { PostItemComponent } from './post-item/post-item.component';
 import { FormsModule } from '@angular/forms';
+import { ColorDirective } from './color.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     ActivePostsComponent,
     InactivePostsComponent,
     Pagina404Component,
-    PostItemComponent
+    PostItemComponent,
+    ColorDirective,
   ],
   imports: [
     BrowserModule,
