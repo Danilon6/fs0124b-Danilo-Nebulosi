@@ -286,7 +286,7 @@ export class PostsService {
       allTags.push(post.tags)
     });
     let allTagsConcat:string[] = allTags.flat()
-    return this.tagsArr = allTagsConcat.filter((value, index, self) => self.indexOf(value) === index);
+    return this.tagsArr = allTagsConcat.filter((value, index, arr) => arr.indexOf(value) === index);
   }
 
 
