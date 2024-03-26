@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="text-center">Post in evidenza</h1>
+  <div class="row">
+    <app-post-item *ngFor="let post of firstPostArr" [post]="post">
+      <button (click)="mostraForm = !mostraForm" class="btn btn-primary">MOSTRA FORM</button>
+      <div *ngIf="mostraForm">
+        <input type="text" class="form-control" placeholder="titolo" [(ngModel)]="post.title">
+        <input type="text" class="form-control" placeholder="contenuto" [(ngModel)]="post.body">
+        <select type="text" class="form-control" placeholder="tags" [(ngModel)]="post.tags">
+          <option value="fiction">Fiction</option>
+          <option value="history">History</option>
+          <option value="mystery">Mystery</option>
+        </select>
+        <button class="btn btn-outline-warning">MODIFICA</button>
+      </div>
+    </app-post-item>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2 class="text-center">Post che potrebbero piacerti</h2>
+  <div class="row">
+    <app-post-item *ngFor="let post of randomPostArr" [post]="post">
+      <button (click)="mostraForm = !mostraForm" class="btn btn-primary">MOSTRA FORM</button>
+      <div *ngIf="mostraForm">
+        <input type="text" class="form-control" placeholder="titolo" [(ngModel)]="post.title">
+        <input type="text" class="form-control" placeholder="contenuto" [(ngModel)]="post.body">
+        <select type="text" class="form-control" placeholder="tags" [(ngModel)]="post.tags">
+          <option value="fiction">Fiction</option>
+          <option value="history">History</option>
+          <option value="mystery">Mystery</option>
+        </select>
+        <button class="btn btn-outline-warning">MODIFICA</button>
+      </div>
+    </app-post-item>
+  </div>
+</div>
