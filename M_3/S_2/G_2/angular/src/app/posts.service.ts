@@ -9,7 +9,7 @@ export class PostsService {
   colorArr:string[] = [
     "#7FFFD4", "#FBCEB1", "#E52B50", "#FFBF00", "#884DA7", "#FC6C85", "#293133", "#ED7465", "#FF6600", "#708090",
     "#C0C0C0", "#87A96B", "#5D8AA8", "#FFFFF0", "#D3305D", "#007FFF", "#ABCDEF", "#F5F5DC", "#908435", "#BEBD7F",
-    "#FFFFFF", "#FFFEEF", "#F2F3F4", "#FAEBD7", "#FEFEE9", "#F8F8FF", "#FFFAF0", "#F5F5F5", "#FFDEAD", "#FFE4C4",
+    "#FFFEEF", "#F2F3F4", "#FAEBD7", "#FEFEE9", "#F8F8FF", "#FFFAF0", "#F5F5F5", "#FFDEAD", "#FFE4C4",
     "#3D2B1F", "#0000FF", "#4682B4", "#F0F8FF", "#0095B6", "#5F9EA0", "#2A52BE", "#007BB8", "#1C39BB", "#003153",
     "#1E90FF", "#003399", "#000080", "#0000CD", "#191970", "#120A8F", "#B0E0E6", "#003399", "#4169E1", "#00008B",
     "#800000", "#800020", "#CD7F32", "#75663F", "#F0DC82", "#050402", "#D8BFD8", "#960018", "#E0FFFF", "#CD5C5C",
