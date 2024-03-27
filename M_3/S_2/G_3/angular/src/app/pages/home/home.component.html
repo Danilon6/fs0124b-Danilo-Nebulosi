@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="alert alert-success" *ngIf="!productsArr.length">
+    <p>Caricamento in corso...</p>
+  </div>
+  <div class="row row-gap-4">
+    <app-single-product class="col-12 col-lg-5 mx-auto px-0" *ngFor="let product of productsArr" [product]="product"></app-single-product>
+</div>
+</div>

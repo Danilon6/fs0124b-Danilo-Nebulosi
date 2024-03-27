@@ -1,0 +1,18 @@
+<div class="card" *ngIf="product" >
+  <img [src]="product.images[0]" class="card-img-top" alt="">
+  <div class="card-body d-flex flex-column justify-content-center">
+    <h5 class="card-title">{{product.title}}</h5>
+    <p class="card-text">{{product.description.slice(0, 30)}}...</p>
+      <p class="card-text"><small class="text-body-secondary">{{product.category}}</small></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Brand: </b>{{product.brand}}</li>
+    <li class="list-group-item"><b>Prezzo:</b> {{product.price}}</li>
+    <li class="list-group-item"><b>Valutazione: </b>{{product.rating}}</li>
+    <li class="list-group-item"><b>In Stock</b> {{product.stock}}</li>
+  </ul>
+  <div class="d-flex">
+
+    <button (onclick)="addToLiked(product)" class="btn btn-outline-info my-2 mx-auto">AGGIUNGI AI PREFERITI</button>
+  </div>
+</div>
