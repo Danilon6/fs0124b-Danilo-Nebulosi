@@ -12,11 +12,7 @@ export class ITuoiPreferitiComponent {
 
   constructor(private dummySvc: DummyProductService) { }
 
-  ngOnInit(){
-    this.dummySvc.$product.subscribe(t => {
-      console.log(t);
-    })
-  }
+
   add(product:iProduct){
     this.likedProductArr.push(product)
     console.log(product);
