@@ -11,6 +11,8 @@ export class HomeComponent {
 
   photosArr: iPhotos[] = []
 
+  photosLikedArr: iPhotos[] = []
+
 
   constructor(private photosSvc: PhotosService) { }
 
@@ -18,6 +20,12 @@ export class HomeComponent {
     this.photosSvc.$photo.subscribe(photos => {
 
       this.photosArr = photos
+
+    })
+
+    this.photosSvc.$photoLiked.subscribe(photos => {
+
+      this.photosLikedArr = photos
 
     })
   }

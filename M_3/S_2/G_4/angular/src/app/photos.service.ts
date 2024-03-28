@@ -58,5 +58,6 @@ export class PhotosService {
     let currentLikedPhotos = this.photoLikedSubject.value
     currentLikedPhotos = currentLikedPhotos.filter(p => p.id != id)
     this.photoLikedSubject.next(currentLikedPhotos)
+    this.photosLikedArr = currentLikedPhotos
   }
 }
