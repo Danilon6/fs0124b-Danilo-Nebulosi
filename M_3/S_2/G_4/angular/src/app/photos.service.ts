@@ -41,6 +41,7 @@ export class PhotosService {
     const currentPhotos = this.photoLikedSubject.value
     const updatedPhotos = [...currentPhotos, photoLiked];
     this.photoLikedSubject.next(updatedPhotos)
+    this.photosLikedArr.push(photoLiked)
   }
 
   remove(id:number){
