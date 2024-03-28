@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PreferitiComponent } from './pages/preferiti/preferiti.component';
 import { HeaderComponent } from './mainComponents/header/header.component';
 import { FooterComponent } from './mainComponents/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './mainComponents/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
