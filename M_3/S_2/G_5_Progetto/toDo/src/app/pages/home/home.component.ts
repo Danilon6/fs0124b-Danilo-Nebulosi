@@ -15,37 +15,15 @@ interface iSingleObject extends iTodo, iUsers{
 })
 export class HomeComponent {
 
-  todoArr:iTodo[] = []
-
-  usersArr:iUsers[] = []
-
   todoUserArr:iSingleObject[] = []
 
   constructor(private todoSvc:TodoService, private userSvc:UsersService){}
 
-
   ngOnInit(){
-    this.todoSvc.$toDo.subscribe(todo => {
-      this.todoArr = todo
+    this.todoSvc.$toDoAndUser.subscribe(todoAndUserArr => {
+      this.todoUserArr = todoAndUserArr
     })
-
-    this.userSvc.$users.subscribe(users => {
-      this.usersArr = users
-    })
-
-    const oggettiNuovi = this.todoSvc.combinedObject(this.todoArr, this.usersArr)
-    for (const key in oggettiNuovi) {
-
-      let oggetto = oggettiNuovi[key]
-      this.todoUserArr.push(oggetto)
-
-
-    }
-
 
   }
-
-
-
 
 }

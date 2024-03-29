@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ToDoDoneComponent } from './pages/to-do-done/to-do-done.component';
 import { ToDoUndoneComponent } from './pages/to-do-undone/to-do-undone.component';
 import { UsersComponent } from './pages/users/users.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UsersComponent } from './pages/users/users.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

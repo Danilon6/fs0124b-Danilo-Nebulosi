@@ -1,14 +1,31 @@
+import { UsersService } from './users.service';
 import { Injectable } from '@angular/core';
 import { iTodo } from './Models/todo';
 import { BehaviorSubject } from 'rxjs';
 import { iUsers } from './Models/users';
 import { iCombinedObject } from './Models/i-combined-object';
+interface iSingleObject extends iTodo, iUsers{
+}
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class TodoService {
+
+
+  todoUserArr:iSingleObject[] = []
+
+  constructor(private userSvc:UsersService){
+    const oggettiNuovi = this.combinedObject(this.ToDoArr, this.userArr)
+    for (const key in oggettiNuovi) {
+
+      let oggetto = oggettiNuovi[key]
+      this.todoUserArr.push(oggetto)
+    }
+
+    this.toDoAndUserCombinedSubject.next(this.todoUserArr)
+  }
 
   ToDoArr:iTodo[] = [
     {
@@ -913,9 +930,11 @@ export class TodoService {
     }
   ]
 
-  toDoSubject = new BehaviorSubject<iTodo[]>(this.ToDoArr)
+  userArr:iUsers[] = this.userSvc.UsersArr
 
-  $toDo = this.toDoSubject.asObservable()
+  toDoAndUserCombinedSubject = new BehaviorSubject<iSingleObject[]>([])
+
+  $toDoAndUser = this.toDoAndUserCombinedSubject.asObservable()
 
 
   combinedObject(todoArr:iTodo[], userArr:iUsers[]){
