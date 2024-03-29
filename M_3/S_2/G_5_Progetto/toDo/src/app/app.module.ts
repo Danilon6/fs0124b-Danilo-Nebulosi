@@ -22,6 +22,7 @@ import { UsersComponent } from './pages/users/users.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     AppRoutingModule
   ],
   providers: [],
