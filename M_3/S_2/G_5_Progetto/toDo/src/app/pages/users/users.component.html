@@ -1,1 +1,33 @@
-<p>users works!</p>
+<div class="row" *ngIf="userWithToDos">
+  <div class="col-12 my-2" *ngFor="let todo of userWithToDos; let i = index" >
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="todo.image" class="img-fluid rounded-start" alt="">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{todo.firstName}} {{todo.lastName}}</h5>
+            <p class="card-text">{{todo.title}}</p>
+
+
+            <div class="card" *ngFor="let todoitem of userWithToDos[i].todo" [ngClass]="{
+              'bg-success' : todoitem.completed,
+              'bg-danger' : !todoitem.completed,
+            }">
+            <div class="d-flex align-items-center px-3">
+              <div> <input type="checkbox" [(ngModel)]="todoitem.completed"></div>
+              <div class="card-body">
+                <h5 class="card-title">{{todoitem.todo}}</h5>
+              </div>
+            </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

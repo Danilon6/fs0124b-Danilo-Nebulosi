@@ -1,15 +1,15 @@
+import { TodoService } from './todo.service';
 import { Injectable } from '@angular/core';
 import { iUsers } from './Models/users';
 import { BehaviorSubject } from 'rxjs';
+import { iSingleObject } from './Models/i-single-object';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor() { }
-
-  UsersArr:iUsers[] = [
+  usersArr:iUsers[] = [
     {
       id:1,
       firstName:"Terry",
@@ -812,7 +812,9 @@ export class UsersService {
     }
   ]
 
-  usersSubject = new BehaviorSubject<iUsers[]>(this.UsersArr)
+
+
+  usersSubject = new BehaviorSubject<iUsers[]>(this.usersArr)
 
   $users = this.usersSubject.asObservable()
 

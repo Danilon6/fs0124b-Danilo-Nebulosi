@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-12 my-2" *ngFor="let todo of todoUserArr">
+  <input type="text" placeholder="Enter Your Name Here" [(ngModel)]="value" (input)="filter(value)">
+  <div class="col-12 my-2 px-0" *ngFor="let todo of todoUserArr">
     <div class="card" [ngClass]="{
       'bg-success' : todo.completed,
       'bg-danger' : !todo.completed

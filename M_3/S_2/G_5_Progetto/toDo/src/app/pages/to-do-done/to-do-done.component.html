@@ -1,1 +1,19 @@
+<div class="row">
+  <div class="col-12 my-2" *ngFor="let todo of toDoDoneUserArr">
+    <div class="card" [ngClass]="{
+      'bg-success' : todo.completed,
+      'bg-danger' : !todo.completed
+    }">
+    <div class="d-flex align-items-center px-3">
+      <div> <input type="checkbox" [(ngModel)]="todo.completed"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{todo.todo}}</h5>
+        <p class="card-text">Assigned to: {{todo.firstName}} {{todo.lastName}}</p>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
 

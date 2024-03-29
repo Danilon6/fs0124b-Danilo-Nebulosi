@@ -1,12 +1,8 @@
-import { iCombinedObject } from './../../Models/i-combined-object';
-import { iUsers } from './../../Models/users';
 import { UsersService } from './../../users.service';
 import { Component } from '@angular/core';
 import { TodoService } from '../../todo.service';
-import { iTodo } from '../../Models/todo';
+import { iSingleObject } from '../../Models/i-single-object';
 
-interface iSingleObject extends iTodo, iUsers{
-}
 
 @Component({
   selector: 'app-home',
@@ -15,6 +11,9 @@ interface iSingleObject extends iTodo, iUsers{
 })
 export class HomeComponent {
 
+  value:string = ""
+
+
   todoUserArr:iSingleObject[] = []
 
   constructor(private todoSvc:TodoService, private userSvc:UsersService){}
@@ -22,8 +21,14 @@ export class HomeComponent {
   ngOnInit(){
     this.todoSvc.$toDoAndUser.subscribe(todoAndUserArr => {
       this.todoUserArr = todoAndUserArr
-    })
+      console.log(this.todoUserArr);
 
+    })
+  }
+
+  filter(value:string){
+    const filteredArr = this.todoSvc.filterByName(this.todoUserArr, value)
+    return filteredArr
   }
 
 }
