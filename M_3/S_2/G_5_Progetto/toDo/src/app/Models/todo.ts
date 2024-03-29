@@ -1,2 +1,6 @@
-export interface Todo {
+export interface iTodo {
+    userId: number
+    id: number
+    todo: string
+    completed: boolean
 }
