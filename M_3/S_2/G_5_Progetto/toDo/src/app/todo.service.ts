@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { iTodo } from './Models/todo';
+import { BehaviorSubject } from 'rxjs';
+import { iUsers } from './Models/users';
+import { iCombinedObject } from './Models/i-combined-object';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TodoService {
 
-  constructor() { }
+export class TodoService {
 
   ToDoArr:iTodo[] = [
     {
@@ -911,4 +913,23 @@ export class TodoService {
     }
   ]
 
+  toDoSubject = new BehaviorSubject<iTodo[]>(this.ToDoArr)
+
+  $toDo = this.toDoSubject.asObservable()
+
+
+  combinedObject(todoArr:iTodo[], userArr:iUsers[]){
+
+    let combinedObject:iCombinedObject = todoArr.reduce((acc:iCombinedObject, curr) => {
+
+      const user = userArr.find(user => user.id === curr.userId);
+
+      if (user) {
+        acc[curr.id] = { ...curr, ...user };
+      }
+
+      return acc;
+    }, {});
+    return combinedObject;
+  }
 }

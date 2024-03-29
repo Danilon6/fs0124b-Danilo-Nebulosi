@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { iUsers } from './Models/users';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -810,5 +811,9 @@ export class UsersService {
       title:"VP Sales"
     }
   ]
+
+  usersSubject = new BehaviorSubject<iUsers[]>(this.UsersArr)
+
+  $users = this.usersSubject.asObservable()
 
 }
