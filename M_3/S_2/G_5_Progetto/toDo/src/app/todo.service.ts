@@ -21,8 +21,6 @@ export class TodoService {
 
   todoUserArr: iSingleObject[] = []
 
-  copiedArray: iSingleObject[] = []
-
   constructor(private userSvc: UsersService) {
     const newCombinedArr = this.combinedToDoArrAndUserArr(this.toDoArr, this.userArr)
 
@@ -33,8 +31,6 @@ export class TodoService {
     }
 
     this.toDoAndUserCombinedSubject.next(this.todoUserArr)
-
-    this.copiedArray = [...this.todoUserArr]
 
     const usersUpdated = this.CombineUserWithToDos(this.toDoArr, this.userArr)
 
