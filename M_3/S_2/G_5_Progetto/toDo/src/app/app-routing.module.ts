@@ -7,20 +7,20 @@ import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: HomeComponent,
     title: "Home"
   },
   {
-    path:'toDoDone',
+    path: 'toDoDone',
     component: ToDoDoneComponent
   },
   {
-    path:'toDoUnDone',
+    path: 'toDoUnDone',
     component: ToDoUndoneComponent
   },
   {
-    path:'users',
+    path: 'users',
     component: UsersComponent
   },
 ];

@@ -10,18 +10,14 @@ import { iSingleObject } from '../../Models/i-single-object';
 })
 export class ToDoDoneComponent {
 
-  toDoDoneUserArr:iSingleObject[] = []
+  toDoDoneUserArr: iSingleObject[] = []
 
-  constructor(private todoSvc:TodoService, private userSvc:UsersService){}
+  constructor(private todoSvc: TodoService, private userSvc: UsersService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.todoSvc.$toDoAndUser.subscribe(todoAndUserArr => {
       const toDoCompleted = todoAndUserArr.filter(oggetti => oggetti.completed)
-      console.log(toDoCompleted);
-
       this.toDoDoneUserArr = toDoCompleted
-
     })
-
   }
 }

@@ -18,14 +18,12 @@ type userWithToDOsObject = {
 
 export class TodoService {
 
-
   todoUserArr: iSingleObject[] = []
 
   constructor(private userSvc: UsersService) {
     const newCombinedArr = this.combinedToDoArrAndUserArr(this.toDoArr, this.userArr)
 
     for (const key in newCombinedArr) {
-
       let oggetto = newCombinedArr[key]
       this.todoUserArr.push(oggetto)
     }
@@ -35,7 +33,6 @@ export class TodoService {
     const usersUpdated = this.CombineUserWithToDos(this.toDoArr, this.userArr)
 
     for (const key in usersUpdated) {
-
       let oggetto = usersUpdated[key]
       this.userWithToDos.push(oggetto)
     }
@@ -949,7 +946,7 @@ export class TodoService {
 
   userArr: iUsers[] = this.userSvc.usersArr
 
-  userWithToDos:IUserWithToDos[] =[]
+  userWithToDos: IUserWithToDos[] = []
 
   toDoAndUserCombinedSubject = new BehaviorSubject<iSingleObject[]>([])
 
@@ -982,35 +979,35 @@ export class TodoService {
       const todosData = todos.map(todo => ({
         todo: todo.todo,
         completed: todo.completed
-    }));
+      }));
       const userWithTodos: IUserWithToDos = {
-          ...user,
-          todo: todosData
+        ...user,
+        todo: todosData
       };
       acc[user.id] = userWithTodos;
       return acc;
-  }, {});
+    }, {});
 
-  return combinedObject;
+    return combinedObject;
 
   }
 
 
-  filterByName(todoUserArr:iSingleObject[], value:string){
-      value = value.toLowerCase()
+  filterByName(todoUserArr: iSingleObject[], value: string) {
+    value = value.toLowerCase()
 
-        const filtered = todoUserArr.filter((todo) => {
-          const fullName = todo.firstName.toLowerCase() + " " + todo.lastName.toLowerCase()
-          return fullName.includes(value)
-        } )
+    const filtered = todoUserArr.filter((todo) => {
+      const fullName = todo.firstName.toLowerCase() + " " + todo.lastName.toLowerCase()
+      return fullName.includes(value)
+    })
 
-        if (filtered.length > 0 && value) {
-          this.toDoAndUserCombinedSubject.next(filtered)
-          console.log(filtered);
-        }else {
-          this.toDoAndUserCombinedSubject.next(this.todoUserArr)
+    if (filtered.length > 0 && value) {
+      this.toDoAndUserCombinedSubject.next(filtered)
+      console.log(filtered);
+    } else {
+      this.toDoAndUserCombinedSubject.next(this.todoUserArr)
 
-        }
+    }
 
   }
 }

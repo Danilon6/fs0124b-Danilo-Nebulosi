@@ -8,17 +8,13 @@ import { IUserWithToDos } from '../../Models/i-user-with-to-dos';
   styleUrl: './users.component.scss'
 })
 export class UsersComponent {
-  userWithToDos:IUserWithToDos[] = []
+  userWithToDos: IUserWithToDos[] = []
 
-  constructor(private todoSvc:TodoService){}
+  constructor(private todoSvc: TodoService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.todoSvc.$userWithToDOs.subscribe(userWithToDos => {
       this.userWithToDos = userWithToDos
-      console.log(userWithToDos[0].todo[0]);
-
-
     })
-
   }
 }

@@ -1,6 +1,5 @@
 import { IToDoArr } from "./i-to-do-arr";
 
-
 export interface IUserWithToDos {
     id: number;
     firstName: string;
