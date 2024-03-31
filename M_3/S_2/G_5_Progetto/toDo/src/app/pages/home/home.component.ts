@@ -27,8 +27,7 @@ export class HomeComponent {
   }
 
   filter(value:string){
-    const filteredArr = this.todoSvc.filterByName(this.todoUserArr, value)
-    return filteredArr
+   this.todoSvc.filterByName(this.todoUserArr, value)
   }
 
 }

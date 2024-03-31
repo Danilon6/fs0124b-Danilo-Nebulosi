@@ -21,6 +21,8 @@ export class TodoService {
 
   todoUserArr: iSingleObject[] = []
 
+  copiedArray: iSingleObject[] = []
+
   constructor(private userSvc: UsersService) {
     const newCombinedArr = this.combinedToDoArrAndUserArr(this.toDoArr, this.userArr)
 
@@ -32,6 +34,7 @@ export class TodoService {
 
     this.toDoAndUserCombinedSubject.next(this.todoUserArr)
 
+    this.copiedArray = [...this.todoUserArr]
 
     const usersUpdated = this.CombineUserWithToDos(this.toDoArr, this.userArr)
 
@@ -998,6 +1001,23 @@ export class TodoService {
 
 
   filterByName(todoUserArr:iSingleObject[], value:string){
-    todoUserArr.filter((todo) => todo.firstName == value)
+      value = value.toLowerCase()
+
+        const filtered = todoUserArr.filter((todo) => {
+          const fullName = todo.firstName.toLowerCase() + " " + todo.lastName.toLowerCase()
+          return fullName.includes(value)
+        } )
+
+        if (filtered.length > 0 && value) {
+          this.toDoAndUserCombinedSubject.next(filtered)
+          console.log(filtered);
+        }else {
+          this.toDoAndUserCombinedSubject.next(this.todoUserArr)
+
+        }
+
   }
 }
+
+
+
