@@ -9,11 +9,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/chi-siamo">Chi siamo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/auth">Pagina protetta</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" (click)="show = !show" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,6 +21,9 @@
             <li><a class="dropdown-item" routerLink="/servizi/servizio1">Servizio 1</a></li>
             <li><a class="dropdown-item" routerLink="/servizi/servizio2">Servizio 2 (protetto)</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/auth">Pagina protetta</a>
         </li>
       </ul>
     </div>
