@@ -12,6 +12,6 @@ export class AuthGuard {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): MaybeAsync<GuardResult> {
-    return this.authSvc.canLogIn();
+    return this.authSvc.isLoggedIn();
   }
 }

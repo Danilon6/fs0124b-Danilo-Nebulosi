@@ -7,7 +7,7 @@ export class AuthService {
 
   constructor() { }
 
-  canLogIn(){
+  isLoggedIn(){
     return false
   }
 }
