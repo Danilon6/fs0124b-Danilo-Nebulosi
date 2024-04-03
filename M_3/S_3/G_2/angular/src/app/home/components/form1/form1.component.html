@@ -1,0 +1,17 @@
+<h1>Template driven form</h1>
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
+  <input type="text" required name="username" ngModel placeholder="Inserisci il tuo username" class="form-control" #username="ngModel">
+  <div *ngIf="username.invalid && isClicked" class="alert alert-danger">
+    Devi inserire lo username
+  </div>
+  <input [type]="passwordType" required name="password" ngModel placeholder="Inserisci la tua password" class="form-control" #password="ngModel">
+  <div *ngIf="password.invalid && isClicked " class="alert alert-danger">
+    Devi inserire la password
+  </div>
+  <button (click)="isClicked= true" class="btn btn-outline-primary">INVIA</button>
+</form>
+<button (click)="ShowHide()" class="btn btn-outline-secondary" [innerText]="btnText + ' PASSWORD' "></button>
+
+
+
