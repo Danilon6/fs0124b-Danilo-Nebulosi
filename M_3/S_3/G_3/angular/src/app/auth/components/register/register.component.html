@@ -1,0 +1,6 @@
+<form>
+  <input type="text" name="nome" [(ngModel)]="newUser.name" placeholder="nome">
+  <input type="email" name="email" [(ngModel)]="newUser.email" placeholder="email">
+  <input type="password" name="password" [(ngModel)]="newUser.password" placeholder="password">
+  <button (click)="register()" class="btn btn primary">INVIA</button>
+</form>
