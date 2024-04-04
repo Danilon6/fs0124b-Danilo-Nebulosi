@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { iUser } from '../models/i-user';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { ILoginData } from '../models/i-login-data';
 
 type accessData = {
@@ -20,7 +20,7 @@ export class AuthService {
   authSubject = new BehaviorSubject<iUser | null>(null)
 
   $user = this.authSubject.asObservable()
-  $isLoggedIn = this.$user.pipe(tap(user => !!user))
+  $isLoggedIn = this.$user.pipe(map(user => !!user))
 
   constructor(
     private http: HttpClient,
