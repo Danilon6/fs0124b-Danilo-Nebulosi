@@ -11,14 +11,14 @@ export class PhotosService {
   apiUrl: string = "http://localhost:3000/photos";
 
 
-  photosArr:iPhotos[] = []
+  photosArr: iPhotos[] = []
 
   photosSubject = new BehaviorSubject<iPhotos[]>([])
 
   $photo = this.photosSubject.asObservable()
 
 
-  photosLikedArr:iPhotos[] = []
+
 
   photoLikedSubject = new BehaviorSubject<iPhotos[]>([])
 
@@ -41,23 +41,22 @@ export class PhotosService {
     const currentPhotos = this.photoLikedSubject.value
     const updatedPhotos = [...currentPhotos, photoLiked];
     this.photoLikedSubject.next(updatedPhotos)
-    this.photosLikedArr.push(photoLiked)
+
   }
 
-  remove(id:number){
+  remove(id: number) {
     return this.http.delete<iPhotos>(this.apiUrl + '/' + id)
-    .pipe(tap(() => {
-      this.photosArr = this.photosArr.filter(p => p.id != id)
-      this.photosSubject.next(this.photosArr)
-      this.photosLikedArr = this.photosLikedArr.filter(p => p.id != id)
-      this.photoLikedSubject.next(this.photosLikedArr)
-    }))
+      .pipe(tap(() => {
+        this.photosArr = this.photosArr.filter(p => p.id != id)
+        this.photosSubject.next(this.photosArr)
+
+      }))
   }
 
-  removeFromLiked(id:number){
+  removeFromLiked(id: number) {
     let currentLikedPhotos = this.photoLikedSubject.value
     currentLikedPhotos = currentLikedPhotos.filter(p => p.id != id)
     this.photoLikedSubject.next(currentLikedPhotos)
-    this.photosLikedArr = currentLikedPhotos
+
   }
 }
