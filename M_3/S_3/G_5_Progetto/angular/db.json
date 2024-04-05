@@ -5,6 +5,43 @@
       "password": "$2a$10$hHE9aR.KLZunnmyvjEliw.yLyndoUbfaZ.ANhNvfiPQxEhgdxC5.i",
       "name": "Danilo",
       "id": 1
+    },
+    {
+      "email": "mario@email.it",
+      "password": "$2a$10$bq0l1DLEWdxWDKYNVU/EdOxPqJ/cjmPSWinTLzrM58M7mqmt0Hzhi",
+      "name": "mario",
+      "id": 2
+    }
+  ],
+  "movies-popular": [
+    {
+      "id": "1",
+      "title": "Il Signore degli Anelli: La Compagnia dell'Anello",
+      "genre": "Fantasy",
+      "releaseDate": "2001-12-19",
+      "imageUrl": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "2",
+      "title": "Il Signore degli Anelli: La Compagnia dell'Anello",
+      "genre": "Fantasy",
+      "releaseDate": "2001-12-19",
+      "imageUrl": "https://picsum.photos/200/300"
+    },
+    {
+      "id": "3",
+      "title": "Il Signore degli Anelli: La Compagnia dell'Anello",
+      "genre": "Fantasy",
+      "releaseDate": "2001-12-19",
+      "imageUrl": "https://picsum.photos/200/300"
+    }
+  ],
+  "favorites": [
+    {
+      "userId": "1",
+      "movieIds": [
+        "1"
+      ]
     }
   ]
 }
