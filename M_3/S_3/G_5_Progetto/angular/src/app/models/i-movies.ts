@@ -1,5 +1,5 @@
 export interface iMovies {
-  id: string
+  id: number
   title: string
   genre: string
   releaseDate: string
