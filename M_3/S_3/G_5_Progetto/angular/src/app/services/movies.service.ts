@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { iMovies } from '../models/i-movies';
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, of, switchMap, tap } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
 
 type favoritesData = {
-  id:number,
-  userId:number,
-  movieIds:number[]
+  id: number,
+  userId: number,
+  movieIds: number[]
 }
 @Injectable({
   providedIn: 'root'
@@ -16,34 +16,47 @@ type favoritesData = {
 export class MoviesService {
 
   moviesUrl: string = environment.moviesUrl
+
   favoritesUrl: string = environment.favoritesUrl
 
   moviesArr: iMovies[] = []
 
-  moviesLikedArr: iMovies[] = []
 
   moviesSubject = new BehaviorSubject<iMovies[]>([])
 
   $movies = this.moviesSubject.asObservable()
 
+  moviesLikedSubject = new BehaviorSubject<iMovies[]>([])
 
-  userId!:number;
-  constructor(private http: HttpClient, private authSvc:AuthService) {
+  $moviesLiked = this.moviesLikedSubject.asObservable()
+
+  userId!: number;
+  constructor(private http: HttpClient, private authSvc: AuthService) {
     this.getAllMovie().subscribe(data => {
       this.moviesSubject.next(data)
       this.moviesArr = data
     })
+
+    const user = this.authSvc.$user.subscribe(user => {
+      if (user) {
+        this.userId = user.id
+      }
+    })
+
+    this.getFavorites(this.userId).subscribe(data => {
+      this.moviesLikedSubject.next(data)
+    })
   }
 
 
-  getAllMovie(): Observable<iMovies[]>{
+  getAllMovie(): Observable<iMovies[]> {
     return this.http.get<iMovies[]>(this.moviesUrl)
   }
 
 
-  getMovie(id: number): Observable<iMovies>{
-      return this.http.get<iMovies>(this.moviesUrl + '/' + id)
-}
+  getMovie(id: number): Observable<iMovies> {
+    return this.http.get<iMovies>(this.moviesUrl + '/' + id)
+  }
 
   addMovie(newMovie: Partial<iMovies>): Observable<iMovies> {
     return this.http.post<iMovies>(this.moviesUrl, newMovie)
@@ -61,7 +74,7 @@ export class MoviesService {
       }))
   }
 
-  editMovie(editMovie:Partial<iMovies>){
+  editMovie(editMovie: Partial<iMovies>) {
     return this.http.post(this.moviesUrl + "/" + editMovie.id, editMovie)
     // .pipe(tap((movie) => {
     //   const index = this.moviesArr.findIndex(movie => movie.id == editMovie.id)
@@ -75,20 +88,44 @@ export class MoviesService {
     //DA GESTIRE
   }
 
-  addToLiked(movie:iMovies){
-    const user = this.authSvc.$user.subscribe(user =>{
-      if (user) {
-        this.userId = user.id
-      }
-    })
-    return this.http.post<favoritesData>(this.favoritesUrl, { "userId": this.userId, "moviesIds": [movie.id] });
-
+  addToLiked(movieId: number) {
+    return this.http.get<favoritesData>(`${this.favoritesUrl}/${this.userId}`).pipe(
+      switchMap(data => {
+        if (data) {
+          if (!data.movieIds.includes(movieId)) {
+            const updatedMovieIds = [...data.movieIds, movieId];
+            return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds });
+          }
+          return of(null)
+        }
+        return this.http.post<favoritesData>(this.favoritesUrl, { userId: this.userId, movieIds: [movieId] });
+      })
+    );
   }
 
-  getFavorites(userId: number) {
-    return this.http.get<favoritesData>(this.favoritesUrl + "?userId=" + userId)
-    .pipe(
-      map(data => this.moviesArr.filter(movie => data.movieIds.includes(movie.id)))
+  removeFromLiked(movieId: number) {
+    return this.http.get<favoritesData>(`${this.favoritesUrl}/${this.userId}`).pipe(
+      switchMap(data => {
+        const updatedMovieIds = data.movieIds.filter(id => id !== movieId)
+        return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds })
+          .pipe(map(() => {
+            const likedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
+            this.moviesLikedSubject.next(likedArr)
+            return likedArr
+          }))
+      })
     );
+  }
+
+
+  getFavorites(userId: number) {
+    return this.http.get<favoritesData[]>(`${this.favoritesUrl}?userId=${userId}`)
+      .pipe(
+        map(data => {
+          const likedArr = this.moviesArr.filter(movie => data[0].movieIds.includes(movie.id))
+          this.moviesLikedSubject.next(likedArr)
+          return likedArr
+        })
+      );
   }
 }

@@ -8,6 +8,7 @@ import { AuthService } from '../../auth/auth.service';
 })
 export class HeaderComponent {
   show:boolean = false
+  showProfile:boolean = false
 
   isUserLoggedIn:boolean = false
 

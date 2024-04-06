@@ -25,7 +25,7 @@ export class MoviesComponent {
     this.moviesSvc.removeMovie(id).subscribe()
   }
 
-  addToLiked(movie:iMovies){
-
+  addToLiked(movieId:number){
+    this.moviesSvc.addToLiked(movieId).subscribe()
   }
 }

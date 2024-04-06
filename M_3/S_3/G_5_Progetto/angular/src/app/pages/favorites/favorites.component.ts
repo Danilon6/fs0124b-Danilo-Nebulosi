@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { iMovies } from '../../models/i-movies';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-favorites',
@@ -10,10 +11,24 @@ import { iMovies } from '../../models/i-movies';
 export class FavoritesComponent {
 
   likedArr:iMovies[] =[]
-  constructor(private moviesSvc:MoviesService){}
+  constructor(private moviesSvc:MoviesService, private authSvc:AuthService){
+
+  }
 
   ngOnInit(){
-    this.moviesSvc.getFavorites(1).subscribe(data =>{
+    this.moviesSvc.$moviesLiked.subscribe(data =>{
+      this.likedArr = data
+      console.log(data);
+
+    })
+  }
+
+  remove(id:number){
+    this.moviesSvc.removeMovie(id).subscribe()
+  }
+
+  removeFromLiked(movieId:number){
+    this.moviesSvc.removeFromLiked(movieId).subscribe(data =>{
       this.likedArr = data
     })
   }

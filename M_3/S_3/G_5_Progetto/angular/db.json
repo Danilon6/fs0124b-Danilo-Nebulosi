@@ -27,18 +27,6 @@
       "plot": "The Lord of the Rings: The Fellowship of the Ring is a 2001 epic fantasy adventure film directed by Peter Jackson. It is based on the first volume of J. R. R. Tolkien's The Lord of the Rings. The film features an ensemble cast including Elijah Wood, Ian McKellen, Viggo Mortensen, and more."
     },
     {
-      "id": 2,
-      "title": "The Lord of the Rings: The Return of the King",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama"
-      ],
-      "releaseDate": "2003",
-      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-      "plot": "The Lord of the Rings: The Return of the King is a 2003 epic fantasy adventure film directed by Peter Jackson. It is the third and final instalment in The Lord of the Rings trilogy, following The Fellowship of the Ring and The Two Towers."
-    },
-    {
       "id": 3,
       "title": "The Lord of the Rings: The Two Towers",
       "genres": [
@@ -307,18 +295,15 @@
     {
       "userId": 1,
       "movieIds": [
-        1,
-        4,
-        20
+        9
       ],
       "id": 1
     },
     {
       "userId": 2,
       "movieIds": [
-        1,
         4,
-        20
+        5
       ],
       "id": 2
     }

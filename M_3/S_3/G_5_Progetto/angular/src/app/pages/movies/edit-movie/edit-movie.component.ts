@@ -13,8 +13,6 @@ export class EditMovieComponent {
 
   movie!: iMovies
 
-  moviesArr: iMovies[] = []
-
   genresString: string = ""
 
   constructor(
@@ -24,10 +22,6 @@ export class EditMovieComponent {
   ) { }
 
   ngOnInit() {
-    this.moviesSvc.$movies.subscribe(moviesArr => {
-      this.moviesArr = moviesArr
-      console.log(moviesArr);
-    })
 
     this.route.params.subscribe((params: any) => {
       const id = params.id
