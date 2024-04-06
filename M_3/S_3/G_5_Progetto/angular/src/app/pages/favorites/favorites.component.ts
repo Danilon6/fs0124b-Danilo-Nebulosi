@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
+import { iMovies } from '../../models/i-movies';
 
 @Component({
   selector: 'app-favorites',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class FavoritesComponent {
 
+  likedArr:iMovies[] =[]
+  constructor(private moviesSvc:MoviesService){}
+
+  ngOnInit(){
+    this.moviesSvc.getFavorites(1).subscribe(data =>{
+      this.likedArr = data
+    })
+  }
 }

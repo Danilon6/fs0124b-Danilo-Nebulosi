@@ -15,33 +15,312 @@
   ],
   "movies-popular": [
     {
-      "id": "1",
-      "title": "Il Signore degli Anelli: La Compagnia dell'Anello",
-      "genre": "Fantasy",
-      "releaseDate": "2001-12-19",
-      "imageUrl": "https://picsum.photos/200/300"
+      "id": 1,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "releaseDate": "2001",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+      "plot": "The Lord of the Rings: The Fellowship of the Ring is a 2001 epic fantasy adventure film directed by Peter Jackson. It is based on the first volume of J. R. R. Tolkien's The Lord of the Rings. The film features an ensemble cast including Elijah Wood, Ian McKellen, Viggo Mortensen, and more."
     },
     {
-      "id": "2",
-      "title": "Il Signore degli Anelli: La Compagnia dell'Anello",
-      "genre": "Fantasy",
-      "releaseDate": "2001-12-19",
-      "imageUrl": "https://picsum.photos/200/300"
+      "id": 2,
+      "title": "The Lord of the Rings: The Return of the King",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "releaseDate": "2003",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "plot": "The Lord of the Rings: The Return of the King is a 2003 epic fantasy adventure film directed by Peter Jackson. It is the third and final instalment in The Lord of the Rings trilogy, following The Fellowship of the Ring and The Two Towers."
     },
     {
-      "id": "3",
-      "title": "Il Signore degli Anelli: La Compagnia dell'Anello",
-      "genre": "Fantasy",
-      "releaseDate": "2001-12-19",
-      "imageUrl": "https://picsum.photos/200/300"
+      "id": 3,
+      "title": "The Lord of the Rings: The Two Towers",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "releaseDate": "2002",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "plot": "The Lord of the Rings: The Two Towers is a 2002 epic fantasy adventure film directed by Peter Jackson. It is the second instalment in The Lord of the Rings trilogy, following The Fellowship of the Ring and preceding The Return of the King."
+    },
+    {
+      "id": 4,
+      "title": "Lord of War",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "releaseDate": "2005",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+      "plot": "Lord of War is a 2005 crime thriller film written, produced, and directed by Andrew Niccol. It stars Nicolas Cage as an arms dealer who confronts the morality of his work while being chased by an Interpol agent."
+    },
+    {
+      "id": 5,
+      "title": "Lords of Dogtown",
+      "genres": [
+        "Biography",
+        "Drama",
+        "Sport"
+      ],
+      "releaseDate": "2005",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+      "plot": "Lords of Dogtown is a 2005 biographical drama film directed by Catherine Hardwicke. The film follows the lives of a group of young skateboarders in California who pioneered the sport of skateboarding."
+    },
+    {
+      "id": 6,
+      "title": "The Lord of the Rings",
+      "genres": [
+        "Animation",
+        "Adventure",
+        "Fantasy"
+      ],
+      "releaseDate": "1978",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+      "plot": "The Lord of the Rings is a 1978 animated fantasy film directed by Ralph Bakshi. It is an adaptation of J. R. R. Tolkien's high fantasy epic The Lord of the Rings, comprising The Fellowship of the Ring and the first half of The Two Towers."
+    },
+    {
+      "id": 7,
+      "title": "Lord of the Flies",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Thriller"
+      ],
+      "releaseDate": "1990",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
+      "plot": "Lord of the Flies is a 1990 survival drama film directed by Harry Hook. It is the second film adaptation of William Golding's 1954 novel of the same name and features young cast members portraying the stranded boys."
+    },
+    {
+      "id": 8,
+      "title": "The Lords of Salem",
+      "genres": [
+        "Horror"
+      ],
+      "releaseDate": "2012",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
+      "plot": "The Lords of Salem is a 2012 supernatural horror film written, produced, and directed by Rob Zombie. It stars Sheri Moon Zombie as a troubled DJ in Salem, Massachusetts, whose life becomes entangled with a coven of ancient witches."
+    },
+    {
+      "id": 9,
+      "title": "Greystoke: The Legend of Tarzan, Lord of the Apes",
+      "genres": [
+        "Adventure",
+        "Drama"
+      ],
+      "releaseDate": "1984",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+      "plot": "Greystoke: The Legend of Tarzan, Lord of the Apes is a 1984 adventure film directed by Hugh Hudson. It is based on Edgar Rice Burroughs' novel Tarzan of the Apes and stars Christopher Lambert as Tarzan."
+    },
+    {
+      "id": 10,
+      "title": "Lord of the Flies",
+      "genres": [
+        "Adventure",
+        "Drama",
+        "Thriller"
+      ],
+      "releaseDate": "1963",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
+      "plot": "Lord of the Flies is a 1963 British drama film directed by Peter Brook. It is based on William Golding's novel of the same name and follows a group of young boys stranded on an uninhabited island."
+    },
+    {
+      "id": 11,
+      "title": "The Avengers",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "releaseDate": "2012",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "plot": "The Avengers is a 2012 superhero film based on the Marvel Comics superhero team of the same name. Directed by Joss Whedon, it features an ensemble cast including Robert Downey Jr., Chris Evans, Mark Ruffalo, and more."
+    },
+    {
+      "id": 12,
+      "title": "Avengers: Infinity War",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "releaseDate": "2018",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+      "plot": "Avengers: Infinity War is a 2018 superhero film based on the Marvel Comics superhero team the Avengers. Directed by Anthony and Joe Russo, it features an ensemble cast including Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, and more."
+    },
+    {
+      "id": 13,
+      "title": "Avengers: Age of Ultron",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "releaseDate": "2015",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
+      "plot": "Avengers: Age of Ultron is a 2015 superhero film based on the Marvel Comics superhero team the Avengers. Directed by Joss Whedon, it features an ensemble cast including Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, and more."
+    },
+    {
+      "id": 14,
+      "title": "Avengers: Endgame",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "releaseDate": "2019",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+      "plot": "Avengers: Endgame is a 2019 superhero film based on the Marvel Comics superhero team the Avengers. Directed by Anthony and Joe Russo, it serves as a direct sequel to Avengers: Infinity War."
+    },
+    {
+      "id": 18,
+      "title": "The Godfather: Part II",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "releaseDate": "1974",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "plot": "The Godfather: Part II is a 1974 crime epic directed by Francis Ford Coppola. It is the second instalment in The Godfather trilogy and presents parallel storylines of the rise of a young Vito Corleone and the descent of his son Michael into darkness."
+    },
+    {
+      "id": 22,
+      "title": "Inception",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "releaseDate": "2010",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+      "plot": "Inception is a 2010 science fiction action film written and directed by Christopher Nolan. The film features an ensemble cast including Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, and more."
+    },
+    {
+      "id": 24,
+      "title": "The Matrix",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "releaseDate": "1999",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "plot": "The Matrix is a 1999 science fiction action film directed by the Wachowskis. It depicts a dystopian future in which reality, as perceived by most humans, is actually a simulated reality called the Matrix."
+    },
+    {
+      "id": 25,
+      "title": "The Shawshank Redemption",
+      "genres": [
+        "Drama"
+      ],
+      "releaseDate": "1994",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "plot": "The Shawshank Redemption is a 1994 drama film written and directed by Frank Darabont. It stars Tim Robbins and Morgan Freeman as two imprisoned men who form a strong bond over the years."
+    },
+    {
+      "id": 26,
+      "title": "Fight Club",
+      "genres": [
+        "Drama"
+      ],
+      "releaseDate": "1999",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "plot": "Fight Club is a 1999 drama film directed by David Fincher. It stars Brad Pitt, Edward Norton, and Helena Bonham Carter. The film depicts an unnamed narrator who forms a 'fight club' with a soap salesman."
+    },
+    {
+      "id": 27,
+      "title": "Forrest Gump",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "releaseDate": "1994",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "plot": "Forrest Gump is a 1994 romantic drama film directed by Robert Zemeckis. It stars Tom Hanks as Forrest Gump, a man with a low IQ who witnesses and unwittingly influences several defining historical events in the 20th century."
+    },
+    {
+      "id": 28,
+      "title": "Pulp Fiction",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "releaseDate": "1994",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "plot": "Pulp Fiction is a 1994 crime film directed by Quentin Tarantino. It features an ensemble cast including John Travolta, Uma Thurman, Samuel L. Jackson, and more. The film intertwines multiple stories of crime and redemption."
+    },
+    {
+      "id": 31,
+      "title": "The Silence of the Lambs",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "releaseDate": "1991",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "plot": "The Silence of the Lambs is a 1991 psychological horror thriller film directed by Jonathan Demme. It stars Jodie Foster as Clarice Starling, a young FBI trainee who seeks the help of the imprisoned cannibalistic serial killer, Dr. Hannibal Lecter, to catch another serial killer."
+    },
+    {
+      "id": 32,
+      "title": "The Usual Suspects",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "releaseDate": "1995",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "plot": "The Usual Suspects is a 1995 neo-noir mystery film directed by Bryan Singer. It follows the interrogation of Roger 'Verbal' Kint, a small-time con man who is one of the only survivors of a massacre and fire on a ship docked in the Port of Los Angeles."
+    },
+    {
+      "title": "Modified The Lord of the Rings: The Fellowship of the Ring",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "releaseDate": "2001",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+      "plot": "The Lord of the Rings: The Fellowship of the Ring is a 2001 epic fantasy adventure film directed by Peter Jackson. It is based on the first volume of J. R. R. Tolkien's The Lord of the Rings. The film features an ensemble cast including Elijah Wood, Ian McKellen, Viggo Mortensen, and more.",
+      "id": 34
+    },
+    {
+      "id": 35,
+      "title": "The Godfather",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "releaseDate": "1972",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "plot": "The Godfather is a 1972 crime film directed by Francis Ford Coppola. It is based on the novel of the same name by Mario Puzo and stars Marlon Brando, Al Pacino, and James Caan. The film follows the patriarch of a powerful crime family and his son's transition into a ruthless mafia leader."
     }
   ],
   "favorites": [
     {
-      "userId": "1",
+      "userId": 1,
       "movieIds": [
-        "1"
-      ]
+        1,
+        4,
+        20
+      ],
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "movieIds": [
+        1,
+        4,
+        20
+      ],
+      "id": 2
     }
   ]
 }

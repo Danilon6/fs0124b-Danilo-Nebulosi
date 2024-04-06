@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'movies', loadChildren: () => import('./pages/movies/movies.module').then(m => m.MoviesModule),
     title:'movies',
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     },
   {
     path: 'favorites', loadChildren: () => import('./pages/favorites/favorites.module').then(m => m.FavoritesModule),
@@ -24,9 +25,7 @@ const routes: Routes = [
     canActivate: [GuestGuard],
     canActivateChild: [GuestGuard],
     },
-  { path: 'add-movies', loadChildren: () => import('./pages/add-movies/add-movies.module').then(m => m.AddMoviesModule) },
-  { path: 'edit-movies', loadChildren: () => import('./pages/edit-movies/edit-movies.module').then(m => m.EditMoviesModule) }
-];
+] ;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

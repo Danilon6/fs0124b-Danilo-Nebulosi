@@ -33,7 +33,10 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router
-  ) {}
+  ) {
+
+    this.getUserAfterRefresh()
+  }
 
     registerUrl:string = environment.registerUrl
     loginUrl:string = environment.loginUrl

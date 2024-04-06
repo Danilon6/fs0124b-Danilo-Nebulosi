@@ -1,4 +1,4 @@
 export interface ifavoritesMovies {
-  userId: string
-  movieIds: string[]
+  userId: number
+  movieIds: number[]
 }

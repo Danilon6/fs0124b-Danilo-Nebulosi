@@ -1,0 +1,80 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <h2 class="card-title">Add New Movie</h2>
+    <form (ngSubmit)="submitForm(movieForm)" #movieForm="ngForm">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          [(ngModel)]="newMovie.title"
+          placeholder="Enter title"
+          required
+          #title="ngModel">
+        <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
+          You must enter a title
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="releaseDate" class="form-label">Release Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="releaseDate"
+          name="releaseDate"
+          [(ngModel)]="newMovie.releaseDate"
+          required
+          #releaseDate="ngModel">
+        <div *ngIf="releaseDate.invalid && releaseDate.dirty" class="alert alert-danger">
+          You must enter the release date
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="plot" class="form-label">Plot</label>
+        <textarea
+          class="form-control"
+          id="plot"
+          name="plot"
+          [(ngModel)]="newMovie.plot"
+          rows="3"
+          placeholder="Enter plot"
+          required
+          #plot="ngModel"></textarea>
+        <div *ngIf="plot.invalid && plot.dirty" class="alert alert-danger">
+          You must enter the plot
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="genres" class="form-label">Generi</label>
+        <input
+          type="text"
+          class="form-control"
+          id="genres"
+          name="genres"
+          [(ngModel)]="genresString"
+          placeholder="Inserisci i generi separati da virgola"
+          required
+          #genresInput="ngModel">
+      </div>
+
+      <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imageUrl"
+          name="imageUrl"
+          [(ngModel)]="newMovie.imageUrl"
+          placeholder="Enter image URL"
+          required
+          #imageUrl="ngModel">
+        <div *ngIf="imageUrl.invalid && imageUrl.dirty" class="alert alert-danger">
+          You must enter the image URL
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+</div>
