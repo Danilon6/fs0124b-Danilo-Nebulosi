@@ -12,8 +12,10 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item px-0" *ngFor="let genre of movie.genres">{{genre}}</li>
         </ul>
-        <button [routerLink]="['/movies']" class="btn btn-outline-secondary">MOVIES</button>
-        <button [routerLink]="['/account/favorites']" class="btn btn-outline-secondary">I TUOI PREFERITI</button>
+        <div class="d-flex justify-content-around">
+          <button [routerLink]="['/movies']" class="btn btn-outline-secondary">MOVIES</button>
+          <button [routerLink]="['/account/favorites']" class="btn btn-outline-secondary">I TUOI PREFERITI</button>
+        </div>
       </div>
     </div>
   </div>

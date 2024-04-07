@@ -14,8 +14,6 @@ export class MoviesComponent {
 
   moviesArr:iMovies[] = []
 
-  clicked:boolean = false
-
   ngOnInit(){
     this.moviesSvc.$movies.subscribe( moviesArr => {
       this.moviesArr = moviesArr

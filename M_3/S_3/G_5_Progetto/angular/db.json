@@ -242,7 +242,7 @@
     },
     {
       "id": 31,
-      "title": "The Silence of the Lambs",
+      "title": "Modified The Silence of the Lambs",
       "genres": [
         "Crime",
         "Drama",
@@ -251,14 +251,6 @@
       "releaseDate": "1991-02-14",
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
       "plot": "The Silence of the Lambs is a 1991 psychological horror thriller film directed by Jonathan Demme. It stars Jodie Foster as Clarice Starling, a young FBI trainee who seeks the help of the imprisoned cannibalistic serial killer, Dr. Hannibal Lecter, to catch another serial killer."
-    },
-    {
-      "title": "The Lord of the Rings: The Fellowship of the Ring",
-      "genres": [],
-      "releaseDate": "2001-12-19",
-      "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
-      "plot": "The Lord of the Rings: The Fellowship of the Ring is a 2001 epic fantasy adventure film directed by Peter Jackson. It is based on the first volume of J. R. R. Tolkien's The Lord of the Rings. The film features an ensemble cast including Elijah Wood, Ian McKellen, Viggo Mortensen, and more.",
-      "id": 34
     }
   ],
   "favorites": [
@@ -271,7 +263,14 @@
     },
     {
       "userId": 2,
-      "movieIds": [],
+      "movieIds": [
+        1,
+        31,
+        28,
+        27,
+        5,
+        4
+      ],
       "id": 2
     }
   ]

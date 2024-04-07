@@ -12,8 +12,11 @@
 				<td>
 					{{ user.name }}
 				</td>
-				<td>{{ user.email }}</td>
+        <td>{{ user.email }}</td>
 			</tr>
-	</tbody>
-</table>
+    </tbody>
+  </table>
 
+<div class="d-flex">
+  <button (click)="logout()" class="btn btn-outline-danger m-auto">Logout</button>
+</div>

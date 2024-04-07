@@ -34,12 +34,12 @@ export class EditMovieComponent {
     })
   }
 
-  editMovie(editedMovie:iMovies){
+  editMovie(){
     const genresWithoutSpaces = this.genresString.replace(/\s/g, ',');
     const genresArray = genresWithoutSpaces.split(',').map(genre => genre.trim());
     const filteredGenresArray = genresArray.filter(genre => genre !== '');
-    editedMovie.genres = filteredGenresArray;
-    this.moviesSvc.editMovie(editedMovie)
+    this.movie.genres = filteredGenresArray;
+    this.moviesSvc.editMovie(this.movie)
       .subscribe(() => {
         this.router.navigate(['/movies'])
       })

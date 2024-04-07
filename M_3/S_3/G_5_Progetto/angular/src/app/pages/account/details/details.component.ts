@@ -21,4 +21,8 @@ export class DetailsComponent {
       }
     })
   }
+
+  logout(){
+    this.authSvc.logout()
+  }
 }
