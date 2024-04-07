@@ -256,9 +256,7 @@
   "favorites": [
     {
       "userId": 1,
-      "movieIds": [
-        9
-      ],
+      "movieIds": [],
       "id": 1
     },
     {

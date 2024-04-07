@@ -1,7 +1,8 @@
+import { AddToLikedConfirmationComponent } from './add-to-liked-confirmation/add-to-liked-confirmation.component';
 import { Component } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { iMovies } from '../../models/i-movies';
-import { Dialog } from '@angular/cdk/dialog';
+import {Dialog} from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-movies',
@@ -10,7 +11,9 @@ import { Dialog } from '@angular/cdk/dialog';
 })
 export class MoviesComponent {
 
-  constructor(private moviesSvc:MoviesService){}
+  constructor(private moviesSvc:MoviesService,
+    public dialog: Dialog
+  ){}
 
   moviesArr:iMovies[] = []
 
@@ -25,18 +28,17 @@ export class MoviesComponent {
   }
 
   addToLiked(movieId:number){
-    this.moviesSvc.addToLiked(movieId).subscribe()
+    this.moviesSvc.addToLiked(movieId).subscribe(data =>{
+      this.openDialog()
+    })
   }
 
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open<string>(appMovies, {
-  //     width: '250px',
-  //     data: {"Hai aggiunto il film ai preferiti"},
-  //   });
-
-  //   dialogRef.closed.subscribe(result => {
-  //     console.log('The dialog was closed');
-  //     this.animal = result;
-  //   });
-  // }
+  openDialog() {
+    this.dialog.open(AddToLikedConfirmationComponent, {
+      minWidth: '350px',
+      data: {
+        animal: 'panda',
+      },
+    })
+  }
 }

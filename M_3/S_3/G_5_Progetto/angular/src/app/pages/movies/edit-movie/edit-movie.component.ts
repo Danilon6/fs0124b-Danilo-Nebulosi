@@ -13,9 +13,7 @@ export class EditMovieComponent {
 
   movie!: iMovies
 
-  genresString!: string;
-
-  selectedGenres: string[] =[]
+  genresString:string = ""
 
   constructor(
     private moviesSvc: MoviesService,
@@ -30,8 +28,10 @@ export class EditMovieComponent {
 
       this.moviesSvc.getMovie(id).subscribe(movie => {
         this.movie = movie
+        this.genresString= this.movie.genres.join(",")
       })
     })
+
   }
 
   editMovie(){

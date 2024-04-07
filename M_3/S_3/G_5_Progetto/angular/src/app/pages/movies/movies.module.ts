@@ -6,6 +6,7 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsMovieComponent } from './details-movie/details-movie.component';
 import { MoviesComponent } from './movies.component';
+import { AddToLikedConfirmationComponent } from './add-to-liked-confirmation/add-to-liked-confirmation.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { MoviesComponent } from './movies.component';
     MoviesComponent,
     EditMovieComponent,
     AddMovieComponent,
-    DetailsMovieComponent
+    DetailsMovieComponent,
+    AddToLikedConfirmationComponent
   ],
   imports: [
     CommonModule,
