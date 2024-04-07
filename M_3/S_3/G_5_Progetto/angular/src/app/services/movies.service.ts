@@ -85,18 +85,17 @@ export class MoviesService {
       }))
   }
 
-  editMovie(editMovie: Partial<iMovies>) {
-    return this.http.post(this.moviesUrl + "/" + editMovie.id, editMovie)
-    // .pipe(tap((movie) => {
-    //   const index = this.moviesArr.findIndex(movie => movie.id == editMovie.id)
-    //   const updatedMovie:iMovies = {
-    //     id: 2,
-    //     ...editMovie
-    //   }
-    //   const x = this.moviesArr.splice(index, 1, editMovie)
-    //   this.moviesSubject.next(this.moviesArr)
-    // }))
-    //DA GESTIRE
+  editMovie(editMovie:iMovies): Observable<iMovies> {
+    return this.http.put<iMovies>(this.moviesUrl + "/" + editMovie.id, editMovie)
+    .pipe(tap(() => {
+      this.moviesArr = this.moviesArr.map(movie => {
+        if (movie.id == editMovie.id) {
+          return { ...movie, ...editMovie }
+        }
+        return movie
+      })
+      this.moviesSubject.next(this.moviesArr)
+    }))
   }
 
   addToLiked(movieId: number): Observable<void | iMovies[] | null> {
@@ -108,7 +107,7 @@ export class MoviesService {
             return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds })
             .pipe(map(() => {
               this.moviesLikedArr = [...this.moviesLikedArr, this.moviesArr.find(movie => movie.id === movieId)!]
-              this.moviesLikedSubject.next(this.moviesLikedArr)
+
             }))
           }
           return of(null)

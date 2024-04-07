@@ -22,7 +22,7 @@
 <div class="card mt-3">
   <div class="card-body">
     <h2 class="card-title">Add New Movie</h2>
-    <form (ngSubmit)="submitForm(movieForm)" #movieForm="ngForm">
+    <form #movieForm="ngForm">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -79,7 +79,9 @@
           required
           #genresInput="ngModel">
       </div>
-
+      <div *ngIf="genresInput.invalid && genresInput.dirty" class="alert alert-danger">
+        You must enter genres separated by comma
+      </div>
       <div class="mb-3">
         <label for="imageUrl" class="form-label">Image URL</label>
         <input
@@ -95,7 +97,7 @@
           You must enter the image URL
         </div>
       </div>
-      <button type="submit" class="btn btn-warning">MODIFICA</button>
+      <button (click)="editMovie(movie)" type="submit" class="btn btn-warning">MODIFICA</button>
     </form>
   </div>
 </div>

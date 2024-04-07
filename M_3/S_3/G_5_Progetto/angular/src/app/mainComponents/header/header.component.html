@@ -29,6 +29,8 @@
             Profile
           </a>
           <ul class="dropdown-menu" [ngClass]="{'show':showProfile}" >
+            <li><a routerLink="/favorites" class="dropdown-item">I tuoi preferiti</a></li>
+            <li><a routerLink="/account" class="dropdown-item" routerLink="/">Account</a></li>
             <li><a (click)="logout()" class="dropdown-item" routerLink="/">Logout</a></li>
           </ul>
         </li>

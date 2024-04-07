@@ -1,0 +1,22 @@
+<h1>Gli utenti che ci hanno scelto</h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (user of usersArr; track user.name; let i = $index) {
+			<tr>
+				<th scope="row">{{ i + 1 }}</th>
+				<td>
+					{{ user.name }}
+				</td>
+				<td>{{ user.email }}</td>
+			</tr>
+		}
+	</tbody>
+</table>

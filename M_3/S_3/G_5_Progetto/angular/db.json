@@ -54,9 +54,7 @@
       "id": 5,
       "title": "Lords of Dogtown",
       "genres": [
-        "Biography",
-        "Drama",
-        "Sport"
+        []
       ],
       "releaseDate": "2005-06-03",
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
@@ -268,12 +266,8 @@
       "plot": "The Usual Suspects is a 1995 neo-noir mystery film directed by Bryan Singer. It follows the interrogation of Roger 'Verbal' Kint, a small-time con man who is one of the only survivors of a massacre and fire on a ship docked in the Port of Los Angeles."
     },
     {
-      "title": "Modified The Lord of the Rings: The Fellowship of the Ring",
-      "genres": [
-        "Action",
-        "Adventure",
-        "Drama"
-      ],
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "genres": [],
       "releaseDate": "2001-12-19",
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
       "plot": "The Lord of the Rings: The Fellowship of the Ring is a 2001 epic fantasy adventure film directed by Peter Jackson. It is based on the first volume of J. R. R. Tolkien's The Lord of the Rings. The film features an ensemble cast including Elijah Wood, Ian McKellen, Viggo Mortensen, and more.",
@@ -290,9 +284,7 @@
     },
     {
       "userId": 2,
-      "movieIds": [
-        4
-      ],
+      "movieIds": [],
       "id": 2
     }
   ]

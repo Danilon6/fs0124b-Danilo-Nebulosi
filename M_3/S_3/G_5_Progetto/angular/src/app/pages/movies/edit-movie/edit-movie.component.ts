@@ -13,7 +13,9 @@ export class EditMovieComponent {
 
   movie!: iMovies
 
-  genresString: string = ""
+  genresString!: string;
+
+  selectedGenres: string[] =[]
 
   constructor(
     private moviesSvc: MoviesService,
@@ -29,18 +31,17 @@ export class EditMovieComponent {
       this.moviesSvc.getMovie(id).subscribe(movie => {
         this.movie = movie
       })
-
     })
   }
 
-  submitForm(newMovie:NgForm){
+  editMovie(editedMovie:iMovies){
     const genresWithoutSpaces = this.genresString.replace(/\s/g, ',');
     const genresArray = genresWithoutSpaces.split(',').map(genre => genre.trim());
     const filteredGenresArray = genresArray.filter(genre => genre !== '');
-    this.movie.genres = filteredGenresArray;
-    this.moviesSvc.editMovie(this.movie)
+    editedMovie.genres = filteredGenresArray;
+    this.moviesSvc.editMovie(editedMovie)
       .subscribe(() => {
-        newMovie.resetForm()
+        this.router.navigate(['/movies'])
       })
   }
 }

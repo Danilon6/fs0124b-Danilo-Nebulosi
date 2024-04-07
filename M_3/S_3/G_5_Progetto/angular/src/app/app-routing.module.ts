@@ -10,21 +10,26 @@ const routes: Routes = [
   },
   {
     path: 'movies', loadChildren: () => import('./pages/movies/movies.module').then(m => m.MoviesModule),
-    title:'movies',
+    title:'Tutti i nostri film',
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     },
   {
     path: 'favorites', loadChildren: () => import('./pages/favorites/favorites.module').then(m => m.FavoritesModule),
-    title: 'favorites',
+    title: 'I tuoi preferiti',
     canActivate: [AuthGuard]
     },
   {
     path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-    title: 'auth',
+    title: 'Auth',
     canActivate: [GuestGuard],
     canActivateChild: [GuestGuard],
     },
+  {
+    path: 'users', loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule),
+    title: 'I nostri utenti',
+    canActivate: [AuthGuard]
+  },
 ] ;
 
 @NgModule({
