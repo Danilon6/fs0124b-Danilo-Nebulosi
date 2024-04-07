@@ -43,8 +43,7 @@
       "title": "Lord of War",
       "genres": [
         "Crime",
-        "Drama",
-        "Thriller"
+        "Drama"
       ],
       "releaseDate": "2005-09-16",
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
@@ -252,18 +251,6 @@
       "releaseDate": "1991-02-14",
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
       "plot": "The Silence of the Lambs is a 1991 psychological horror thriller film directed by Jonathan Demme. It stars Jodie Foster as Clarice Starling, a young FBI trainee who seeks the help of the imprisoned cannibalistic serial killer, Dr. Hannibal Lecter, to catch another serial killer."
-    },
-    {
-      "id": 32,
-      "title": "The Usual Suspects",
-      "genres": [
-        "Crime",
-        "Drama",
-        "Mystery"
-      ],
-      "releaseDate": "1995-09-15",
-      "imageUrl": "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
-      "plot": "The Usual Suspects is a 1995 neo-noir mystery film directed by Bryan Singer. It follows the interrogation of Roger 'Verbal' Kint, a small-time con man who is one of the only survivors of a massacre and fire on a ship docked in the Port of Los Angeles."
     },
     {
       "title": "The Lord of the Rings: The Fellowship of the Ring",

@@ -1,1 +1,19 @@
-<p>details works!</p>
+<h1 *ngIf="user">Benvenuto {{user.name}}</h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Email</th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+				<td>
+					{{ user.name }}
+				</td>
+				<td>{{ user.email }}</td>
+			</tr>
+	</tbody>
+</table>
+

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { iUser } from '../../../models/i-user';
+import { UsersService } from '../../../services/users.service';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-details',
@@ -7,4 +10,15 @@ import { Component } from '@angular/core';
 })
 export class DetailsComponent {
 
+  user!:iUser
+
+  constructor(private authSvc:AuthService){}
+
+  ngOnInit(){
+    this.authSvc.$user.subscribe(user =>{
+      if (user) {
+        this.user = user
+      }
+    })
+  }
 }
