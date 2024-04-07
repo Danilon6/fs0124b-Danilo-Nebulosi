@@ -9,20 +9,21 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  loginUser:iLogindata = {
+
+  loginUser: iLogindata = {
     email: '',
     password: ''
   }
 
   constructor(
-    private authSvc:AuthService,
-    private router:Router
-    ){}
+    private authSvc: AuthService,
+    private router: Router
+  ) { }
 
-    login(){
-      this.authSvc.login(this.loginUser)
-      .subscribe(data =>{
+  login() {
+    this.authSvc.login(this.loginUser)
+      .subscribe(data => {
         this.router.navigate(['/movies'])
       })
-    }
+  }
 }

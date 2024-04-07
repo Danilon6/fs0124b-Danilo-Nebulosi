@@ -32,14 +32,15 @@ export class MoviesService {
 
   $moviesLiked = this.moviesLikedSubject.asObservable()
 
-  userId!: number;
+  userId!: number
+
   constructor(private http: HttpClient, private authSvc: AuthService) {
     this.getAllMovie().subscribe(data => {
       this.moviesSubject.next(data)
       this.moviesArr = data
     })
 
-    const user = this.authSvc.$user.subscribe(user => {
+    this.authSvc.$user.subscribe(user => {
       if (user) {
         this.userId = user.id
       }
@@ -65,6 +66,7 @@ export class MoviesService {
         })
       );
   }
+
   getMovie(id: number): Observable<iMovies> {
     return this.http.get<iMovies>(this.moviesUrl + '/' + id)
   }
@@ -121,7 +123,7 @@ export class MoviesService {
     );
   }
 
-  removeFromLiked(movieId: number) {
+  removeFromLiked(movieId: number): Observable<void> {
     return this.http.get<favoritesData>(`${this.favoritesUrl}/${this.userId}`).pipe(
       switchMap(data => {
         const updatedMovieIds = data.movieIds.filter(id => id !== movieId)
@@ -133,7 +135,5 @@ export class MoviesService {
       })
     );
   }
-
-
 
 }

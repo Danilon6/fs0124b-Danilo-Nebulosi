@@ -35,10 +35,7 @@ export class MoviesComponent {
 
   openDialog() {
     this.dialog.open(AddToLikedConfirmationComponent, {
-      minWidth: '350px',
-      data: {
-        animal: 'panda',
-      },
+      minWidth: '350px'
     })
   }
 }

@@ -22,7 +22,7 @@ export class HeaderComponent {
     })
   }
 
-  logout(){
+  logout():void{
     this.authSvc.logout()
   }
 }

@@ -17,7 +17,6 @@ export class GuestGuard {
     if(this.authSvc.syncIsLoggedIn){
       this.router.navigate(['/movies'])
     }
-
     return !this.authSvc.syncIsLoggedIn
   }
   canActivateChild(

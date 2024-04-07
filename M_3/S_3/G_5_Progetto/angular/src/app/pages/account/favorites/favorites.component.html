@@ -1,10 +1,9 @@
-<h1>FAVORITES MOVIES</h1>
+<h1>Ciao {{user.name}} ecco i tuoi preferiti</h1>
 
 <div class="row">
   <div class="col-12 col-md-6 col-lg-2 mb-3" *ngFor="let movie of likedArr">
-
     <div class="card">
-      <img [src]="movie.imageUrl" class="card-img-top" alt="...">
+      <img [src]="movie.imageUrl" class="card-img-top" alt="">
       <div class="card-body">
         <h2 class="card-title">{{movie.title.length > 20 ? movie.title.slice(0,20)+'...' : movie.title}}</h2>
         <p class="card-text">Release Date: {{movie.releaseDate}}</p>
@@ -14,15 +13,15 @@
         </ul>
         <div class="d-flex justify-content-between">
           <div>
-          <button [routerLink]="['/movies', 'details', movie.id]" class="btn btn-outline-info">DETTAGLI</button>
-          <button (click)="removeFromLiked(movie.id)" class="btn btn-outline-danger">RIMUOVI DAI PREFERITI</button>
+            <button [routerLink]="['/movies', 'details', movie.id]" class="btn btn-outline-info">DETTAGLI</button>
+            <button (click)="removeFromLiked(movie.id)" class="btn btn-outline-danger">RIMUOVI DAI PREFERITI</button>
           </div>
           <div>
-            <button [routerLink]="['/movies', 'edit', movie.id]" class="btn btn-outline-warning me-2"><i class="bi bi-pencil-fill"></i></button>
+            <button [routerLink]="['/movies', 'edit', movie.id]" class="btn btn-outline-warning me-2"><i
+                class="bi bi-pencil-fill"></i></button>
             <button (click)="remove(movie.id)" class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
           </div>
         </div>
-
       </div>
     </div>
   </div>

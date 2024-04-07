@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { iMovies } from '../../../models/i-movies';
 import { MoviesService } from '../../../services/movies.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-movie',
@@ -14,7 +15,10 @@ export class AddMovieComponent {
   newMovie:Partial<iMovies>={
   }
 
-  constructor(private moviesSvc:MoviesService){}
+  constructor(
+    private moviesSvc:MoviesService,
+    private router: Router
+  ){}
 
 
   submitForm(newMovie:NgForm){
@@ -24,7 +28,7 @@ export class AddMovieComponent {
   this.newMovie.genres = filteredGenresArray;
     this.moviesSvc.addMovie(this.newMovie)
     .subscribe(() =>{
-      newMovie.resetForm()
+      this.router.navigate(['/movies'])
     })
   }
 }

@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class UsersService {
 
   usersUrl: string = environment.usersUrl
+
   constructor(private http:HttpClient) { }
 
   getUsers(): Observable<iUser[]>{

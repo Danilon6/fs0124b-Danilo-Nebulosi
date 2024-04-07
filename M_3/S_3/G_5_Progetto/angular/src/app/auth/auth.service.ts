@@ -34,13 +34,11 @@ export class AuthService {
     private http: HttpClient,
     private router: Router
   ) {
-
     this.getUserAfterRefresh()
   }
 
     registerUrl:string = environment.registerUrl
     loginUrl:string = environment.loginUrl
-
 
     register(newUser:Partial<iUser>):Observable<accessData>{
       return this.http.post<accessData>(this.registerUrl, newUser)
@@ -51,19 +49,17 @@ export class AuthService {
       .pipe(tap(data => {
         this.authSubject.next(data.user)
         localStorage.setItem("accessData", JSON.stringify(data))
-
         this.autologout(data.accessToken)
       }))
     }
 
-
-    logout(){
+    logout():void{
       this.authSubject.next(null)
       localStorage.removeItem("accessData")
       this.router.navigate([""])
     }
 
-    autologout(jwt:string){
+    autologout(jwt:string):void{
       const expirationDate = this.jwtHelper.getTokenExpirationDate(jwt) as Date
       const exiprationMs = expirationDate.getTime() - new Date().getTime()
 
@@ -72,7 +68,7 @@ export class AuthService {
     }, exiprationMs)
     }
 
-    getUserAfterRefresh(){
+    getUserAfterRefresh():void{
       const user = localStorage.getItem('accessData')
       if (!user) return
 

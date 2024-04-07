@@ -3,6 +3,7 @@ import { MoviesService } from '../../../services/movies.service';
 import { iMovies } from '../../../models/i-movies';
 import { AuthService } from '../../../auth/auth.service';
 import { Subscription } from 'rxjs';
+import { iUser } from '../../../models/i-user';
 
 @Component({
   selector: 'app-favorites',
@@ -13,22 +14,19 @@ export class FavoritesComponent {
 
   likedArr:iMovies[] =[]
 
-  userId!:number
+  user!:iUser
 
   constructor(private moviesSvc:MoviesService, private authSvc:AuthService){
 
     this.authSvc.$user.subscribe(user =>{
       if (user) {
-        this.userId = user.id
+        this.user = user
       }
     })
+
   }
 
   ngOnInit(){
-
-    // this.moviesSvc.getFavorites(this.userId).subscribe(data=>{
-    //   this.likedArr = data
-    // })
 
     this.moviesSvc.$moviesLiked.subscribe(likedArr =>{
       this.likedArr = likedArr
