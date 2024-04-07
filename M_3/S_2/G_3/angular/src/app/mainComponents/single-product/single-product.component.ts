@@ -20,7 +20,7 @@ export class SingleProductComponent {
   addToLiked(product: iProduct) {
 
     this.onAddToLiked.emit(product)
-console.log(product);
+    console.log(product);
 
   }
 }

@@ -21,10 +21,12 @@ export class MoviesService {
 
   moviesArr: iMovies[] = []
 
-
   moviesSubject = new BehaviorSubject<iMovies[]>([])
 
   $movies = this.moviesSubject.asObservable()
+
+
+  moviesLikedArr: iMovies[] =[]
 
   moviesLikedSubject = new BehaviorSubject<iMovies[]>([])
 
@@ -45,6 +47,7 @@ export class MoviesService {
 
     this.getFavorites(this.userId).subscribe(data => {
       this.moviesLikedSubject.next(data)
+      this.moviesLikedArr = data
     })
   }
 
@@ -94,11 +97,19 @@ export class MoviesService {
         if (data) {
           if (!data.movieIds.includes(movieId)) {
             const updatedMovieIds = [...data.movieIds, movieId];
-            return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds });
+            return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds })
+            .pipe(map(() => {
+              this.moviesLikedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
+              this.moviesLikedSubject.next(this.moviesLikedArr)
+            }))
           }
           return of(null)
         }
-        return this.http.post<favoritesData>(this.favoritesUrl, { userId: this.userId, movieIds: [movieId] });
+        return this.http.post<favoritesData>(this.favoritesUrl, { userId: this.userId, movieIds: [movieId] })
+        .pipe(map((data) => {
+          this.moviesLikedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
+          this.moviesLikedSubject.next(this.moviesLikedArr)
+        }))
       })
     );
   }
@@ -109,9 +120,8 @@ export class MoviesService {
         const updatedMovieIds = data.movieIds.filter(id => id !== movieId)
         return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds })
           .pipe(map(() => {
-            const likedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
-            this.moviesLikedSubject.next(likedArr)
-            return likedArr
+            this.moviesLikedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
+            this.moviesLikedSubject.next(this.moviesLikedArr)
           }))
       })
     );
@@ -122,9 +132,9 @@ export class MoviesService {
     return this.http.get<favoritesData[]>(`${this.favoritesUrl}?userId=${userId}`)
       .pipe(
         map(data => {
-          const likedArr = this.moviesArr.filter(movie => data[0].movieIds.includes(movie.id))
-          this.moviesLikedSubject.next(likedArr)
-          return likedArr
+          this.moviesLikedArr = this.moviesArr.filter(movie => data[0].movieIds.includes(movie.id))
+          this.moviesLikedSubject.next(this.moviesLikedArr)
+          return this.moviesLikedArr
         })
       );
   }

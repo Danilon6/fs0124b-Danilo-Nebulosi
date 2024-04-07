@@ -83,4 +83,14 @@ export class AuthService {
       this.authSubject.next(accessData.user)
       this.autologout(accessData.accessToken)
     }
+
+    getAuthToken():string{
+      const user = localStorage.getItem('accessData')
+      if (!user) return ""
+
+      const accessData:accessData = JSON.parse(user)
+      if (this.jwtHelper.isTokenExpired(accessData.accessToken)) return ""
+
+      return accessData.accessToken
+    }
 }
