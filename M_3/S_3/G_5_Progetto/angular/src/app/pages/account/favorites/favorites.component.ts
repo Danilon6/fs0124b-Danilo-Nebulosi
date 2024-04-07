@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MoviesService } from '../../services/movies.service';
-import { iMovies } from '../../models/i-movies';
-import { AuthService } from '../../auth/auth.service';
+import { MoviesService } from '../../../services/movies.service';
+import { iMovies } from '../../../models/i-movies';
+import { AuthService } from '../../../auth/auth.service';
 import { Subscription } from 'rxjs';
 
 @Component({
