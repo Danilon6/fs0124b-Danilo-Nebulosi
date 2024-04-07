@@ -56,7 +56,15 @@ export class MoviesService {
     return this.http.get<iMovies[]>(this.moviesUrl)
   }
 
-
+  getFavorites(userId: number): Observable<iMovies[]> {
+    return this.http.get<favoritesData[]>(`${this.favoritesUrl}?userId=${userId}`)
+      .pipe(
+        map(data => {
+          this.moviesLikedArr = this.moviesArr.filter(movie => data[0].movieIds.includes(movie.id))
+          return this.moviesLikedArr
+        })
+      );
+  }
   getMovie(id: number): Observable<iMovies> {
     return this.http.get<iMovies>(this.moviesUrl + '/' + id)
   }
@@ -91,7 +99,7 @@ export class MoviesService {
     //DA GESTIRE
   }
 
-  addToLiked(movieId: number) {
+  addToLiked(movieId: number): Observable<void | iMovies[] | null> {
     return this.http.get<favoritesData>(`${this.favoritesUrl}/${this.userId}`).pipe(
       switchMap(data => {
         if (data) {
@@ -99,7 +107,7 @@ export class MoviesService {
             const updatedMovieIds = [...data.movieIds, movieId];
             return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds })
             .pipe(map(() => {
-              this.moviesLikedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
+              this.moviesLikedArr = [...this.moviesLikedArr, this.moviesArr.find(movie => movie.id === movieId)!]
               this.moviesLikedSubject.next(this.moviesLikedArr)
             }))
           }
@@ -107,7 +115,7 @@ export class MoviesService {
         }
         return this.http.post<favoritesData>(this.favoritesUrl, { userId: this.userId, movieIds: [movieId] })
         .pipe(map((data) => {
-          this.moviesLikedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
+          this.moviesLikedArr = [...this.moviesLikedArr, this.moviesArr.find(movie => movie.id === movieId)!]
           this.moviesLikedSubject.next(this.moviesLikedArr)
         }))
       })
@@ -120,7 +128,7 @@ export class MoviesService {
         const updatedMovieIds = data.movieIds.filter(id => id !== movieId)
         return this.http.put(`${this.favoritesUrl}/${data.id}`, { userId: this.userId, movieIds: updatedMovieIds })
           .pipe(map(() => {
-            this.moviesLikedArr = this.moviesArr.filter(movie => data.movieIds.includes(movie.id))
+            this.moviesLikedArr = this.moviesLikedArr.filter(movie => movie.id !== movieId);
             this.moviesLikedSubject.next(this.moviesLikedArr)
           }))
       })
@@ -128,14 +136,5 @@ export class MoviesService {
   }
 
 
-  getFavorites(userId: number) {
-    return this.http.get<favoritesData[]>(`${this.favoritesUrl}?userId=${userId}`)
-      .pipe(
-        map(data => {
-          this.moviesLikedArr = this.moviesArr.filter(movie => data[0].movieIds.includes(movie.id))
-          this.moviesLikedSubject.next(this.moviesLikedArr)
-          return this.moviesLikedArr
-        })
-      );
-  }
+
 }

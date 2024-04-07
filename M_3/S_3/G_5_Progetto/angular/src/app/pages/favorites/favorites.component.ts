@@ -13,18 +13,27 @@ export class FavoritesComponent {
 
   likedArr:iMovies[] =[]
 
+  userId!:number
 
   constructor(private moviesSvc:MoviesService, private authSvc:AuthService){
 
+    this.authSvc.$user.subscribe(user =>{
+      if (user) {
+        this.userId = user.id
+      }
+    })
   }
 
   ngOnInit(){
-    this.moviesSvc.$moviesLiked.subscribe( moviesLikedArr => {
-      this.likedArr = moviesLikedArr
-    })
-    // this.moviesSvc.getFavorites(2).subscribe(data=>{
+
+    // this.moviesSvc.getFavorites(this.userId).subscribe(data=>{
     //   this.likedArr = data
     // })
+
+    this.moviesSvc.$moviesLiked.subscribe(likedArr =>{
+      this.likedArr = likedArr
+    })
+
   }
 
   remove(id:number){

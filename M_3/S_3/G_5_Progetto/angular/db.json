@@ -278,17 +278,6 @@
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
       "plot": "The Lord of the Rings: The Fellowship of the Ring is a 2001 epic fantasy adventure film directed by Peter Jackson. It is based on the first volume of J. R. R. Tolkien's The Lord of the Rings. The film features an ensemble cast including Elijah Wood, Ian McKellen, Viggo Mortensen, and more.",
       "id": 34
-    },
-    {
-      "id": 35,
-      "title": "The Godfather",
-      "genres": [
-        "Crime",
-        "Drama"
-      ],
-      "releaseDate": "1972-03-14",
-      "imageUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-      "plot": "The Godfather is a 1972 crime film directed by Francis Ford Coppola. It is based on the novel of the same name by Mario Puzo and stars Marlon Brando, Al Pacino, and James Caan. The film follows the patriarch of a powerful crime family and his son's transition into a ruthless mafia leader."
     }
   ],
   "favorites": [
@@ -302,7 +291,7 @@
     {
       "userId": 2,
       "movieIds": [
-        31
+        4
       ],
       "id": 2
     }
