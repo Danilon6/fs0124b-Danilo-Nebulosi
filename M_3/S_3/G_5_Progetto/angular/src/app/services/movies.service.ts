@@ -115,7 +115,7 @@ export class MoviesService {
           return of(null)
         }
         return this.http.post<favoritesData>(this.favoritesUrl, { userId: this.userId, movieIds: [movieId] })
-        .pipe(map((data) => {
+        .pipe(map(() => {
           this.moviesLikedArr = [...this.moviesLikedArr, this.moviesArr.find(movie => movie.id === movieId)!]
           this.moviesLikedSubject.next(this.moviesLikedArr)
         }))

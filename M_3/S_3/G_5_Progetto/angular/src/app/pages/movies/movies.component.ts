@@ -28,7 +28,7 @@ export class MoviesComponent {
   }
 
   addToLiked(movieId:number){
-    this.moviesSvc.addToLiked(movieId).subscribe(data =>{
+    this.moviesSvc.addToLiked(movieId).subscribe(() =>{
       this.openDialog()
     })
   }
